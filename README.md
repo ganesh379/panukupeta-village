@@ -1,15 +1,15 @@
-# Panukupeta Village — Official Website
+﻿# Panukupeta Village — Official Website
 
 🌾 **panukupeta.family** — The official digital home of Panukupeta village.
 
-> **పానుకుపేట — మన ఊరు, మన కుటుంబం**  
+> **పణుకుపేట — మన ఊరు, మన కుటుంబం**  
 > *Our Village, Our Family*
 
 ---
 
 ## 🌍 About
 
-Panukupeta (పానుకుపేట) is a vibrant village in **Seethanagaram Mandal**, **Parvathipuram Manyam District**, Andhra Pradesh, India.
+Panukupeta (పణుకుపేట) is a vibrant village in **Seethanagaram Mandal**, **Parvathipuram Manyam District**, Andhra Pradesh, India.
 
 - 👨‍👩‍👧‍👦 ~1,074 residents | 275 households
 - 📚 62.1% literacy rate

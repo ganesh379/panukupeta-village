@@ -1,5 +1,14 @@
 /* ─── script.js — Panukupeta Village Site ─── */
 
+/* ─── Route Banner Close ─── */
+const routeBanner = document.getElementById('route-banner');
+const routeCloseBtn = document.getElementById('route-close');
+if (routeCloseBtn && routeBanner) {
+  routeCloseBtn.addEventListener('click', () => {
+    routeBanner.classList.add('hidden');
+  });
+}
+
 /* ─── Mobile Menu Toggle ─── */
 const hamburger = document.getElementById('nav-hamburger');
 const mobileMenu = document.getElementById('mobile-menu');

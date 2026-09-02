@@ -43,7 +43,220 @@
   --page-max: 1200px;
 }
 
-/* ─── Reset & Base ─── */
+/* ════════════════════════════════
+   ROUTE ANIMATION BANNER
+════════════════════════════════ */
+.route-banner {
+  width: 100%;
+  background: var(--color-eel-dark-blue);
+  position: relative;
+  border-bottom: 3px solid var(--color-lingot-lime);
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  max-height: 500px;
+}
+.route-banner.hidden {
+  max-height: 0;
+  opacity: 0;
+  border: none;
+  pointer-events: none;
+}
+.route-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 300px;
+}
+
+/* ── Route draw-on animation ── */
+.route-draw-line {
+  animation: drawRoute 5.5s ease-in-out forwards;
+}
+@keyframes drawRoute {
+  0%   { stroke-dashoffset: 960; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Dashed line fades in with route */
+.route-dashes {
+  opacity: 0;
+  animation: fadeIn 1s ease-in 2s forwards;
+}
+
+/* ── Via dots & labels appear progressively ── */
+.via-dot {
+  animation: popIn 0.4s ease-out forwards;
+}
+.via-label {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.milestone-dot {
+  animation: popIn 0.4s ease-out forwards;
+}
+@keyframes popIn {
+  0%   { opacity: 0; transform: scale(0); }
+  70%  { opacity: 1; transform: scale(1.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Destination marker ── */
+.dest-glow {
+  animation: destGlow 0.6s ease-out forwards;
+  animation-delay: 4.8s;
+}
+@keyframes destGlow {
+  0%   { opacity: 0; r: 10; }
+  60%  { opacity: 0.4; r: 24; }
+  100% { opacity: 0.15; r: 20; }
+}
+.dest-marker {
+  animation: popIn 0.5s ease-out forwards;
+}
+.dest-pin {
+  animation: popIn 0.4s ease-out forwards;
+}
+.dest-label {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Burst rings expanding outward */
+.dest-burst {
+  opacity: 0;
+  animation: burstRing 1.2s ease-out infinite;
+}
+@keyframes burstRing {
+  0%   { opacity: 0.8; r: 12; stroke-width: 2; }
+  100% { opacity: 0;   r: 36; stroke-width: 0.5; }
+}
+
+/* ── Destination ring pulse ── */
+.dest-ring {
+  opacity: 0;
+  animation: destRingPulse 1.5s ease-in-out infinite;
+  animation-delay: 5.2s;
+}
+@keyframes destRingPulse {
+  0%, 100% { opacity: 0.6; r: 14; }
+  50%       { opacity: 1;   r: 18; }
+}
+
+/* ── Origin city pulse ── */
+.city-pulse-blue {
+  animation: cityPulse 2s ease-in-out infinite;
+}
+@keyframes cityPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+.city-ring-blue {
+  animation: cityRingExpand 2s ease-out infinite;
+}
+@keyframes cityRingExpand {
+  0%   { opacity: 0.8; r: 14; stroke-width: 2; }
+  100% { opacity: 0;   r: 28; stroke-width: 0.5; }
+}
+
+/* ── Bus bounce ── */
+.bus-emoji {
+  animation: busBounce 0.6s ease-in-out infinite alternate;
+}
+@keyframes busBounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-3px); }
+}
+
+/* ── Info bar at bottom of banner ── */
+.route-info-bar {
+  background: rgba(4, 44, 96, 0.92);
+  border-top: 1px solid rgba(165, 237, 110, 0.3);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.route-badge-chip {
+  background: rgba(88, 204, 2, 0.15);
+  border: 1.5px solid var(--color-lingot-lime);
+  color: var(--color-lingot-lime);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.route-stats-pills {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.r-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 16px;
+}
+.r-icon { font-size: 15px; }
+.r-val {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+.r-lbl {
+  font-family: var(--font-primary);
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+}
+.r-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Close button ── */
+.route-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: rgba(0,0,0,0.35);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.7);
+  font-size: 13px;
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+  font-family: var(--font-primary);
+}
+.route-close:hover {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .route-info-bar { gap: 8px; padding: 8px 12px; }
+  .r-stat { padding: 4px 8px; }
+  .r-lbl { display: none; }
+  .route-badge-chip { font-size: 11px; padding: 3px 10px; }
+}
+
+/* ════════════════════════════════
+   RESET & BASE
+════════════════════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {

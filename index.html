@@ -14,6 +14,171 @@
 <body>
 
   <!-- ═══════════════════════════════════════
+       ROUTE ANIMATION BANNER (above nav)
+  ════════════════════════════════════════ -->
+  <div class="route-banner" id="route-banner">
+
+    <!-- SVG MAP ANIMATION -->
+    <svg class="route-svg" id="route-svg" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-label="Animated route from Visakhapatnam to Panukupeta">
+      <defs>
+        <!-- Sea gradient -->
+        <radialGradient id="seaGrad" cx="30%" cy="70%">
+          <stop offset="0%" style="stop-color:#1cb0f6;stop-opacity:0.55"/>
+          <stop offset="100%" style="stop-color:#042c60;stop-opacity:0"/>
+        </radialGradient>
+        <!-- Field gradient -->
+        <linearGradient id="fieldGrad" x1="30%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#1a5c0a;stop-opacity:0.35"/>
+          <stop offset="100%" style="stop-color:#2d7a1a;stop-opacity:0.55"/>
+        </linearGradient>
+        <!-- Road glow -->
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <!-- Route gradient colour -->
+        <linearGradient id="routeColor" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#1cb0f6"/>
+          <stop offset="50%" stop-color="#ffe700"/>
+          <stop offset="100%" stop-color="#58cc02"/>
+        </linearGradient>
+        <!-- Shimmer clip -->
+        <clipPath id="routeClip">
+          <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"/>
+        </clipPath>
+      </defs>
+
+      <!-- ── BACKGROUND ── -->
+      <rect width="1000" height="300" fill="#042c60"/>
+
+      <!-- Night-sky stars -->
+      <circle cx="200" cy="30" r="1.2" fill="white" opacity="0.5"/>
+      <circle cx="440" cy="18" r="1" fill="white" opacity="0.4"/>
+      <circle cx="650" cy="40" r="1.5" fill="white" opacity="0.3"/>
+      <circle cx="820" cy="22" r="1" fill="white" opacity="0.5"/>
+      <circle cx="960" cy="50" r="1.2" fill="white" opacity="0.4"/>
+      <circle cx="130" cy="55" r="1" fill="white" opacity="0.3"/>
+      <circle cx="340" cy="12" r="1.3" fill="white" opacity="0.5"/>
+      <circle cx="750" cy="15" r="1" fill="white" opacity="0.4"/>
+
+      <!-- Bay of Bengal water area -->
+      <ellipse cx="55" cy="255" rx="155" ry="90" fill="url(#seaGrad)"/>
+      <text x="32" y="240" font-size="9" fill="#1cb0f6" font-family="Nunito,sans-serif" font-weight="700" opacity="0.7" transform="rotate(-30,32,240)">Bay of Bengal</text>
+      <!-- Coastal wave lines -->
+      <path d="M 10,265 Q 40,255 70,265 Q 100,275 130,265" fill="none" stroke="#1cb0f6" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 15,278 Q 50,268 80,278 Q 110,288 140,278" fill="none" stroke="#1cb0f6" stroke-width="1.2" opacity="0.2"/>
+
+      <!-- Vizag city silhouette blocks -->
+      <rect x="62" y="195" width="8" height="20" fill="#1cb0f6" opacity="0.25" rx="1"/>
+      <rect x="74" y="187" width="10" height="28" fill="#1cb0f6" opacity="0.2" rx="1"/>
+      <rect x="88" y="193" width="7" height="22" fill="#1cb0f6" opacity="0.18" rx="1"/>
+
+      <!-- Green terrain / rice field patches (right half) -->
+      <ellipse cx="580" cy="270" rx="340" ry="48" fill="url(#fieldGrad)" opacity="0.6"/>
+      <ellipse cx="820" cy="255" rx="200" ry="42" fill="#1a5c0a" opacity="0.4"/>
+      <!-- Forest/hill area (Parvathipuram Manyam mountains) -->
+      <ellipse cx="920" cy="200" rx="130" ry="75" fill="#0d3808" opacity="0.35"/>
+      <ellipse cx="980" cy="185" rx="90" ry="65" fill="#0a2e06" opacity="0.4"/>
+
+      <!-- Small paddy field squares -->
+      <rect x="510" y="230" width="30" height="18" fill="#3da800" opacity="0.2" rx="3"/>
+      <rect x="548" y="228" width="25" height="16" fill="#3da800" opacity="0.15" rx="3"/>
+      <rect x="630" y="225" width="28" height="17" fill="#3da800" opacity="0.2" rx="3"/>
+      <rect x="665" y="223" width="22" height="15" fill="#3da800" opacity="0.15" rx="3"/>
+
+      <!-- ── ROAD BASE (shadow / grey) ── -->
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
+            fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.08"/>
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
+            fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+
+      <!-- ── ANIMATED ROUTE DRAW-ON ── -->
+      <path id="main-route"
+            d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
+            fill="none"
+            stroke="url(#routeColor)"
+            stroke-width="4"
+            stroke-linecap="round"
+            stroke-dasharray="960"
+            stroke-dashoffset="960"
+            filter="url(#glow)"
+            class="route-draw-line"/>
+
+      <!-- Dashed centre line (like a highway) -->
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
+            fill="none"
+            stroke="rgba(255,255,255,0.35)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-dasharray="12 14"
+            class="route-dashes"/>
+
+      <!-- ── MILESTONE DOTS ── -->
+      <!-- Vizianagaram -->
+      <circle cx="390" cy="165" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:2.2s"/>
+      <!-- Bobbili -->
+      <circle cx="710" cy="134" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:3.8s"/>
+
+      <!-- ── CITY: VISAKHAPATNAM (origin) ── -->
+      <circle cx="90" cy="220" r="14" fill="#042c60" stroke="#1cb0f6" stroke-width="2.5" class="city-pulse-blue"/>
+      <circle cx="90" cy="220" r="14" fill="none" stroke="#1cb0f6" stroke-width="2" class="city-ring-blue"/>
+      <text x="90" y="224" text-anchor="middle" font-size="12">✈️</text>
+      <text x="90" y="244" text-anchor="middle" font-size="10" fill="white" font-family="Nunito,sans-serif" font-weight="900">Visakhapatnam</text>
+      <text x="90" y="256" text-anchor="middle" font-size="9" fill="#1cb0f6" font-family="Nunito,sans-serif">(Vizag)</text>
+
+      <!-- ── CITY: VIZIANAGARAM ── -->
+      <circle cx="390" cy="165" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot" style="animation-delay:2s"/>
+      <text x="390" y="150" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" font-weight="700" opacity="0" class="via-label" style="animation-delay:2.2s">Vizianagaram</text>
+      <text x="390" y="161" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif" opacity="0" class="via-label" style="animation-delay:2.4s">~45 km</text>
+
+      <!-- ── CITY: BOBBILI ── -->
+      <circle cx="710" cy="134" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot" style="animation-delay:3.6s"/>
+      <text x="710" y="119" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" font-weight="700" opacity="0" class="via-label" style="animation-delay:3.8s">Bobbili</text>
+      <text x="710" y="130" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif" opacity="0" class="via-label" style="animation-delay:4s">~140 km</text>
+
+      <!-- ── CITY: PANUKUPETA (destination) ── -->
+      <circle cx="875" cy="124" r="18" fill="#58cc02" opacity="0" class="dest-glow" style="animation-delay:4.8s"/>
+      <circle cx="875" cy="124" r="12" fill="#042c60" stroke="#58cc02" stroke-width="3" opacity="0" class="dest-marker" style="animation-delay:5s"/>
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="2" class="dest-ring" style="animation-delay:5.2s"/>
+      <text x="875" y="129" text-anchor="middle" font-size="12" opacity="0" class="dest-pin" style="animation-delay:5.1s">📍</text>
+      <text x="875" y="152" text-anchor="middle" font-size="12" fill="#a5ed6e" font-family="Nunito,sans-serif" font-weight="900" opacity="0" class="dest-label" style="animation-delay:5.3s">పణుకుపేట</text>
+      <text x="875" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" opacity="0" class="dest-label" style="animation-delay:5.5s">~150 km from Vizag</text>
+      <!-- Destination arrival burst rings -->
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#58cc02" stroke-width="2" class="dest-burst" style="animation-delay:5.4s"/>
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="1.5" class="dest-burst" style="animation-delay:5.7s"/>
+
+      <!-- ── THE BUS ── -->
+      <g id="bus-traveller">
+        <text font-size="22" text-anchor="middle" dy="-10" class="bus-emoji">🚌</text>
+        <animateMotion dur="6s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
+          <mpath href="#main-route"/>
+        </animateMotion>
+      </g>
+
+      <!-- ── ROUTE DISTANCE BADGES ── -->
+      <text x="240" y="190" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)" font-family="Nunito,sans-serif">NH 516 →</text>
+      <text x="555" y="150" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)" font-family="Nunito,sans-serif">NH 516 →</text>
+    </svg>
+
+    <!-- ── INFO OVERLAY ── -->
+    <div class="route-info-bar">
+      <div class="route-badge-chip">🚌 How to Reach పణుకుపేట</div>
+      <div class="route-stats-pills">
+        <div class="r-stat"><span class="r-icon">🛣️</span><span class="r-val">~150 km</span><span class="r-lbl">from Vizag</span></div>
+        <div class="r-divider"></div>
+        <div class="r-stat"><span class="r-icon">⏱️</span><span class="r-val">~3 hrs</span><span class="r-lbl">by bus</span></div>
+        <div class="r-divider"></div>
+        <div class="r-stat"><span class="r-icon">🚌</span><span class="r-val">APSRTC</span><span class="r-lbl">Bus available</span></div>
+        <div class="r-divider"></div>
+        <div class="r-stat"><span class="r-icon">📍</span><span class="r-val">7 km</span><span class="r-lbl">from Bobbili</span></div>
+      </div>
+    </div>
+
+    <!-- Close button -->
+    <button class="route-close" id="route-close" aria-label="Close route banner" title="Close">✕</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
        TOP NAV
   ════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
