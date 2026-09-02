@@ -630,6 +630,23 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.12);
 }
 .contact-form .btn-primary { align-self: center; }
+/* Contact section tag — visible on dark background */
+.contact-tag {
+  background: rgba(165, 237, 110, 0.15);
+  color: var(--color-lingot-lime);
+  border-color: var(--color-lingot-lime);
+}
+
+/* Pre-filled village field — readonly look */
+.input-readonly {
+  background: rgba(165, 237, 110, 0.1) !important;
+  border-color: var(--color-lingot-lime) !important;
+  color: var(--color-lingot-lime) !important;
+  font-weight: 700 !important;
+  cursor: default;
+  letter-spacing: 0.04em;
+}
+
 .form-success {
   text-align: center;
   padding: var(--spacing-48);

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Panukupeta — మన ఊరు, మన కుటుంబం</title>
-  <meta name="description" content="Panukupeta (పానుకుపేట) is a vibrant village in Seethanagaram Mandal, Parvathipuram Manyam District, Andhra Pradesh. Discover our heritage, culture, agriculture, and community." />
+  <meta name="description" content="Panukupeta (పణుకుపేట) is a vibrant village in Seethanagaram Mandal, Parvathipuram Manyam District, Andhra Pradesh. Discover our heritage, culture, agriculture, and community." />
   <meta name="keywords" content="Panukupeta, Parvathipuram Manyam, Seethanagaram, Andhra Pradesh village, panukupeta.family" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo" id="nav-logo">
         <span class="logo-icon">🌾</span>
-        <span class="logo-text">పానుకుపేట</span>
+        <span class="logo-text">పణుకుపేట</span>
       </a>
       <div class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">About</a>
@@ -53,7 +53,7 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-badge">📍 Seethanagaram Mandal · Andhra Pradesh</div>
-        <h1 class="hero-headline">మన ఊరు<br/>పానుకుపేట!</h1>
+        <h1 class="hero-headline">మన ఊరు<br/>పణుకుపేట!</h1>
         <p class="hero-subtext">
           Where golden paddy fields meet centuries of tradition.
           Our village — <strong>~1,074 people, 275 families</strong> — is one big family rooted in love, land, and legacy.
@@ -343,7 +343,7 @@
   <section class="contact-section" id="contact">
     <div class="page-width">
       <div class="contact-inner">
-        <div class="section-tag" style="color:var(--color-eel-light);">✉️ Connect With Us</div>
+        <div class="section-tag contact-tag">✉️ Connect With Us</div>
         <h2 class="section-headline" style="color: var(--color-paper);">Join the Panukupeta Family!</h2>
         <p class="section-subtext" style="color: rgba(255,255,255,0.85);">
           Whether you're a resident, a diaspora member, or someone who loves Panukupeta — register here to stay connected.
@@ -351,21 +351,31 @@
         <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
           <div class="form-row">
             <div class="form-group">
-              <label for="form-name">Your Name</label>
-              <input type="text" id="form-name" placeholder="మీ పేరు (Your Name)" required />
+              <label for="form-firstname">First Name</label>
+              <input type="text" id="form-firstname" placeholder="మీ పేరు (First Name)" required />
             </div>
             <div class="form-group">
-              <label for="form-phone">Phone / WhatsApp</label>
-              <input type="tel" id="form-phone" placeholder="+91 98765 43210" />
+              <label for="form-lastname">Last Name / ఇంటిపేరు (Intiperu)</label>
+              <input type="text" id="form-lastname" placeholder="ఇంటిపేరు (Last Name / Intiperu)" />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="form-family">Family / Intiperu</label>
-              <input type="text" id="form-family" placeholder="ఇంటిపేరు (Intiperu)" />
+              <label for="form-phone">Phone / WhatsApp</label>
+              <input type="tel" id="form-phone" placeholder="+91 98765 43210" />
             </div>
             <div class="form-group">
-              <label for="form-location">Current Location</label>
+              <label for="form-street">Street Name / వీధి పేరు</label>
+              <input type="text" id="form-street" placeholder="వీధి పేరు (Street Name)" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-village">Village / గ్రామం</label>
+              <input type="text" id="form-village" value="పణుకుపేట" readonly class="input-readonly" />
+            </div>
+            <div class="form-group">
+              <label for="form-location">Current Location (if living outside)</label>
               <input type="text" id="form-location" placeholder="Hyderabad / USA / Village itself..." />
             </div>
           </div>
@@ -391,7 +401,7 @@
     <div class="page-width">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div class="footer-logo">🌾 పానుకుపేట</div>
+          <div class="footer-logo">🌾 పణుకుపేట</div>
           <p>Panukupeta Village · Seethanagaram Mandal<br/>Parvathipuram Manyam District<br/>Andhra Pradesh, India — 535546</p>
           <a href="https://panukupeta.family" class="footer-domain">🌐 panukupeta.family</a>
         </div>
@@ -412,7 +422,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 panukupeta.family — Made with ❤️ for Panukupeta</span>
-        <span>పానుకుపేట — మన ఊరు, మన కుటుంబం</span>
+        <span>పణుకుపేట — మన ఊరు, మన కుటుంబం</span>
       </div>
     </div>
   </footer>
