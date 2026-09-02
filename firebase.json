@@ -6,7 +6,8 @@
       ".firebaserc",
       ".git",
       "README.md",
-      "node_modules"
+      "node_modules",
+      "firestore.rules"
     ],
     "cleanUrls": true,
     "trailingSlash": false,
@@ -24,5 +25,8 @@
         ]
       }
     ]
+  },
+  "firestore": {
+    "rules": "firestore.rules"
   }
 }

@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -508,53 +511,116 @@
   <section class="contact-section" id="contact">
     <div class="page-width">
       <div class="contact-inner">
-        <div class="section-tag contact-tag">✉️ Connect With Us</div>
-        <h2 class="section-headline" style="color: var(--color-paper);">Join the Panukupeta Family!</h2>
+        <div class="section-tag contact-tag">✉️ Mana Ooru · Mana Kutumbam</div>
+        <h2 class="section-headline" style="color: var(--color-paper);">పణుకుపేట కుటుంబంలో చేరండి!</h2>
         <p class="section-subtext" style="color: rgba(255,255,255,0.85);">
-          Whether you're a resident, a diaspora member, or someone who loves Panukupeta — register here to stay connected.
+          మీ కుటుంబ వివరాలను నమోదు చేయండి — ఊరిలో ఉన్నా, దూరంగా ఉన్నా మనమంతా ఒక్కటే!
         </p>
+
+        <!-- Live Registered Families Stats Badge -->
+        <div class="live-registry-badge" id="live-registry-badge">
+          <span class="pulse-dot"></span>
+          <span id="registered-families-count-text">🏡 ఇప్పటివరకు నమోదైన కుటుంబాలను పరిశీలిస్తోంది...</span>
+        </div>
+
         <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+          <!-- Head of Family / Primary Info -->
+          <div class="form-section-title">
+            <span>👤</span> ముఖ్య వ్యక్తి వివరాలు (Head of Family)
+          </div>
+
           <div class="form-row">
             <div class="form-group">
-              <label for="form-firstname">First Name</label>
-              <input type="text" id="form-firstname" placeholder="మీ పేరు (First Name)" required />
+              <label for="form-firstname">First Name / మీ పేరు *</label>
+              <input type="text" id="form-firstname" placeholder="ఉదా: గణేష్ (First Name)" required />
             </div>
             <div class="form-group">
-              <label for="form-lastname">Last Name / ఇంటిపేరు (Intiperu)</label>
-              <input type="text" id="form-lastname" placeholder="ఇంటిపేరు (Last Name / Intiperu)" />
+              <label for="form-lastname">Last Name / ఇంటిపేరు (Intiperu) *</label>
+              <input type="text" id="form-lastname" placeholder="ఉదా: పూడి (Intiperu)" required />
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
-              <label for="form-phone">Phone / WhatsApp</label>
-              <input type="tel" id="form-phone" placeholder="+91 98765 43210" />
+              <label for="form-phone">Phone / WhatsApp *</label>
+              <input type="tel" id="form-phone" placeholder="+91 98765 43210" required />
             </div>
             <div class="form-group">
               <label for="form-street">Street Name / వీధి పేరు</label>
-              <input type="text" id="form-street" placeholder="వీధి పేరు (Street Name)" />
+              <input type="text" id="form-street" placeholder="ఉదా: రామాలయం వీధి / మెయిన్ రోడ్డు" />
             </div>
           </div>
+
           <div class="form-row">
             <div class="form-group">
               <label for="form-village">Village / గ్రామం</label>
               <input type="text" id="form-village" value="పణుకుపేట" readonly class="input-readonly" />
             </div>
             <div class="form-group">
-              <label for="form-location">Current Location (if living outside)</label>
-              <input type="text" id="form-location" placeholder="Hyderabad / USA / Village itself..." />
+              <label for="form-location">Current Living Location / ప్రస్తుత నివాసం</label>
+              <input type="text" id="form-location" placeholder="పణుకుపేట / హైదరాబాద్ / బెంగళూరు / విదేశాలు..." />
             </div>
           </div>
-          <div class="form-group full-width">
-            <label for="form-message">Message / Share a Memory</label>
-            <textarea id="form-message" rows="3" placeholder="Share a memory, say hello, or suggest something for our village website! 🌾"></textarea>
+
+          <!-- Family Members Sub-Section -->
+          <div class="family-members-wrapper">
+            <div class="family-members-header">
+              <div class="fm-title-block">
+                <span class="fm-icon">👨‍👩‍👧‍👦</span>
+                <div>
+                  <h4>కుటుంబ సభ్యులు (Family Members)</h4>
+                  <p>భార్య, పిల్లలు, తల్లిదండ్రులు, ఇతర సభ్యులను సంబంధంతో పాటు ఇక్కడ చేర్చండి</p>
+                </div>
+              </div>
+              <button type="button" class="btn-add-member" id="btn-add-member" onclick="addFamilyMemberRow()">
+                ➕ సభ్యుడిని చేర్చండి (Add Member)
+              </button>
+            </div>
+
+            <!-- List of dynamic family members -->
+            <div id="family-members-container" class="family-members-container">
+              <!-- Dynamically added rows will appear here -->
+            </div>
+
+            <div class="fm-empty-state" id="fm-empty-state">
+              <span>👨‍👩‍👦</span> మీ కుటుంబంలో ఇతర సభ్యులు ఉంటే పైనున్న <strong>'➕ సభ్యుడిని చేర్చండి'</strong> బటన్ నొక్కండి.
+            </div>
           </div>
-          <button type="submit" class="btn-primary btn-large" id="form-submit-btn">Register &amp; Join the Family 🤝</button>
+
+          <div class="form-group full-width">
+            <label for="form-message">Message / జ్ఞాపకాలు లేదా సలహాలు (Optional)</label>
+            <textarea id="form-message" rows="2" placeholder="మన ఊరు గురించి మీ జ్ఞాపకం లేదా సలహా తెలియజేయండి... 🌾"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-primary btn-large btn-submit-family" id="form-submit-btn">
+            <span class="btn-text">కుటుంబాన్ని నమోదు చేయండి (Register Family) 🤝</span>
+            <span class="btn-spinner" style="display:none;">⏳ నమోదు అవుతోంది...</span>
+          </button>
         </form>
+
+        <!-- Success Screen -->
         <div class="form-success" id="form-success" style="display:none;">
           <div class="success-icon">🎉</div>
-          <h3>Welcome to the Family!</h3>
-          <p>మీరు మన కుటుంబంలో చేరారు! We'll be in touch soon.</p>
+          <h3 id="success-family-title">పణుకుపేట కుటుంబంలోకి స్వాగతం!</h3>
+          <p id="success-family-msg">మీ కుటుంబ వివరాలు పణుకుపేట డేటాబేస్‌లో సురక్షితంగా నమోదయ్యాయి.</p>
+          <div class="success-summary-card" id="success-summary-card"></div>
+          <button type="button" class="btn-secondary" onclick="resetRegistrationForm()" style="margin-top:20px;">
+            + మరొక కుటుంబాన్ని నమోదు చేయండి
+          </button>
         </div>
+
+        <!-- Recent Registered Families Directory -->
+        <div class="recent-families-block" id="recent-families-block">
+          <div class="recent-families-header">
+            <h4>🏡 ఇటీవల చేరిన పణుకుపేట కుటుంబాలు</h4>
+            <span class="live-pill">🔴 Live Updates</span>
+          </div>
+          <div class="recent-families-grid" id="recent-families-grid">
+            <div class="loading-families-placeholder">నమోదైన కుటుంబాల వివరాలు లోడ్ అవుతున్నాయి...</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -591,6 +657,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile Bottom Floating Action Bar -->
+  <div class="mobile-bottom-bar" id="mobile-bottom-bar">
+    <a href="#hero" class="mob-bar-btn">
+      <span class="mob-icon">🌾</span>
+      <span>ఊరు</span>
+    </a>
+    <a href="#route-banner" class="mob-bar-btn">
+      <span class="mob-icon">🚌</span>
+      <span>రూట్</span>
+    </a>
+    <a href="#contact" class="mob-bar-btn mob-bar-highlight">
+      <span class="mob-icon">🤝</span>
+      <span>కుటుంబం</span>
+    </a>
+    <a href="#location" class="mob-bar-btn">
+      <span class="mob-icon">📍</span>
+      <span>మ్యాప్</span>
+    </a>
+    <button type="button" class="mob-bar-btn" onclick="shareVillageWebsite()" aria-label="Share village site on WhatsApp">
+      <span class="mob-icon">💬</span>
+      <span>షేర్</span>
+    </button>
+  </div>
 
   <script src="script.js"></script>
 </body>
