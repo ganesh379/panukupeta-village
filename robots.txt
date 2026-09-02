@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://panukupeta.family/sitemap.xml
+Sitemap: https://panukupeta-village.web.app/sitemap.xml

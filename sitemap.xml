@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://panukupeta.family/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://panukupeta-village.web.app/img-hero.jpg</image:loc>
+      <image:title>Panukupeta Village Landscape Andhra Pradesh</image:title>
+      <image:caption>Lush green paddy fields, temple and traditional village life in Panukupeta, Seethanagaram, Parvathipuram Manyam</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://panukupeta-village.web.app/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://panukupeta-village.web.app/img-hero.jpg</image:loc>
+      <image:title>పణుకుపేట గ్రామం - Seethanagaram Mandal</image:title>
+    </image:image>
+  </url>
+</urlset>
