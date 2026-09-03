@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-IN" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="content-language" content="te, en" />
-  
+
   <!-- Primary SEO Meta Tags -->
   <title>Panukupeta (పణుకుపేట) — Official Village Website | Seethanagaram, Parvathipuram Manyam, Andhra Pradesh</title>
   <meta name="title" content="Panukupeta (పణుకుపేట) — Official Village Website | Seethanagaram, Parvathipuram Manyam" />
-  <meta name="description" content="Official website of Panukupeta (పణుకుపేట / పానుకుపేట) village, Seethanagaram Mandal, Parvathipuram Manyam District, Andhra Pradesh, PIN: 535546. Explore village history, culture, paddy agriculture, landmarks near Bobbili, route map from Visakhapatnam, and join our digital family registry." />
-  <meta name="keywords" content="Panukupeta, Panukupeta village, పణుకుపేట, పానుకుపేట, Panukupeta Seethanagaram, Panukupeta Parvathipuram Manyam, Panukupeta Bobbili, Panukupeta Vizianagaram, Panukupeta Andhra Pradesh, Panukupeta 535546, panukupeta.family, Seethanagaram mandal villages, Parvathipuram Manyam tourism, Bobbili nearby villages, Telugu village portal, Panukupeta pin code" />
+  <meta name="description"
+    content="Official website of Panukupeta (పణుకుపేట / పానుకుపేట) village, Seethanagaram Mandal, Parvathipuram Manyam District, Andhra Pradesh, PIN: 535546. Explore village history, culture, paddy agriculture, landmarks near Bobbili, route map from Visakhapatnam, and join our digital family registry." />
+  <meta name="keywords"
+    content="Panukupeta, Panukupeta village, పణుకుపేట, పానుకుపేట, Panukupeta Seethanagaram, Panukupeta Parvathipuram Manyam, Panukupeta Bobbili, Panukupeta Vizianagaram, Panukupeta Andhra Pradesh, Panukupeta 535546, panukupeta.family, Seethanagaram mandal villages, Parvathipuram Manyam tourism, Bobbili nearby villages, Telugu village portal, Panukupeta pin code" />
   <meta name="author" content="Panukupeta Village Community" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://panukupeta.family/" />
@@ -25,10 +28,14 @@
   <meta property="og:url" content="https://panukupeta.family/" />
   <meta property="og:site_name" content="Panukupeta Village — మన ఊరు, మన కుటుంబం" />
   <meta property="og:title" content="పణుకుపేట (Panukupeta) — Official Village Website" />
-  <meta property="og:description" content="మన ఊరు, మన కుటుంబం! Explore Panukupeta village, Seethanagaram Mandal, Parvathipuram Manyam District, AP — 535546. Agriculture, culture, route map & family registry." />
-  <meta property="og:image" content="https://panukupeta-village.web.app/img-hero.jpg" />
+  <meta property="og:description"
+    content="మన ఊరు, మన కుటుంబం! Official website of Panukupeta village, Seethanagaram Mandal, Parvathipuram Manyam District, AP — PIN: 535546. Discover history, agriculture, and join our WhatsApp village community." />
+  <meta property="og:image" content="https://panukupeta.family/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://panukupeta.family/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Panukupeta Village Official Logo" />
   <meta property="og:locale" content="te_IN" />
   <meta property="og:locale:alternate" content="en_IN" />
 
@@ -36,8 +43,20 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://panukupeta.family/" />
   <meta name="twitter:title" content="పణుకుపేట (Panukupeta) — Official Village Website" />
-  <meta name="twitter:description" content="Official website of Panukupeta village in Parvathipuram Manyam, Andhra Pradesh. Discover history, agriculture, and join our global family registry." />
-  <meta name="twitter:image" content="https://panukupeta-village.web.app/img-hero.jpg" />
+  <meta name="twitter:description"
+    content="Official website of Panukupeta village in Parvathipuram Manyam, Andhra Pradesh. Discover history, agriculture, and join our global family community." />
+  <meta name="twitter:image" content="https://panukupeta.family/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Panukupeta Village Official Logo" />
+
+  <!-- Favicon & Mobile Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#6B8E4E" />
+  <meta name="msapplication-TileColor" content="#6B8E4E" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,6 +67,9 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+
+  <!-- Razorpay Payment Gateway Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <!-- Google Structured Data (JSON-LD) for Search Engine Rich Snippets -->
   <script type="application/ld+json">
@@ -147,6 +169,7 @@
   }
   </script>
 </head>
+
 <body>
 
   <!-- ═══════════════════════════════════════
@@ -154,9 +177,12 @@
   ════════════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" id="nav-logo">
-        <span class="logo-icon">🌾</span>
-        <span class="logo-text">పణుకుపేట</span>
+      <a href="#" class="nav-logo" id="nav-logo" aria-label="Panukupeta Village Home">
+        <img src="logo-mark.png" alt="Panukupeta Village Official Logo" class="logo-mark-img" width="46" height="46" />
+        <div class="logo-text-group">
+          <span class="logo-text">పణుకుపేట</span>
+          <span class="logo-subtext">Panukupeta</span>
+        </div>
       </a>
       <div class="nav-links" id="nav-links">
         <a href="#about" class="nav-link">About</a>
@@ -178,9 +204,11 @@
     <a href="#about" class="mobile-link">About</a>
     <a href="#culture" class="mobile-link">Culture</a>
     <a href="#agriculture" class="mobile-link">Agriculture</a>
-    <a href="#community" class="mobile-link">Community</a>
+    <a href="#community" class="mobile-link">Community &amp; Fund</a>
     <a href="#location" class="mobile-link">Location</a>
     <a href="#faq" class="mobile-link">FAQ / ప్రశ్నలు</a>
+    <a href="terms.html" class="mobile-link">Terms &amp; Policies</a>
+    <a href="contact.html" class="mobile-link">Contact Us</a>
     <a href="#contact" class="mobile-link mobile-cta">Join Family 🤝</a>
   </div>
 
@@ -190,158 +218,175 @@
   <div class="route-banner" id="route-banner">
 
     <!-- SVG MAP ANIMATION -->
-    <svg class="route-svg" id="route-svg" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-label="Animated route from Visakhapatnam to Panukupeta">
+    <svg class="route-svg" id="route-svg" viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet" aria-label="Animated route from Visakhapatnam to Panukupeta">
       <defs>
         <!-- Sea gradient -->
         <radialGradient id="seaGrad" cx="30%" cy="70%">
-          <stop offset="0%" style="stop-color:#1cb0f6;stop-opacity:0.55"/>
-          <stop offset="100%" style="stop-color:#042c60;stop-opacity:0"/>
+          <stop offset="0%" style="stop-color:#1cb0f6;stop-opacity:0.55" />
+          <stop offset="100%" style="stop-color:#042c60;stop-opacity:0" />
         </radialGradient>
         <!-- Field gradient -->
         <linearGradient id="fieldGrad" x1="30%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#1a5c0a;stop-opacity:0.35"/>
-          <stop offset="100%" style="stop-color:#2d7a1a;stop-opacity:0.55"/>
+          <stop offset="0%" style="stop-color:#1a5c0a;stop-opacity:0.35" />
+          <stop offset="100%" style="stop-color:#2d7a1a;stop-opacity:0.55" />
         </linearGradient>
         <!-- Road glow -->
         <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
         </filter>
         <!-- Route gradient colour -->
         <linearGradient id="routeColor" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#1cb0f6"/>
-          <stop offset="50%" stop-color="#ffe700"/>
-          <stop offset="100%" stop-color="#58cc02"/>
+          <stop offset="0%" stop-color="#1cb0f6" />
+          <stop offset="50%" stop-color="#ffe700" />
+          <stop offset="100%" stop-color="#58cc02" />
         </linearGradient>
         <!-- Shimmer clip -->
         <clipPath id="routeClip">
-          <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"/>
+          <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124" />
         </clipPath>
       </defs>
 
       <!-- ── BACKGROUND ── -->
-      <rect width="1000" height="300" fill="#042c60"/>
+      <rect width="1000" height="300" fill="#042c60" />
 
       <!-- Night-sky stars -->
-      <circle cx="200" cy="30" r="1.2" fill="white" opacity="0.5"/>
-      <circle cx="440" cy="18" r="1" fill="white" opacity="0.4"/>
-      <circle cx="650" cy="40" r="1.5" fill="white" opacity="0.3"/>
-      <circle cx="820" cy="22" r="1" fill="white" opacity="0.5"/>
-      <circle cx="960" cy="50" r="1.2" fill="white" opacity="0.4"/>
-      <circle cx="130" cy="55" r="1" fill="white" opacity="0.3"/>
-      <circle cx="340" cy="12" r="1.3" fill="white" opacity="0.5"/>
-      <circle cx="750" cy="15" r="1" fill="white" opacity="0.4"/>
+      <circle cx="200" cy="30" r="1.2" fill="white" opacity="0.5" />
+      <circle cx="440" cy="18" r="1" fill="white" opacity="0.4" />
+      <circle cx="650" cy="40" r="1.5" fill="white" opacity="0.3" />
+      <circle cx="820" cy="22" r="1" fill="white" opacity="0.5" />
+      <circle cx="960" cy="50" r="1.2" fill="white" opacity="0.4" />
+      <circle cx="130" cy="55" r="1" fill="white" opacity="0.3" />
+      <circle cx="340" cy="12" r="1.3" fill="white" opacity="0.5" />
+      <circle cx="750" cy="15" r="1" fill="white" opacity="0.4" />
 
       <!-- Bay of Bengal water area -->
-      <ellipse cx="55" cy="255" rx="155" ry="90" fill="url(#seaGrad)"/>
-      <text x="32" y="240" font-size="9" fill="#1cb0f6" font-family="Nunito,sans-serif" font-weight="700" opacity="0.7" transform="rotate(-30,32,240)">Bay of Bengal</text>
+      <ellipse cx="55" cy="255" rx="155" ry="90" fill="url(#seaGrad)" />
+      <text x="32" y="240" font-size="9" fill="#1cb0f6" font-family="Nunito,sans-serif" font-weight="700" opacity="0.7"
+        transform="rotate(-30,32,240)">Bay of Bengal</text>
       <!-- Coastal wave lines -->
-      <path d="M 10,265 Q 40,255 70,265 Q 100,275 130,265" fill="none" stroke="#1cb0f6" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 15,278 Q 50,268 80,278 Q 110,288 140,278" fill="none" stroke="#1cb0f6" stroke-width="1.2" opacity="0.2"/>
+      <path d="M 10,265 Q 40,255 70,265 Q 100,275 130,265" fill="none" stroke="#1cb0f6" stroke-width="1.5"
+        opacity="0.3" />
+      <path d="M 15,278 Q 50,268 80,278 Q 110,288 140,278" fill="none" stroke="#1cb0f6" stroke-width="1.2"
+        opacity="0.2" />
 
       <!-- Vizag city silhouette blocks -->
-      <rect x="62" y="195" width="8" height="20" fill="#1cb0f6" opacity="0.25" rx="1"/>
-      <rect x="74" y="187" width="10" height="28" fill="#1cb0f6" opacity="0.2" rx="1"/>
-      <rect x="88" y="193" width="7" height="22" fill="#1cb0f6" opacity="0.18" rx="1"/>
+      <rect x="62" y="195" width="8" height="20" fill="#1cb0f6" opacity="0.25" rx="1" />
+      <rect x="74" y="187" width="10" height="28" fill="#1cb0f6" opacity="0.2" rx="1" />
+      <rect x="88" y="193" width="7" height="22" fill="#1cb0f6" opacity="0.18" rx="1" />
 
       <!-- Green terrain / rice field patches (right half) -->
-      <ellipse cx="580" cy="270" rx="340" ry="48" fill="url(#fieldGrad)" opacity="0.6"/>
-      <ellipse cx="820" cy="255" rx="200" ry="42" fill="#1a5c0a" opacity="0.4"/>
+      <ellipse cx="580" cy="270" rx="340" ry="48" fill="url(#fieldGrad)" opacity="0.6" />
+      <ellipse cx="820" cy="255" rx="200" ry="42" fill="#1a5c0a" opacity="0.4" />
       <!-- Forest/hill area (Parvathipuram Manyam mountains) -->
-      <ellipse cx="920" cy="200" rx="130" ry="75" fill="#0d3808" opacity="0.35"/>
-      <ellipse cx="980" cy="185" rx="90" ry="65" fill="#0a2e06" opacity="0.4"/>
+      <ellipse cx="920" cy="200" rx="130" ry="75" fill="#0d3808" opacity="0.35" />
+      <ellipse cx="980" cy="185" rx="90" ry="65" fill="#0a2e06" opacity="0.4" />
 
       <!-- Small paddy field squares -->
-      <rect x="510" y="230" width="30" height="18" fill="#3da800" opacity="0.2" rx="3"/>
-      <rect x="548" y="228" width="25" height="16" fill="#3da800" opacity="0.15" rx="3"/>
-      <rect x="630" y="225" width="28" height="17" fill="#3da800" opacity="0.2" rx="3"/>
-      <rect x="665" y="223" width="22" height="15" fill="#3da800" opacity="0.15" rx="3"/>
+      <rect x="510" y="230" width="30" height="18" fill="#3da800" opacity="0.2" rx="3" />
+      <rect x="548" y="228" width="25" height="16" fill="#3da800" opacity="0.15" rx="3" />
+      <rect x="630" y="225" width="28" height="17" fill="#3da800" opacity="0.2" rx="3" />
+      <rect x="665" y="223" width="22" height="15" fill="#3da800" opacity="0.15" rx="3" />
 
       <!-- ── ROAD BASE (shadow / grey) ── -->
-      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
-            fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.08"/>
-      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
-            fill="none" stroke="#555" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124" fill="none"
+        stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.08" />
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124" fill="none"
+        stroke="#555" stroke-width="5" stroke-linecap="round" opacity="0.5" />
 
       <!-- ── ANIMATED ROUTE DRAW-ON ── -->
-      <path id="main-route"
-            d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
-            fill="none"
-            stroke="url(#routeColor)"
-            stroke-width="4"
-            stroke-linecap="round"
-            stroke-dasharray="960"
-            stroke-dashoffset="960"
-            filter="url(#glow)"
-            class="route-draw-line"/>
+      <path id="main-route" d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
+        fill="none" stroke="url(#routeColor)" stroke-width="4" stroke-linecap="round" stroke-dasharray="960"
+        stroke-dashoffset="960" filter="url(#glow)" class="route-draw-line" />
 
       <!-- Dashed centre line (like a highway) -->
-      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124"
-            fill="none"
-            stroke="rgba(255,255,255,0.35)"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-dasharray="12 14"
-            class="route-dashes"/>
+      <path d="M 90,220 C 185,198 275,180 390,165 C 500,151 598,141 710,134 C 770,130 818,127 875,124" fill="none"
+        stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="12 14"
+        class="route-dashes" />
 
       <!-- ── MILESTONE DOTS ── -->
       <!-- Vizianagaram -->
-      <circle cx="390" cy="165" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:2.2s"/>
+      <circle cx="390" cy="165" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:2.2s" />
       <!-- Bobbili -->
-      <circle cx="710" cy="134" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:3.8s"/>
+      <circle cx="710" cy="134" r="5" fill="#1cb0f6" opacity="0" class="milestone-dot" style="animation-delay:3.8s" />
 
       <!-- ── CITY: VISAKHAPATNAM (origin) ── -->
-      <circle cx="90" cy="220" r="14" fill="#042c60" stroke="#1cb0f6" stroke-width="2.5" class="city-pulse-blue"/>
-      <circle cx="90" cy="220" r="14" fill="none" stroke="#1cb0f6" stroke-width="2" class="city-ring-blue"/>
+      <circle cx="90" cy="220" r="14" fill="#042c60" stroke="#1cb0f6" stroke-width="2.5" class="city-pulse-blue" />
+      <circle cx="90" cy="220" r="14" fill="none" stroke="#1cb0f6" stroke-width="2" class="city-ring-blue" />
       <text x="90" y="224" text-anchor="middle" font-size="12">✈️</text>
-      <text x="90" y="244" text-anchor="middle" font-size="10" fill="white" font-family="Nunito,sans-serif" font-weight="900">Visakhapatnam</text>
-      <text x="90" y="256" text-anchor="middle" font-size="9" fill="#1cb0f6" font-family="Nunito,sans-serif">(Vizag)</text>
+      <text x="90" y="244" text-anchor="middle" font-size="10" fill="white" font-family="Nunito,sans-serif"
+        font-weight="900">Visakhapatnam</text>
+      <text x="90" y="256" text-anchor="middle" font-size="9" fill="#1cb0f6"
+        font-family="Nunito,sans-serif">(Vizag)</text>
 
       <!-- ── CITY: VIZIANAGARAM ── -->
-      <circle cx="390" cy="165" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot" style="animation-delay:2s"/>
-      <text x="390" y="150" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" font-weight="700" opacity="0" class="via-label" style="animation-delay:2.2s">Vizianagaram</text>
-      <text x="390" y="161" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif" opacity="0" class="via-label" style="animation-delay:2.4s">~45 km</text>
+      <circle cx="390" cy="165" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot"
+        style="animation-delay:2s" />
+      <text x="390" y="150" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif"
+        font-weight="700" opacity="0" class="via-label" style="animation-delay:2.2s">Vizianagaram</text>
+      <text x="390" y="161" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif"
+        opacity="0" class="via-label" style="animation-delay:2.4s">~45 km</text>
 
       <!-- ── CITY: BOBBILI ── -->
-      <circle cx="710" cy="134" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot" style="animation-delay:3.6s"/>
-      <text x="710" y="119" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" font-weight="700" opacity="0" class="via-label" style="animation-delay:3.8s">Bobbili</text>
-      <text x="710" y="130" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif" opacity="0" class="via-label" style="animation-delay:4s">~140 km</text>
+      <circle cx="710" cy="134" r="7" fill="#042c60" stroke="#1cb0f6" stroke-width="2" opacity="0" class="via-dot"
+        style="animation-delay:3.6s" />
+      <text x="710" y="119" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif"
+        font-weight="700" opacity="0" class="via-label" style="animation-delay:3.8s">Bobbili</text>
+      <text x="710" y="130" text-anchor="middle" font-size="8.5" fill="#1cb0f6" font-family="Nunito,sans-serif"
+        opacity="0" class="via-label" style="animation-delay:4s">~140 km</text>
 
       <!-- ── CITY: PANUKUPETA (destination) ── -->
-      <circle cx="875" cy="124" r="18" fill="#58cc02" opacity="0" class="dest-glow" style="animation-delay:4.8s"/>
-      <circle cx="875" cy="124" r="12" fill="#042c60" stroke="#58cc02" stroke-width="3" opacity="0" class="dest-marker" style="animation-delay:5s"/>
-      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="2" class="dest-ring" style="animation-delay:5.2s"/>
-      <text x="875" y="129" text-anchor="middle" font-size="12" opacity="0" class="dest-pin" style="animation-delay:5.1s">📍</text>
-      <text x="875" y="152" text-anchor="middle" font-size="12" fill="#a5ed6e" font-family="Nunito,sans-serif" font-weight="900" opacity="0" class="dest-label" style="animation-delay:5.3s">పణుకుపేట</text>
-      <text x="875" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif" opacity="0" class="dest-label" style="animation-delay:5.5s">~150 km from Vizag</text>
+      <circle cx="875" cy="124" r="18" fill="#58cc02" opacity="0" class="dest-glow" style="animation-delay:4.8s" />
+      <circle cx="875" cy="124" r="12" fill="#042c60" stroke="#58cc02" stroke-width="3" opacity="0" class="dest-marker"
+        style="animation-delay:5s" />
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="2" class="dest-ring"
+        style="animation-delay:5.2s" />
+      <text x="875" y="129" text-anchor="middle" font-size="12" opacity="0" class="dest-pin"
+        style="animation-delay:5.1s">📍</text>
+      <text x="875" y="152" text-anchor="middle" font-size="12" fill="#a5ed6e" font-family="Nunito,sans-serif"
+        font-weight="900" opacity="0" class="dest-label" style="animation-delay:5.3s">పణుకుపేట</text>
+      <text x="875" y="166" text-anchor="middle" font-size="9.5" fill="white" font-family="Nunito,sans-serif"
+        opacity="0" class="dest-label" style="animation-delay:5.5s">~150 km from Vizag</text>
       <!-- Destination arrival burst rings -->
-      <circle cx="875" cy="124" r="12" fill="none" stroke="#58cc02" stroke-width="2" class="dest-burst" style="animation-delay:5.4s"/>
-      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="1.5" class="dest-burst" style="animation-delay:5.7s"/>
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#58cc02" stroke-width="2" class="dest-burst"
+        style="animation-delay:5.4s" />
+      <circle cx="875" cy="124" r="12" fill="none" stroke="#a5ed6e" stroke-width="1.5" class="dest-burst"
+        style="animation-delay:5.7s" />
 
       <!-- ── THE BUS ── -->
       <g id="bus-traveller">
         <text font-size="22" text-anchor="middle" dy="-10" class="bus-emoji">🚌</text>
         <animateMotion dur="6s" begin="0.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1">
-          <mpath href="#main-route"/>
+          <mpath href="#main-route" />
         </animateMotion>
       </g>
 
       <!-- ── ROUTE DISTANCE BADGES ── -->
-      <text x="240" y="190" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)" font-family="Nunito,sans-serif">NH 516 →</text>
-      <text x="555" y="150" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)" font-family="Nunito,sans-serif">NH 516 →</text>
+      <text x="240" y="190" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)"
+        font-family="Nunito,sans-serif">NH 516 →</text>
+      <text x="555" y="150" text-anchor="middle" font-size="8.5" fill="rgba(255,255,255,0.45)"
+        font-family="Nunito,sans-serif">NH 516 →</text>
     </svg>
 
     <!-- ── INFO OVERLAY ── -->
     <div class="route-info-bar">
       <div class="route-badge-chip">🚌 How to Reach పణుకుపేట</div>
       <div class="route-stats-pills">
-        <div class="r-stat"><span class="r-icon">🛣️</span><span class="r-val">~150 km</span><span class="r-lbl">from Vizag</span></div>
+        <div class="r-stat"><span class="r-icon">🛣️</span><span class="r-val">~150 km</span><span class="r-lbl">from
+            Vizag</span></div>
         <div class="r-divider"></div>
-        <div class="r-stat"><span class="r-icon">⏱️</span><span class="r-val">~3 hrs</span><span class="r-lbl">by bus</span></div>
+        <div class="r-stat"><span class="r-icon">⏱️</span><span class="r-val">~3 hrs</span><span class="r-lbl">by
+            bus</span></div>
         <div class="r-divider"></div>
-        <div class="r-stat"><span class="r-icon">🚌</span><span class="r-val">APSRTC</span><span class="r-lbl">Bus available</span></div>
+        <div class="r-stat"><span class="r-icon">🚌</span><span class="r-val">APSRTC</span><span class="r-lbl">Bus
+            available</span></div>
         <div class="r-divider"></div>
-        <div class="r-stat"><span class="r-icon">📍</span><span class="r-val">7 km</span><span class="r-lbl">from Bobbili</span></div>
+        <div class="r-stat"><span class="r-icon">📍</span><span class="r-val">7 km</span><span class="r-lbl">from
+            Bobbili</span></div>
       </div>
     </div>
 
@@ -354,461 +399,559 @@
   ════════════════════════════════════════ -->
   <main id="main-content">
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        HERO
   ════════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge">📍 Seethanagaram Mandal · Andhra Pradesh</div>
-        <h1 class="hero-headline">మన ఊరు<br/>పణుకుపేట!</h1>
-        <p class="hero-subtext">
-          Where golden paddy fields meet centuries of tradition.
-          Our village — <strong>~1,074 people, 275 families</strong> — is one big family rooted in love, land, and legacy.
-        </p>
-        <div class="hero-btn-stack">
-          <a href="#about" class="btn-primary" id="hero-explore-btn">Explore Our Village 🌾</a>
-          <a href="#community" class="btn-secondary" id="hero-join-btn">Join the Family 🤝</a>
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <div class="hero-badge">📍 Seethanagaram Mandal · Andhra Pradesh</div>
+          <h1 class="hero-headline">మన ఊరు<br />పణుకుపేట!</h1>
+          <p class="hero-subtext">
+            Where golden paddy fields meet centuries of tradition.
+            Our village — <strong>~1,074 people, 275 families</strong> — is one big family rooted in love, land, and
+            legacy.
+          </p>
+          <div class="hero-btn-stack">
+            <a href="#about" class="btn-primary" id="hero-explore-btn">Explore Our Village 🌾</a>
+            <a href="https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-hero" id="hero-whatsapp-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.791.825 3.182 0 5.768-2.587 5.769-5.766 0-3.18-2.587-5.767-5.77-5.767m0 10.379c-.83 0-1.642-.224-2.348-.646l-.168-.1-1.745.458.466-1.7-.11-.176c-.463-.736-.708-1.591-.707-2.467.001-2.54 2.067-4.606 4.61-4.606 2.544 0 4.609 2.066 4.61 4.606-.002 2.54-2.067 4.606-4.608 4.606m2.529-3.454c-.139-.07-1.127-.556-1.302-.62-.175-.064-.303-.095-.43.095s-.494.62-.605.748c-.111.127-.223.143-.362.073-.139-.07-.587-.216-1.118-.69-.413-.368-.692-.823-.773-.962-.081-.139-.009-.214.061-.284.063-.062.139-.163.208-.244.07-.082.093-.139.139-.232.046-.093.023-.174-.012-.244s-.43-1.037-.59-1.42c-.156-.373-.314-.322-.43-.328l-.367-.006c-.126 0-.332.047-.506.236-.174.19-.665.65-.665 1.584 0 .934.68 1.836.775 1.963.095.127 1.339 2.045 3.245 2.868.453.196.807.313 1.083.401.455.145.869.124 1.196.075.365-.055 1.127-.461 1.286-.906.159-.445.159-.826.111-.906-.048-.08-.175-.127-.314-.197z"/></svg>
+              Join WhatsApp 💬
+            </a>
+            <a href="#community" class="btn-secondary" id="hero-join-btn">Join Family 🤝</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-pill">👨‍👩‍👧‍👦 <strong>~1,074</strong> People</div>
+            <div class="stat-pill">🏡 <strong>275</strong> Households</div>
+            <div class="stat-pill">📚 <strong>62.1%</strong> Literacy</div>
+            <div class="stat-pill">📮 <strong>535546</strong> Pincode</div>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-pill">👨‍👩‍👧‍👦 <strong>~1,074</strong> People</div>
-          <div class="stat-pill">🏡 <strong>275</strong> Households</div>
-          <div class="stat-pill">📚 <strong>62.1%</strong> Literacy</div>
-          <div class="stat-pill">📮 <strong>535546</strong> Pincode</div>
+        <div class="hero-illustration">
+          <img src="img-hero.jpg"
+            alt="Panukupeta village illustration showing paddy fields, a temple, and daily village life"
+            class="hero-img" id="hero-img" width="700" height="394" loading="eager" fetchpriority="high" />
         </div>
       </div>
-      <div class="hero-illustration">
-        <img src="img-hero.jpg" alt="Panukupeta village illustration showing paddy fields, a temple, and daily village life" class="hero-img" id="hero-img" width="700" height="394" loading="eager" fetchpriority="high" />
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f8fff0" />
+        </svg>
       </div>
-    </div>
-    <div class="hero-wave">
-      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#f8fff0"/>
-      </svg>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        ABOUT STRIP
   ════════════════════════════════════════ -->
-  <section class="about-strip" id="about">
-    <div class="page-width">
-      <div class="about-grid">
-        <div class="about-card" id="about-card-1">
-          <div class="about-icon">🗺️</div>
-          <h3>Where We Are</h3>
-          <p>Nestled in Seethanagaram Mandal, Parvathipuram Manyam District. Just <strong>7 km north of Bobbili</strong> town — surrounded by green forests, rivers, and fertile plains.</p>
-        </div>
-        <div class="about-card" id="about-card-2">
-          <div class="about-icon">🌳</div>
-          <h3>Our Roots</h3>
-          <p>Historically part of the Vizianagaram district before administrative reforms. The village sits near Kasapeta, Antipeta, and the hamlet of Vakadavalasa.</p>
-        </div>
-        <div class="about-card" id="about-card-3">
-          <div class="about-icon">🏛️</div>
-          <h3>Panchayat</h3>
-          <p>Panukupeta has its own <strong>Grama Panchayat</strong> — a proud mark of the village's self-governing identity and community spirit.</p>
-        </div>
-        <div class="about-card" id="about-card-4">
-          <div class="about-icon">🌾</div>
-          <h3>Paddy Heartland</h3>
-          <p>The <strong>Seethanagaram Anicut</strong> irrigation system powers our rice fields. Paddy is the soul of our economy, identity, and seasonal celebrations.</p>
+    <section class="about-strip" id="about">
+      <div class="page-width">
+        <div class="about-grid">
+          <div class="about-card" id="about-card-1">
+            <div class="about-icon">🗺️</div>
+            <h3>Where We Are</h3>
+            <p>Nestled in Seethanagaram Mandal, Parvathipuram Manyam District. Just <strong>7 km north of
+                Bobbili</strong> town — surrounded by green forests, rivers, and fertile plains.</p>
+          </div>
+          <div class="about-card" id="about-card-2">
+            <div class="about-icon">🌳</div>
+            <h3>Our Roots</h3>
+            <p>Historically part of the Vizianagaram district before administrative reforms. The village sits near
+              Kasapeta, Antipeta, and the hamlet of Vakadavalasa.</p>
+          </div>
+          <div class="about-card" id="about-card-3">
+            <div class="about-icon">🏛️</div>
+            <h3>Panchayat</h3>
+            <p>Panukupeta has its own <strong>Grama Panchayat</strong> — a proud mark of the village's self-governing
+              identity and community spirit.</p>
+          </div>
+          <div class="about-card" id="about-card-4">
+            <div class="about-icon">🌾</div>
+            <h3>Paddy Heartland</h3>
+            <p>The <strong>Seethanagaram Anicut</strong> irrigation system powers our rice fields. Paddy is the soul of
+              our economy, identity, and seasonal celebrations.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        CULTURE SECTION
   ════════════════════════════════════════ -->
-  <section class="feature-section" id="culture">
-    <div class="page-width">
-      <div class="feature-row">
-        <div class="feature-text">
-          <div class="section-tag">🎊 Culture &amp; Traditions</div>
-          <h2 class="feature-headline">Mana Pandugalu — మన పండుగలు!</h2>
-          <p class="feature-body">
-            Life in Panukupeta dances to the rhythm of seasons and festivals. From the blazing Bhogi bonfire of <strong>Sankranti</strong> to the vibrant colors of the village deity's <em>Jatara</em>, every festival is a reunion of hearts.
-          </p>
-          <ul class="feature-list">
-            <li>🔥 <strong>Bhogi &amp; Sankranti</strong> — Harvest celebration, kite-flying &amp; rangoli</li>
-            <li>🛕 <strong>Ammavari Jatara</strong> — Village deity festivals with drums &amp; dance</li>
-            <li>🎨 <strong>Savara Adivasi Art</strong> — Indigenous tribal paintings using natural pigments</li>
-            <li>🌙 <strong>Mahasivaratri &amp; Ugadi</strong> — Temple festivities and community grams</li>
-          </ul>
-          <a href="#community" class="btn-outline" id="culture-join-btn">Share Your Memory 📸</a>
-        </div>
-        <div class="feature-illustration">
-          <img src="img-culture.jpg" alt="Panukupeta village festival celebration with Sankranti bonfire, rangoli, and villagers" width="600" height="450" loading="lazy" />
+    <section class="feature-section" id="culture">
+      <div class="page-width">
+        <div class="feature-row">
+          <div class="feature-text">
+            <div class="section-tag">🎊 Culture &amp; Traditions</div>
+            <h2 class="feature-headline">Mana Pandugalu — మన పండుగలు!</h2>
+            <p class="feature-body">
+              Life in Panukupeta dances to the rhythm of seasons and festivals. From the blazing Bhogi bonfire of
+              <strong>Sankranti</strong> to the vibrant colors of the village deity's <em>Jatara</em>, every festival is
+              a reunion of hearts.
+            </p>
+            <ul class="feature-list">
+              <li>🔥 <strong>Bhogi &amp; Sankranti</strong> — Harvest celebration, kite-flying &amp; rangoli</li>
+              <li>🛕 <strong>Ammavari Jatara</strong> — Village deity festivals with drums &amp; dance</li>
+              <li>🎨 <strong>Savara Adivasi Art</strong> — Indigenous tribal paintings using natural pigments</li>
+              <li>🌙 <strong>Mahasivaratri &amp; Ugadi</strong> — Temple festivities and community grams</li>
+            </ul>
+            <a href="#community" class="btn-outline" id="culture-join-btn">Share Your Memory 📸</a>
+          </div>
+          <div class="feature-illustration">
+            <img src="img-culture.jpg"
+              alt="Panukupeta village festival celebration with Sankranti bonfire, rangoli, and villagers" width="600"
+              height="450" loading="lazy" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        AGRICULTURE SECTION
   ════════════════════════════════════════ -->
-  <section class="feature-section feature-alt" id="agriculture">
-    <div class="page-width">
-      <div class="feature-row feature-row-reverse">
-        <div class="feature-illustration">
-          <img src="img-agriculture.jpg" alt="Telugu farmer proudly holding a paddy bundle in lush green rice fields" width="600" height="450" loading="lazy" />
-        </div>
-        <div class="feature-text">
-          <div class="section-tag">🌾 Agriculture</div>
-          <h2 class="feature-headline">The Farmers Feed the World!</h2>
-          <p class="feature-body">
-            Paddy is our pride. The fertile land, powered by the <strong>Seethanagaram Anicut</strong>, yields bountiful harvests of rice each Kharif season. Our farmers are the backbone of the village — and of the nation.
-          </p>
-          <ul class="feature-list">
-            <li>🌾 <strong>Main Crop:</strong> Paddy (Rice) — the staple of Andhra</li>
-            <li>🌽 <strong>Other Crops:</strong> Millets, Maize, Groundnut, Sugarcane</li>
-            <li>💧 <strong>Irrigation:</strong> Seethanagaram Anicut canal network</li>
-            <li>🏭 <strong>Rice Mills:</strong> Strong processing infrastructure around Bobbili</li>
-            <li>🤝 <strong>Rythu Seva:</strong> Government-backed farmer support centers</li>
-          </ul>
-          <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="btn-outline" id="agriculture-map-btn">View on Google Maps 🗺️</a>
+    <section class="feature-section feature-alt" id="agriculture">
+      <div class="page-width">
+        <div class="feature-row feature-row-reverse">
+          <div class="feature-illustration">
+            <img src="img-agriculture.jpg" alt="Telugu farmer proudly holding a paddy bundle in lush green rice fields"
+              width="600" height="450" loading="lazy" />
+          </div>
+          <div class="feature-text">
+            <div class="section-tag">🌾 Agriculture</div>
+            <h2 class="feature-headline">The Farmers Feed the World!</h2>
+            <p class="feature-body">
+              Paddy is our pride. The fertile land, powered by the <strong>Seethanagaram Anicut</strong>, yields
+              bountiful harvests of rice each Kharif season. Our farmers are the backbone of the village — and of the
+              nation.
+            </p>
+            <ul class="feature-list">
+              <li>🌾 <strong>Main Crop:</strong> Paddy (Rice) — the staple of Andhra</li>
+              <li>🌽 <strong>Other Crops:</strong> Millets, Maize, Groundnut, Sugarcane</li>
+              <li>💧 <strong>Irrigation:</strong> Seethanagaram Anicut canal network</li>
+              <li>🏭 <strong>Rice Mills:</strong> Strong processing infrastructure around Bobbili</li>
+              <li>🤝 <strong>Rythu Seva:</strong> Government-backed farmer support centers</li>
+            </ul>
+            <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="btn-outline"
+              id="agriculture-map-btn">View on Google Maps 🗺️</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        NEARBY LANDMARKS
   ════════════════════════════════════════ -->
-  <section class="landmarks-section" id="landmarks">
-    <div class="page-width">
-      <div class="section-center-header">
-        <div class="section-tag">📍 Nearby Places</div>
-        <h2 class="section-headline">Our Neighborhood!</h2>
-        <p class="section-subtext">Panukupeta sits in one of Andhra's most historically rich regions</p>
+    <section class="landmarks-section" id="landmarks">
+      <div class="page-width">
+        <div class="section-center-header">
+          <div class="section-tag">📍 Nearby Places</div>
+          <h2 class="section-headline">Our Neighborhood!</h2>
+          <p class="section-subtext">Panukupeta sits in one of Andhra's most historically rich regions</p>
+        </div>
+        <div class="landmarks-grid">
+          <div class="landmark-card" id="landmark-1">
+            <div class="landmark-emoji">🏰</div>
+            <h4>Bobbili Fort</h4>
+            <p>Historic royal fort — 7 km south. Site of the legendary <strong>Battle of Bobbili (1757)</strong>.</p>
+            <span class="landmark-distance">~7 km</span>
+          </div>
+          <div class="landmark-card" id="landmark-2">
+            <div class="landmark-emoji">🎻</div>
+            <h4>Bobbili Veena Centre</h4>
+            <p>Home of the traditional <strong>Saraswati Veena</strong> — a UNESCO-heritage-level craft unique to
+              Bobbili.</p>
+            <span class="landmark-distance">~7 km</span>
+          </div>
+          <div class="landmark-card" id="landmark-3">
+            <div class="landmark-emoji">🛕</div>
+            <h4>Sambara Polamamba Temple</h4>
+            <p>Revered local temple attracting devotees from across the region for annual <em>Jatara</em>.</p>
+            <span class="landmark-distance">~10 km</span>
+          </div>
+          <div class="landmark-card" id="landmark-4">
+            <div class="landmark-emoji">🌊</div>
+            <h4>Thonam Waterfalls</h4>
+            <p>A beautiful natural waterfall in the scenic forests of the Parvathipuram Manyam region.</p>
+            <span class="landmark-distance">~25 km</span>
+          </div>
+          <div class="landmark-card" id="landmark-5">
+            <div class="landmark-emoji">⚔️</div>
+            <h4>Bobbili War Memorial</h4>
+            <p>A commemorative stupam honoring the brave warriors of the historic <strong>1757 Battle of
+                Bobbili</strong>.</p>
+            <span class="landmark-distance">~7 km</span>
+          </div>
+          <div class="landmark-card" id="landmark-6">
+            <div class="landmark-emoji">🏙️</div>
+            <h4>Vizianagaram Town</h4>
+            <p>District headquarters with Vizianagaram Fort, Pydithalli Ammavari Temple, and city amenities.</p>
+            <span class="landmark-distance">~40 km</span>
+          </div>
+        </div>
       </div>
-      <div class="landmarks-grid">
-        <div class="landmark-card" id="landmark-1">
-          <div class="landmark-emoji">🏰</div>
-          <h4>Bobbili Fort</h4>
-          <p>Historic royal fort — 7 km south. Site of the legendary <strong>Battle of Bobbili (1757)</strong>.</p>
-          <span class="landmark-distance">~7 km</span>
-        </div>
-        <div class="landmark-card" id="landmark-2">
-          <div class="landmark-emoji">🎻</div>
-          <h4>Bobbili Veena Centre</h4>
-          <p>Home of the traditional <strong>Saraswati Veena</strong> — a UNESCO-heritage-level craft unique to Bobbili.</p>
-          <span class="landmark-distance">~7 km</span>
-        </div>
-        <div class="landmark-card" id="landmark-3">
-          <div class="landmark-emoji">🛕</div>
-          <h4>Sambara Polamamba Temple</h4>
-          <p>Revered local temple attracting devotees from across the region for annual <em>Jatara</em>.</p>
-          <span class="landmark-distance">~10 km</span>
-        </div>
-        <div class="landmark-card" id="landmark-4">
-          <div class="landmark-emoji">🌊</div>
-          <h4>Thonam Waterfalls</h4>
-          <p>A beautiful natural waterfall in the scenic forests of the Parvathipuram Manyam region.</p>
-          <span class="landmark-distance">~25 km</span>
-        </div>
-        <div class="landmark-card" id="landmark-5">
-          <div class="landmark-emoji">⚔️</div>
-          <h4>Bobbili War Memorial</h4>
-          <p>A commemorative stupam honoring the brave warriors of the historic <strong>1757 Battle of Bobbili</strong>.</p>
-          <span class="landmark-distance">~7 km</span>
-        </div>
-        <div class="landmark-card" id="landmark-6">
-          <div class="landmark-emoji">🏙️</div>
-          <h4>Vizianagaram Town</h4>
-          <p>District headquarters with Vizianagaram Fort, Pydithalli Ammavari Temple, and city amenities.</p>
-          <span class="landmark-distance">~40 km</span>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        COMMUNITY SECTION
   ════════════════════════════════════════ -->
-  <section class="feature-section" id="community">
-    <div class="page-width">
-      <div class="feature-row">
-        <div class="feature-text">
-          <div class="section-tag">🤝 Our Community</div>
-          <h2 class="feature-headline">One Village, One Big Family!</h2>
-          <p class="feature-body">
-            Whether you live right here in Panukupeta, or you've moved to Hyderabad, Bengaluru, the Gulf, or the USA — you're still part of our family. <strong>panukupeta.family</strong> is your digital home.
-          </p>
-          <ul class="feature-list">
-            <li>🌍 <strong>Diaspora Connect:</strong> Find villagers across the world</li>
-            <li>🩸 <strong>Blood Donor Network:</strong> Emergency donor directory</li>
-            <li>🎓 <strong>Youth Mentorship:</strong> Education &amp; career guidance</li>
-            <li>🏆 <strong>Village Achievements:</strong> Celebrate our pride moments</li>
-            <li>📢 <strong>Festival Alerts:</strong> Never miss a village event</li>
-          </ul>
-          <a href="#contact" class="btn-primary" id="community-register-btn">Register Your Family 🏡</a>
+    <section class="feature-section" id="community">
+      <div class="page-width">
+        <div class="feature-row">
+          <div class="feature-text">
+            <div class="section-tag">🤝 Our Community</div>
+            <h2 class="feature-headline">One Village, One Big Family!</h2>
+            <p class="feature-body">
+              Whether you live right here in Panukupeta, or you've moved to Hyderabad, Bengaluru, the Gulf, or the USA —
+              you're still part of our family. <strong>panukupeta.family</strong> is your digital home.
+            </p>
+            <ul class="feature-list">
+              <li>🌍 <strong>Diaspora Connect:</strong> Find villagers across the world</li>
+              <li>🩸 <strong>Blood Donor Network:</strong> Emergency donor directory</li>
+              <li>🎓 <strong>Youth Mentorship:</strong> Education &amp; career guidance</li>
+              <li>🏆 <strong>Village Achievements:</strong> Celebrate our pride moments</li>
+              <li>📢 <strong>Festival Alerts:</strong> Never miss a village event</li>
+            </ul>
+            <div class="community-btn-stack">
+              <a href="#contact" class="btn-primary" id="community-register-btn">Register Your Family 🏡</a>
+              <a href="https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" id="community-whatsapp-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.791.825 3.182 0 5.768-2.587 5.769-5.766 0-3.18-2.587-5.767-5.77-5.767m0 10.379c-.83 0-1.642-.224-2.348-.646l-.168-.1-1.745.458.466-1.7-.11-.176c-.463-.736-.708-1.591-.707-2.467.001-2.54 2.067-4.606 4.61-4.606 2.544 0 4.609 2.066 4.61 4.606-.002 2.54-2.067 4.606-4.608 4.606m2.529-3.454c-.139-.07-1.127-.556-1.302-.62-.175-.064-.303-.095-.43.095s-.494.62-.605.748c-.111.127-.223.143-.362.073-.139-.07-.587-.216-1.118-.69-.413-.368-.692-.823-.773-.962-.081-.139-.009-.214.061-.284.063-.062.139-.163.208-.244.07-.082.093-.139.139-.232.046-.093.023-.174-.012-.244s-.43-1.037-.59-1.42c-.156-.373-.314-.322-.43-.328l-.367-.006c-.126 0-.332.047-.506.236-.174.19-.665.65-.665 1.584 0 .934.68 1.836.775 1.963.095.127 1.339 2.045 3.245 2.868.453.196.807.313 1.083.401.455.145.869.124 1.196.075.365-.055 1.127-.461 1.286-.906.159-.445.159-.826.111-.906-.048-.08-.175-.127-.314-.197z"/></svg>
+                Join WhatsApp Group 💬
+              </a>
+            </div>
+          </div>
+          <div class="feature-illustration">
+            <img src="img-community.jpg" alt="Happy Panukupeta village community — all ages, all generations together"
+              width="600" height="450" loading="lazy" />
+          </div>
         </div>
-        <div class="feature-illustration">
-          <img src="img-community.jpg" alt="Happy Panukupeta village community — all ages, all generations together" width="600" height="450" loading="lazy" />
+
+        <!-- ─── Razorpay Village Development & Welfare Fund Card ─── -->
+        <div class="fund-card" id="fund-section">
+          <div class="fund-header">
+            <span class="fund-badge">🏛️ Razorpay Verified</span>
+            <h3 class="fund-title">Panukupeta Village Development &amp; Welfare Fund (గ్రామ అభివృద్ధి నిధి)</h3>
+          </div>
+          <p style="color: #4B4B4B; margin-bottom: 20px; font-size: 15px; line-height: 1.6;">
+            Support our native village infrastructure, drinking water RO units, solar street lighting, school youth sports and scholarships, and festival Annadanam. Every rupee directly empowers Panukupeta families.
+          </p>
+          
+          <div class="fund-amount-chips">
+            <button type="button" class="fund-amount-chip" onclick="selectDonationAmount(500, this)">₹500</button>
+            <button type="button" class="fund-amount-chip active" onclick="selectDonationAmount(1000, this)">₹1,000</button>
+            <button type="button" class="fund-amount-chip" onclick="selectDonationAmount(2500, this)">₹2,500</button>
+            <button type="button" class="fund-amount-chip" onclick="selectDonationAmount(5000, this)">₹5,000</button>
+          </div>
+
+          <div class="fund-input-row">
+            <div class="fund-input-group">
+              <label for="donor-amount">Contribution Amount (INR ₹) *</label>
+              <input type="number" id="donor-amount" value="1000" min="10" step="10" placeholder="Enter amount in ₹" />
+            </div>
+            <div class="fund-input-group">
+              <label for="donor-purpose">Purpose of Contribution (వినియోగ ప్రయోజనం) *</label>
+              <select id="donor-purpose">
+                <option value="General Village Development">General Village Development &amp; Welfare</option>
+                <option value="RO Drinking Water Plant">RO Drinking Water Plant Maintenance</option>
+                <option value="Solar Street Lighting">Solar Street Lighting &amp; Sanitation</option>
+                <option value="Youth &amp; School Scholarships">Youth Sports &amp; Education Scholarships</option>
+                <option value="Temple &amp; Festival Annadanam">Temple Preservation &amp; Festival Annadanam</option>
+                <option value="Emergency Healthcare Relief">Emergency Family Healthcare Relief</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="fund-input-row">
+            <div class="fund-input-group">
+              <label for="donor-name">Your Full Name (పూర్తి పేరు) *</label>
+              <input type="text" id="donor-name" placeholder="e.g., Sanyasi Rao" required />
+            </div>
+            <div class="fund-input-group">
+              <label for="donor-phone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="donor-phone" placeholder="e.g., 9876543210" required />
+            </div>
+          </div>
+
+          <button type="button" class="btn-donate" id="razorpay-pay-btn" onclick="handleRazorpayDonation()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            Contribute via Razorpay 🛡️
+          </button>
+
+          <div class="razorpay-badge-row">
+            <span>🔒 256-Bit SSL Encrypted</span>
+            <span>•</span>
+            <span>⚡ UPI, Cards &amp; NetBanking</span>
+            <span>•</span>
+            <span>📜 Instant Digital Receipt</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        STATS BANNER
   ════════════════════════════════════════ -->
-  <section class="stats-banner" id="stats">
-    <div class="page-width">
-      <div class="stats-grid">
-        <div class="stat-item" id="stat-1">
-          <div class="stat-number" data-target="1074">0</div>
-          <div class="stat-label">Villagers &amp; Counting</div>
-        </div>
-        <div class="stat-item" id="stat-2">
-          <div class="stat-number" data-target="275">0</div>
-          <div class="stat-label">Households</div>
-        </div>
-        <div class="stat-item" id="stat-3">
-          <div class="stat-number" data-target="1127">0</div>
-          <div class="stat-label">Women per 1000 Men</div>
-        </div>
-        <div class="stat-item" id="stat-4">
-          <div class="stat-number" data-suffix="%">62</div>
-          <div class="stat-label">Literacy Rate</div>
+    <section class="stats-banner" id="stats">
+      <div class="page-width">
+        <div class="stats-grid">
+          <div class="stat-item" id="stat-1">
+            <div class="stat-number" data-target="1074">0</div>
+            <div class="stat-label">Villagers &amp; Counting</div>
+          </div>
+          <div class="stat-item" id="stat-2">
+            <div class="stat-number" data-target="275">0</div>
+            <div class="stat-label">Households</div>
+          </div>
+          <div class="stat-item" id="stat-3">
+            <div class="stat-number" data-target="1127">0</div>
+            <div class="stat-label">Women per 1000 Men</div>
+          </div>
+          <div class="stat-item" id="stat-4">
+            <div class="stat-number" data-suffix="%">62</div>
+            <div class="stat-label">Literacy Rate</div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        LOCATION SECTION
   ════════════════════════════════════════ -->
-  <section class="location-section" id="location">
-    <div class="page-width">
-      <div class="section-center-header">
-        <div class="section-tag">📍 Find Us</div>
-        <h2 class="section-headline">Where is Panukupeta?</h2>
-        <p class="section-subtext">Come visit us — or just drop a pin and say hello from wherever you are!</p>
-      </div>
-      <div class="location-content">
-        <div class="location-info">
-          <div class="location-detail-card" id="loc-card-1">
-            <div class="loc-icon">🏛️</div>
-            <div>
-              <strong>District</strong>
-              <span>Parvathipuram Manyam District</span>
-            </div>
-          </div>
-          <div class="location-detail-card" id="loc-card-2">
-            <div class="loc-icon">🗺️</div>
-            <div>
-              <strong>Mandal</strong>
-              <span>Seethanagaram Mandal</span>
-            </div>
-          </div>
-          <div class="location-detail-card" id="loc-card-3">
-            <div class="loc-icon">🇮🇳</div>
-            <div>
-              <strong>State</strong>
-              <span>Andhra Pradesh, India</span>
-            </div>
-          </div>
-          <div class="location-detail-card" id="loc-card-4">
-            <div class="loc-icon">📮</div>
-            <div>
-              <strong>Pincode</strong>
-              <span>535546</span>
-            </div>
-          </div>
-          <div class="location-detail-card" id="loc-card-5">
-            <div class="loc-icon">🏙️</div>
-            <div>
-              <strong>Nearest Town</strong>
-              <span>Bobbili (~7 km south)</span>
-            </div>
-          </div>
-          <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="btn-primary" id="open-maps-btn" style="margin-top: 8px;">
-            Open in Google Maps 🗺️
-          </a>
+    <section class="location-section" id="location">
+      <div class="page-width">
+        <div class="section-center-header">
+          <div class="section-tag">📍 Find Us</div>
+          <h2 class="section-headline">Where is Panukupeta?</h2>
+          <p class="section-subtext">Come visit us — or just drop a pin and say hello from wherever you are!</p>
         </div>
-        <div class="map-embed-container" id="map-embed">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15198.14!2d83.3704!3d18.2356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c23cd1cd9d99f%3A0x6e8671e70a39d9ad!2sPanukupeta%2C%20Andhra%20Pradesh%20535546!5e0!3m2!1sen!2sin!4v1693000000000!5m2!1sen!2sin"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Panukupeta village on Google Maps"
-          ></iframe>
-          <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="map-cta-overlay" id="map-cta-overlay">
-            📍 Open full map in Google Maps →
-          </a>
+        <div class="location-content">
+          <div class="location-info">
+            <div class="location-detail-card" id="loc-card-1">
+              <div class="loc-icon">🏛️</div>
+              <div>
+                <strong>District</strong>
+                <span>Parvathipuram Manyam District</span>
+              </div>
+            </div>
+            <div class="location-detail-card" id="loc-card-2">
+              <div class="loc-icon">🗺️</div>
+              <div>
+                <strong>Mandal</strong>
+                <span>Seethanagaram Mandal</span>
+              </div>
+            </div>
+            <div class="location-detail-card" id="loc-card-3">
+              <div class="loc-icon">🇮🇳</div>
+              <div>
+                <strong>State</strong>
+                <span>Andhra Pradesh, India</span>
+              </div>
+            </div>
+            <div class="location-detail-card" id="loc-card-4">
+              <div class="loc-icon">📮</div>
+              <div>
+                <strong>Pincode</strong>
+                <span>535546</span>
+              </div>
+            </div>
+            <div class="location-detail-card" id="loc-card-5">
+              <div class="loc-icon">🏙️</div>
+              <div>
+                <strong>Nearest Town</strong>
+                <span>Bobbili (~7 km south)</span>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="btn-primary" id="open-maps-btn"
+              style="margin-top: 8px;">
+              Open in Google Maps 🗺️
+            </a>
+          </div>
+          <div class="map-embed-container" id="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15198.14!2d83.3704!3d18.2356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3c23cd1cd9d99f%3A0x6e8671e70a39d9ad!2sPanukupeta%2C%20Andhra%20Pradesh%20535546!5e0!3m2!1sen!2sin!4v1693000000000!5m2!1sen!2sin"
+              allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Panukupeta village on Google Maps"></iframe>
+            <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank" class="map-cta-overlay"
+              id="map-cta-overlay">
+              📍 Open full map in Google Maps →
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        VILLAGE FAQ SECTION (SEO & Search Snippets)
   ════════════════════════════════════════ -->
-  <section class="faq-section" id="faq">
-    <div class="page-width">
-      <div class="section-center-header">
-        <div class="section-tag">❓ Quick Answers · ప్రశ్నలు &amp; సమాధానాలు</div>
-        <h2 class="section-headline">Frequently Asked Questions</h2>
-        <p class="section-subtext">Everything you want to know about Panukupeta (పణుకుపేట) Village</p>
+    <section class="faq-section" id="faq">
+      <div class="page-width">
+        <div class="section-center-header">
+          <div class="section-tag">❓ Quick Answers · ప్రశ్నలు &amp; సమాధానాలు</div>
+          <h2 class="section-headline">Frequently Asked Questions</h2>
+          <p class="section-subtext">Everything you want to know about Panukupeta (పణుకుపేట) Village</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-card">
+            <h4>📍 Where is Panukupeta village located? (పణుకుపేట ఎక్కడుంది?)</h4>
+            <p>Panukupeta (పణుకుపేట / పానుకుపేట) is located in <strong>Seethanagaram Mandal</strong>,
+              <strong>Parvathipuram Manyam District</strong>, Andhra Pradesh. It is situated just <strong>7 km north of
+                Bobbili</strong> and about 150 km from Visakhapatnam (Vizag).</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>📮 What is the postal Pincode of Panukupeta? (పిన్‌కోడ్ ఎంత?)</h4>
+            <p>The official Pincode of Panukupeta is <strong>535546</strong>. The village is serviced under the
+              Seethanagaram Sub-Post Office.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>🏛️ Which Grama Panchayat and Mandal does it belong to?</h4>
+            <p>Panukupeta functions as its own independent <strong>Grama Panchayat</strong> in <strong>Seethanagaram
+                Mandal</strong>. It has about 275 households and ~1,074 residents.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>🚌 How do I reach Panukupeta by bus or train?</h4>
+            <p>The nearest major town and railway station is <strong>Bobbili (VBL)</strong>, located 7 km away. From
+              Visakhapatnam or Vizianagaram, take an APSRTC bus or train to Bobbili, then local autos or buses to
+              Panukupeta.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>🌾 What are the primary crops and agriculture in Panukupeta?</h4>
+            <p><strong>Paddy (వరి / Rice)</strong> is the chief crop, irrigated by the Seethanagaram Anicut canal. Other
+              crops include millets, sugarcane, maize, and pulses, supported by local Rythu Seva centers.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4>🌐 What is panukupeta.family?</h4>
+            <p><strong>panukupeta.family</strong> is the official community website uniting all Panukupeta residents,
+              families, and worldwide diaspora with a digital village registry, festival calendar, and directory.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="faq-grid">
-        <div class="faq-card">
-          <h4>📍 Where is Panukupeta village located? (పణుకుపేట ఎక్కడుంది?)</h4>
-          <p>Panukupeta (పణుకుపేట / పానుకుపేట) is located in <strong>Seethanagaram Mandal</strong>, <strong>Parvathipuram Manyam District</strong>, Andhra Pradesh. It is situated just <strong>7 km north of Bobbili</strong> and about 150 km from Visakhapatnam (Vizag).</p>
-        </div>
-
-        <div class="faq-card">
-          <h4>📮 What is the postal Pincode of Panukupeta? (పిన్‌కోడ్ ఎంత?)</h4>
-          <p>The official Pincode of Panukupeta is <strong>535546</strong>. The village is serviced under the Seethanagaram Sub-Post Office.</p>
-        </div>
-
-        <div class="faq-card">
-          <h4>🏛️ Which Grama Panchayat and Mandal does it belong to?</h4>
-          <p>Panukupeta functions as its own independent <strong>Grama Panchayat</strong> in <strong>Seethanagaram Mandal</strong>. It has about 275 households and ~1,074 residents.</p>
-        </div>
-
-        <div class="faq-card">
-          <h4>🚌 How do I reach Panukupeta by bus or train?</h4>
-          <p>The nearest major town and railway station is <strong>Bobbili (VBL)</strong>, located 7 km away. From Visakhapatnam or Vizianagaram, take an APSRTC bus or train to Bobbili, then local autos or buses to Panukupeta.</p>
-        </div>
-
-        <div class="faq-card">
-          <h4>🌾 What are the primary crops and agriculture in Panukupeta?</h4>
-          <p><strong>Paddy (వరి / Rice)</strong> is the chief crop, irrigated by the Seethanagaram Anicut canal. Other crops include millets, sugarcane, maize, and pulses, supported by local Rythu Seva centers.</p>
-        </div>
-
-        <div class="faq-card">
-          <h4>🌐 What is panukupeta.family?</h4>
-          <p><strong>panukupeta.family</strong> is the official community website uniting all Panukupeta residents, families, and worldwide diaspora with a digital village registry, festival calendar, and directory.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
+    <!-- ═══════════════════════════════════════
        CONTACT / JOIN SECTION
   ════════════════════════════════════════ -->
-  <section class="contact-section" id="contact">
-    <div class="page-width">
-      <div class="contact-inner">
-        <div class="section-tag contact-tag">✉️ Mana Ooru · Mana Kutumbam</div>
-        <h2 class="section-headline" style="color: var(--color-paper);">పణుకుపేట కుటుంబంలో చేరండి!</h2>
-        <p class="section-subtext" style="color: rgba(255,255,255,0.85);">
-          మీ కుటుంబ వివరాలను నమోదు చేయండి — ఊరిలో ఉన్నా, దూరంగా ఉన్నా మనమంతా ఒక్కటే!
-        </p>
+    <section class="contact-section" id="contact">
+      <div class="page-width">
+        <div class="contact-inner">
+          <div class="section-tag contact-tag">✉️ Mana Ooru · Mana Kutumbam</div>
+          <h2 class="section-headline" style="color: var(--color-paper);">పణుకుపేట కుటుంబంలో చేరండి!</h2>
+          <p class="section-subtext" style="color: rgba(255,255,255,0.85);">
+            మీ కుటుంబ వివరాలను నమోదు చేయండి — ఊరిలో ఉన్నా, దూరంగా ఉన్నా మనమంతా ఒక్కటే!
+          </p>
 
-        <!-- Live Registered Families Stats Badge -->
-        <div class="live-registry-badge" id="live-registry-badge">
-          <span class="pulse-dot"></span>
-          <span id="registered-families-count-text">🏡 ఇప్పటివరకు నమోదైన కుటుంబాలను పరిశీలిస్తోంది...</span>
-        </div>
-
-        <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
-          <!-- Head of Family / Primary Info -->
-          <div class="form-section-title">
-            <span>👤</span> ముఖ్య వ్యక్తి వివరాలు (Head of Family)
+          <!-- Live Registered Families Stats Badge -->
+          <div class="live-registry-badge" id="live-registry-badge">
+            <span class="pulse-dot"></span>
+            <span id="registered-families-count-text">🏡 ఇప్పటివరకు నమోదైన కుటుంబాలను పరిశీలిస్తోంది...</span>
           </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="form-firstname">First Name / మీ పేరు *</label>
-              <input type="text" id="form-firstname" placeholder="ఉదా: గణేష్ (First Name)" required />
+          <form class="contact-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+            <!-- Head of Family / Primary Info -->
+            <div class="form-section-title">
+              <span>👤</span> ముఖ్య వ్యక్తి వివరాలు (Head of Family)
             </div>
-            <div class="form-group">
-              <label for="form-lastname">Last Name / ఇంటిపేరు (Intiperu) *</label>
-              <input type="text" id="form-lastname" placeholder="ఉదా: పూడి (Intiperu)" required />
-            </div>
-          </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="form-phone">Phone / WhatsApp *</label>
-              <input type="tel" id="form-phone" placeholder="+91 98765 43210" required />
-            </div>
-            <div class="form-group">
-              <label for="form-street">Street Name / వీధి పేరు</label>
-              <input type="text" id="form-street" placeholder="ఉదా: రామాలయం వీధి / మెయిన్ రోడ్డు" />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="form-village">Village / గ్రామం</label>
-              <input type="text" id="form-village" value="పణుకుపేట" readonly class="input-readonly" />
-            </div>
-            <div class="form-group">
-              <label for="form-location">Current Living Location / ప్రస్తుత నివాసం</label>
-              <input type="text" id="form-location" placeholder="పణుకుపేట / హైదరాబాద్ / బెంగళూరు / విదేశాలు..." />
-            </div>
-          </div>
-
-          <!-- Family Members Sub-Section -->
-          <div class="family-members-wrapper">
-            <div class="family-members-header">
-              <div class="fm-title-block">
-                <span class="fm-icon">👨‍👩‍👧‍👦</span>
-                <div>
-                  <h4>కుటుంబ సభ్యులు (Family Members)</h4>
-                  <p>భార్య, పిల్లలు, తల్లిదండ్రులు, ఇతర సభ్యులను సంబంధంతో పాటు ఇక్కడ చేర్చండి</p>
-                </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-firstname">First Name / మీ పేరు *</label>
+                <input type="text" id="form-firstname" placeholder="ఉదా: గణేష్ (First Name)" required />
               </div>
-              <button type="button" class="btn-add-member" id="btn-add-member" onclick="addFamilyMemberRow()">
-                ➕ సభ్యుడిని చేర్చండి (Add Member)
-              </button>
+              <div class="form-group">
+                <label for="form-lastname">Last Name / ఇంటిపేరు (Intiperu) *</label>
+                <input type="text" id="form-lastname" placeholder="ఉదా: పూడి (Intiperu)" required />
+              </div>
             </div>
 
-            <!-- List of dynamic family members -->
-            <div id="family-members-container" class="family-members-container">
-              <!-- Dynamically added rows will appear here -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-phone">Phone / WhatsApp *</label>
+                <input type="tel" id="form-phone" placeholder="+91 98765 43210" required />
+              </div>
+              <div class="form-group">
+                <label for="form-street">Street Name / వీధి పేరు</label>
+                <input type="text" id="form-street" placeholder="ఉదా: రామాలయం వీధి / మెయిన్ రోడ్డు" />
+              </div>
             </div>
 
-            <div class="fm-empty-state" id="fm-empty-state">
-              <span>👨‍👩‍👦</span> మీ కుటుంబంలో ఇతర సభ్యులు ఉంటే పైనున్న <strong>'➕ సభ్యుడిని చేర్చండి'</strong> బటన్ నొక్కండి.
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-village">Village / గ్రామం</label>
+                <input type="text" id="form-village" value="పణుకుపేట" readonly class="input-readonly" />
+              </div>
+              <div class="form-group">
+                <label for="form-location">Current Living Location / ప్రస్తుత నివాసం</label>
+                <input type="text" id="form-location" placeholder="పణుకుపేట / హైదరాబాద్ / బెంగళూరు / విదేశాలు..." />
+              </div>
+            </div>
+
+            <!-- Family Members Sub-Section -->
+            <div class="family-members-wrapper">
+              <div class="family-members-header">
+                <div class="fm-title-block">
+                  <span class="fm-icon">👨‍👩‍👧‍👦</span>
+                  <div>
+                    <h4>కుటుంబ సభ్యులు (Family Members)</h4>
+                    <p>భార్య, పిల్లలు, తల్లిదండ్రులు, ఇతర సభ్యులను సంబంధంతో పాటు ఇక్కడ చేర్చండి</p>
+                  </div>
+                </div>
+                <button type="button" class="btn-add-member" id="btn-add-member" onclick="addFamilyMemberRow()">
+                  ➕ సభ్యుడిని చేర్చండి (Add Member)
+                </button>
+              </div>
+
+              <!-- List of dynamic family members -->
+              <div id="family-members-container" class="family-members-container">
+                <!-- Dynamically added rows will appear here -->
+              </div>
+
+              <div class="fm-empty-state" id="fm-empty-state">
+                <span>👨‍👩‍👦</span> మీ కుటుంబంలో ఇతర సభ్యులు ఉంటే పైనున్న <strong>'➕ సభ్యుడిని చేర్చండి'</strong> బటన్
+                నొక్కండి.
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="form-message">Message / జ్ఞాపకాలు లేదా సలహాలు (Optional)</label>
+              <textarea id="form-message" rows="2"
+                placeholder="మన ఊరు గురించి మీ జ్ఞాపకం లేదా సలహా తెలియజేయండి... 🌾"></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-primary btn-large btn-submit-family" id="form-submit-btn">
+              <span class="btn-text">కుటుంబాన్ని నమోదు చేయండి (Register Family) 🤝</span>
+              <span class="btn-spinner" style="display:none;">⏳ నమోదు అవుతోంది...</span>
+            </button>
+          </form>
+
+          <!-- Success Screen -->
+          <div class="form-success" id="form-success" style="display:none;">
+            <div class="success-icon">🎉</div>
+            <h3 id="success-family-title">పణుకుపేట కుటుంబంలోకి స్వాగతం!</h3>
+            <p id="success-family-msg">మీ కుటుంబ వివరాలు పణుకుపేట డేటాబేస్‌లో సురక్షితంగా నమోదయ్యాయి.</p>
+            <div class="success-summary-card" id="success-summary-card"></div>
+            <button type="button" class="btn-secondary" onclick="resetRegistrationForm()" style="margin-top:20px;">
+              + మరొక కుటుంబాన్ని నమోదు చేయండి
+            </button>
+          </div>
+
+          <!-- Recent Registered Families Directory -->
+          <div class="recent-families-block" id="recent-families-block">
+            <div class="recent-families-header">
+              <h4>🏡 ఇటీవల చేరిన పణుకుపేట కుటుంబాలు</h4>
+              <span class="live-pill">🔴 Live Updates</span>
+            </div>
+            <div class="recent-families-grid" id="recent-families-grid">
+              <div class="loading-families-placeholder">నమోదైన కుటుంబాల వివరాలు లోడ్ అవుతున్నాయి...</div>
             </div>
           </div>
 
-          <div class="form-group full-width">
-            <label for="form-message">Message / జ్ఞాపకాలు లేదా సలహాలు (Optional)</label>
-            <textarea id="form-message" rows="2" placeholder="మన ఊరు గురించి మీ జ్ఞాపకం లేదా సలహా తెలియజేయండి... 🌾"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" class="btn-primary btn-large btn-submit-family" id="form-submit-btn">
-            <span class="btn-text">కుటుంబాన్ని నమోదు చేయండి (Register Family) 🤝</span>
-            <span class="btn-spinner" style="display:none;">⏳ నమోదు అవుతోంది...</span>
-          </button>
-        </form>
-
-        <!-- Success Screen -->
-        <div class="form-success" id="form-success" style="display:none;">
-          <div class="success-icon">🎉</div>
-          <h3 id="success-family-title">పణుకుపేట కుటుంబంలోకి స్వాగతం!</h3>
-          <p id="success-family-msg">మీ కుటుంబ వివరాలు పణుకుపేట డేటాబేస్‌లో సురక్షితంగా నమోదయ్యాయి.</p>
-          <div class="success-summary-card" id="success-summary-card"></div>
-          <button type="button" class="btn-secondary" onclick="resetRegistrationForm()" style="margin-top:20px;">
-            + మరొక కుటుంబాన్ని నమోదు చేయండి
-          </button>
         </div>
-
-        <!-- Recent Registered Families Directory -->
-        <div class="recent-families-block" id="recent-families-block">
-          <div class="recent-families-header">
-            <h4>🏡 ఇటీవల చేరిన పణుకుపేట కుటుంబాలు</h4>
-            <span class="live-pill">🔴 Live Updates</span>
-          </div>
-          <div class="recent-families-grid" id="recent-families-grid">
-            <div class="loading-families-placeholder">నమోదైన కుటుంబాల వివరాలు లోడ్ అవుతున్నాయి...</div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
+    </section>
   </main>
 
   <!-- ═══════════════════════════════════════
@@ -818,8 +961,15 @@
     <div class="page-width">
       <div class="footer-inner">
         <div class="footer-brand">
-          <div class="footer-logo">🌾 పణుకుపేట</div>
-          <p>Panukupeta Village · Seethanagaram Mandal<br/>Parvathipuram Manyam District<br/>Andhra Pradesh, India — 535546</p>
+          <div class="footer-logo">
+            <img src="logo-mark.png" alt="Panukupeta Village Official Logo" class="footer-logo-img" width="50" height="50" />
+            <div class="footer-logo-text">
+              <span class="footer-logo-title">పణుకుపేట</span>
+              <span class="footer-logo-sub">Panukupeta · మన ఊరు, మన కుటుంబం</span>
+            </div>
+          </div>
+          <p>Panukupeta Village · Seethanagaram Mandal<br />Parvathipuram Manyam District<br />Andhra Pradesh, India —
+            535546</p>
           <a href="https://panukupeta.family" class="footer-domain">🌐 panukupeta.family</a>
         </div>
         <div class="footer-links-col">
@@ -827,23 +977,43 @@
           <a href="#about">About Village</a>
           <a href="#culture">Culture &amp; Festivals</a>
           <a href="#agriculture">Agriculture</a>
-          <a href="#community">Community</a>
+          <a href="#community">Community &amp; Fund</a>
           <a href="#location">Location &amp; Map</a>
           <a href="#faq">FAQ / ప్రశ్నలు</a>
         </div>
         <div class="footer-links-col">
+          <h5>Legal &amp; Policies</h5>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="refund-policy.html">Refund &amp; Cancellation</a>
+          <a href="shipping-policy.html">Shipping &amp; Delivery</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-links-col">
           <h5>Connect</h5>
+          <a href="https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk" target="_blank" rel="noopener noreferrer" class="footer-wa-link">💬 WhatsApp Community</a>
           <a href="#contact">Join the Family</a>
+          <a href="contact.html">Support &amp; Feedback</a>
           <a href="https://maps.app.goo.gl/GKqSiTPVJubdtEh18" target="_blank">Google Maps</a>
           <a href="mailto:hello@panukupeta.family">hello@panukupeta.family</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>© 2026 panukupeta.family — Made with ❤️ for Panukupeta</span>
-        <span>పణుకుపేట — మన ఊరు, మన కుటుంబం</span>
+        <span>© 2026 panukupeta.family — Made with ❤️ for Panukupeta Village</span>
+        <span>
+          <a href="privacy.html">Privacy</a> · 
+          <a href="terms.html">Terms</a> · 
+          <a href="refund-policy.html">Refunds</a> · 
+          <a href="shipping-policy.html">Delivery</a> · 
+          <a href="contact.html">Contact</a>
+        </span>
       </div>
     </div>
-  </footer>
+  <!-- Floating WhatsApp Community Quick Join Button -->
+  <a href="https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp" aria-label="Join Panukupeta Village WhatsApp Community">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.83.824 2.791.825 3.182 0 5.768-2.587 5.769-5.766 0-3.18-2.587-5.767-5.77-5.767m0 10.379c-.83 0-1.642-.224-2.348-.646l-.168-.1-1.745.458.466-1.7-.11-.176c-.463-.736-.708-1.591-.707-2.467.001-2.54 2.067-4.606 4.61-4.606 2.544 0 4.609 2.066 4.61 4.606-.002 2.54-2.067 4.606-4.608 4.606m2.529-3.454c-.139-.07-1.127-.556-1.302-.62-.175-.064-.303-.095-.43.095s-.494.62-.605.748c-.111.127-.223.143-.362.073-.139-.07-.587-.216-1.118-.69-.413-.368-.692-.823-.773-.962-.081-.139-.009-.214.061-.284.063-.062.139-.163.208-.244.07-.082.093-.139.139-.232.046-.093.023-.174-.012-.244s-.43-1.037-.59-1.42c-.156-.373-.314-.322-.43-.328l-.367-.006c-.126 0-.332.047-.506.236-.174.19-.665.65-.665 1.584 0 .934.68 1.836.775 1.963.095.127 1.339 2.045 3.245 2.868.453.196.807.313 1.083.401.455.145.869.124 1.196.075.365-.055 1.127-.461 1.286-.906.159-.445.159-.826.111-.906-.048-.08-.175-.127-.314-.197z"/></svg>
+    <span>Join WhatsApp</span>
+  </a>
 
   <!-- Mobile Bottom Floating Action Bar -->
   <div class="mobile-bottom-bar" id="mobile-bottom-bar">
@@ -863,7 +1033,8 @@
       <span class="mob-icon">📍</span>
       <span>మ్యాప్</span>
     </a>
-    <button type="button" class="mob-bar-btn" onclick="shareVillageWebsite()" aria-label="Share village site on WhatsApp">
+    <button type="button" class="mob-bar-btn" onclick="shareVillageWebsite()"
+      aria-label="Share village site on WhatsApp">
       <span class="mob-icon">💬</span>
       <span>షేర్</span>
     </button>
@@ -871,4 +1042,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

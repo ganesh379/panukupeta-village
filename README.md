@@ -1,4 +1,4 @@
-﻿# Panukupeta Village — Official Website
+# Panukupeta Village — Official Website
 
 🌾 **panukupeta.family** — The official digital home of Panukupeta village.
 
@@ -58,19 +58,51 @@ start index.html
 
 ```
 panukupeta-village/
-├── index.html          # Main website
-├── style.css           # Duolingo-style design system
-├── script.js           # Animations & interactivity
-├── img-hero.jpg        # Village landscape illustration
-├── img-culture.jpg     # Festival illustration
-├── img-agriculture.jpg # Farmer illustration
-├── img-community.jpg   # Community illustration
-└── README.md           # This file
+├── index.html                  # Main website & Village Fund section
+├── style.css                   # Design system & responsive styles
+├── script.js                   # Interactivity, Firebase & Razorpay integration
+├── privacy.html                # Privacy Policy (Razorpay mandatory)
+├── terms.html                  # Terms & Conditions (Razorpay mandatory)
+├── refund-policy.html          # Cancellation & Refund Policy (Razorpay mandatory)
+├── shipping-policy.html        # Shipping & Fulfillment Policy (Razorpay mandatory)
+├── contact.html                # Contact Us page (Razorpay mandatory)
+├── logo.jpg / logo.png         # Official Panukupeta Village Logo (1024x1024)
+├── logo-mark.png               # High-res square emblem mark for navbar & footer
+├── favicon.ico                 # Multi-resolution favicon (16x16, 32x32)
+├── favicon-16x16.png           # 16px browser tab favicon
+├── favicon-32x32.png           # 32px retina tab favicon
+├── favicon.svg                 # Scalable vector favicon
+├── apple-touch-icon.png        # 180px iOS Home Screen icon
+├── android-chrome-192x192.png  # PWA home screen icon
+├── android-chrome-512x512.png  # High-res PWA splash icon
+├── site.webmanifest            # Progressive Web App manifest
+├── og-image.jpg                # 1200x630 Open Graph preview for WhatsApp / Social
+├── img-hero.jpg                # Village landscape illustration
+├── img-culture.jpg             # Festival illustration
+├── img-agriculture.jpg         # Farmer illustration
+├── img-community.jpg           # Community illustration
+└── README.md                   # This file
 ```
+
+## 💳 Razorpay Payment Gateway Integration
+
+The site includes the **Panukupeta Village Development & Welfare Fund (గ్రామ అభివృద్ధి నిధి)** with instant Razorpay Checkout:
+- **Test Key Configuration:** Set `window.RAZORPAY_KEY_ID = 'rzp_live_your_actual_key'` in `script.js` once your Razorpay merchant account is activated.
+- **Mandatory Compliance Policies:** Fully compliant with Razorpay onboarding requirements:
+  - [Privacy Policy](privacy.html)
+  - [Terms & Conditions](terms.html)
+  - [Cancellation & Refund Policy](refund-policy.html)
+  - [Shipping & Delivery Policy](shipping-policy.html)
+  - [Contact Us](contact.html)
+
+## 💬 Community WhatsApp Group
+
+Join the official Panukupeta Village Community WhatsApp Group:  
+👉 **[Join WhatsApp Group](https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk)**
 
 ## 🌐 Domain
 
-**[panukupeta.family](https://panukupeta.family)** — Coming soon!
+**[panukupeta.family](https://panukupeta.family)** — Official Digital Home!
 
 ---
 

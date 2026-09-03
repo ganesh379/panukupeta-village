@@ -1,0 +1,681 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 160" width="100%" height="100%">
+  <defs>
+    <!-- Filter for soft shadow -->
+    <filter id="logoShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Left Emblem Mark -->
+  <g transform="translate(10, 10) scale(0.273)" filter="url(#logoShadow)">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Badges Gradients -->
+    <linearGradient id="badgeBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C8FFA4"/>
+      <stop offset="30%" stop-color="#58CC02"/>
+      <stop offset="70%" stop-color="#238202"/>
+      <stop offset="100%" stop-color="#0E4203"/>
+    </linearGradient>
+    <linearGradient id="badgeGoldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF2A8"/>
+      <stop offset="40%" stop-color="#FFC83B"/>
+      <stop offset="70%" stop-color="#FF9600"/>
+      <stop offset="100%" stop-color="#C66500"/>
+    </linearGradient>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#196D12"/>
+      <stop offset="50%" stop-color="#104D0C"/>
+      <stop offset="85%" stop-color="#093007"/>
+      <stop offset="100%" stop-color="#041A04"/>
+    </radialGradient>
+
+    <!-- Sky & Dawn Gradients -->
+    <radialGradient id="skyGrad" cx="50%" cy="58%" r="55%">
+      <stop offset="0%" stop-color="#FFF8E1"/>
+      <stop offset="25%" stop-color="#FFE082"/>
+      <stop offset="55%" stop-color="#FFB300"/>
+      <stop offset="80%" stop-color="#FB8C00"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </radialGradient>
+    <radialGradient id="sunGrad" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#FFF9C4"/>
+      <stop offset="70%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </radialGradient>
+
+    <!-- Paddy Gold Gradients -->
+    <linearGradient id="paddyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3B0"/>
+      <stop offset="25%" stop-color="#FFD54F"/>
+      <stop offset="60%" stop-color="#FFB300"/>
+      <stop offset="90%" stop-color="#FB8C00"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="paddyLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#FFFDE7"/>
+      <stop offset="100%" stop-color="#FFF59D"/>
+    </linearGradient>
+
+    <!-- Terraced Fields Gradients -->
+    <linearGradient id="hillGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8BC34A"/>
+      <stop offset="100%" stop-color="#558B2F"/>
+    </linearGradient>
+    <linearGradient id="hillGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#58CC02"/>
+      <stop offset="100%" stop-color="#2E7D32"/>
+    </linearGradient>
+    <linearGradient id="hillGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#1B5E20"/>
+    </linearGradient>
+
+    <!-- Seethanagaram Water Canal -->
+    <linearGradient id="canalWater" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#B3E5FC"/>
+      <stop offset="25%" stop-color="#4FC3F7"/>
+      <stop offset="60%" stop-color="#0288D1"/>
+      <stop offset="100%" stop-color="#01579B"/>
+    </linearGradient>
+
+    <!-- House Roof -->
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7043"/>
+      <stop offset="60%" stop-color="#E64A19"/>
+      <stop offset="100%" stop-color="#BF360C"/>
+    </linearGradient>
+
+    <clipPath id="innerCircleClip">
+      <circle cx="256" cy="256" r="226"/>
+    </clipPath>
+
+    <filter id="badgeGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Base outer container: Rounded Squircle for Favicon & Native App Icon feel -->
+  <rect x="8" y="8" width="496" height="496" rx="120" fill="url(#badgeBorderGrad)"/>
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bgGrad)"/>
+  <rect x="22" y="22" width="468" height="468" rx="106" fill="none" stroke="url(#badgeGoldBorder)" stroke-width="4" opacity="0.85"/>
+
+  <!-- Scenic Window (Clipped Circle with Gold Rim) -->
+  <circle cx="256" cy="256" r="230" fill="none" stroke="url(#badgeGoldBorder)" stroke-width="6"/>
+  <g clip-path="url(#innerCircleClip)">
+    <!-- Sky backdrop -->
+    <rect x="20" y="20" width="472" height="472" fill="url(#skyGrad)"/>
+
+    <!-- Radiant Sun Beams -->
+    <g opacity="0.55">
+      <polygon points="256,238 251,32 261,32" fill="#FFFDE7"/>
+      <polygon points="256,238 297,46 307,53" fill="#FFFDE7"/>
+      <polygon points="256,238 215,46 205,53" fill="#FFFDE7"/>
+      <polygon points="256,238 344,76 352,86" fill="#FFFDE7"/>
+      <polygon points="256,238 168,76 160,86" fill="#FFFDE7"/>
+      <polygon points="256,238 388,122 393,134" fill="#FFFDE7"/>
+      <polygon points="256,238 124,122 119,134" fill="#FFFDE7"/>
+      <polygon points="256,238 420,180 422,194" fill="#FFFDE7"/>
+      <polygon points="256,238 92,180 90,194" fill="#FFFDE7"/>
+    </g>
+
+    <!-- Rising Sun Sphere -->
+    <circle cx="256" cy="236" r="68" fill="url(#sunGrad)"/>
+    <circle cx="256" cy="236" r="74" fill="none" stroke="#FFF59D" stroke-width="3" opacity="0.6"/>
+
+    <!-- Distant Blue Hills / Eastern Ghats Range -->
+    <path d="M 20,270 Q 140,218 256,242 T 492,246 L 492,492 L 20,492 Z" fill="#2E7D32" opacity="0.5"/>
+
+    <!-- Terraced Paddy Hills -->
+    <path d="M 20,292 Q 135,248 256,270 T 492,274 L 492,492 L 20,492 Z" fill="url(#hillGrad1)"/>
+    <path d="M 20,322 Q 165,276 310,305 T 492,308 L 492,492 L 20,492 Z" fill="url(#hillGrad2)"/>
+
+    <!-- Seethanagaram Irrigation Canal Ribbon -->
+    <path d="M 238,284 C 248,325 210,365 175,410 C 145,448 135,472 130,492 L 245,492 C 255,465 275,430 292,390 C 310,350 285,310 258,284 Z" fill="url(#canalWater)"/>
+    <!-- Canal Sunlight Shimmer -->
+    <path d="M 245,296 C 253,330 222,368 190,410 C 168,440 156,468 152,485" fill="none" stroke="#E1F5FE" stroke-width="4.5" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 252,304 C 256,326 235,355 210,388" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.9"/>
+
+    <!-- Foreground Terraced Lawn (Left & Right) -->
+    <path d="M 20,358 Q 115,335 188,375 L 175,410 C 145,448 135,472 130,492 L 20,492 Z" fill="url(#hillGrad3)"/>
+    <path d="M 292,390 C 310,350 285,310 258,284 Q 375,280 492,326 L 492,492 L 245,492 C 255,465 275,430 292,390 Z" fill="url(#hillGrad2)"/>
+
+    <!-- Left & Right Coconut Palms (Andhra Village Icon) -->
+    <!-- Left Palm -->
+    <path d="M 132,315 Q 138,265 152,230" stroke="#3E2723" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    <path d="M 152,230 Q 124,218 106,232" stroke="#1B5E20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 152,230 Q 142,204 126,204" stroke="#2E7D32" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 152,230 Q 164,202 180,208" stroke="#33691E" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 152,230 Q 178,222 184,242" stroke="#1B5E20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Right Palm -->
+    <path d="M 378,315 Q 372,265 358,230" stroke="#3E2723" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+    <path d="M 358,230 Q 386,218 404,232" stroke="#1B5E20" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 358,230 Q 368,204 384,204" stroke="#2E7D32" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 358,230 Q 346,202 330,208" stroke="#33691E" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 358,230 Q 332,222 326,242" stroke="#1B5E20" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+    <!-- Village Cottage (Home & Family Hearth) -->
+    <g transform="translate(256, 282)">
+      <!-- Drop shadow -->
+      <ellipse cx="0" cy="38" rx="46" ry="8" fill="#0A3305" opacity="0.6"/>
+      <!-- Wall structure -->
+      <polygon points="-42,-6 42,-6 38,36 -38,36" fill="#FFFDE7" stroke="#3E2723" stroke-width="3.5" stroke-linejoin="round"/>
+      <!-- Cozy Wooden Arch Doorway -->
+      <path d="M -11,36 L -11,10 A 11,11 0 0,1 11,10 L 11,36 Z" fill="#D84315" stroke="#3E2723" stroke-width="2.5"/>
+      <!-- Glowing inner light inside doorway -->
+      <path d="M -7,36 L -7,14 A 7,7 0 0,1 7,14 L 7,36 Z" fill="#FFE082"/>
+      <circle cx="4" cy="24" r="1.5" fill="#3E2723"/>
+      <!-- Window -->
+      <rect x="18" y="6" width="14" height="14" rx="2" fill="#81D4FA" stroke="#3E2723" stroke-width="2.5"/>
+      <line x1="25" y1="6" x2="25" y2="20" stroke="#3E2723" stroke-width="1.8"/>
+      <line x1="18" y1="13" x2="32" y2="13" stroke="#3E2723" stroke-width="1.8"/>
+      <!-- Tiled Cottage Roof -->
+      <polygon points="0,-42 56,-4 -56,-4" fill="url(#roofGrad)" stroke="#3E2723" stroke-width="4.5" stroke-linejoin="round"/>
+      <!-- Roof apex kalasam/finial -->
+      <circle cx="0" cy="-44" r="5" fill="#FFD54F" stroke="#3E2723" stroke-width="2.5"/>
+      <!-- Roof tile rib lines -->
+      <line x1="-28" y1="-18" x2="-22" y2="-4" stroke="#BF360C" stroke-width="2.5"/>
+      <line x1="0" y1="-32" x2="0" y2="-4" stroke="#BF360C" stroke-width="2.5"/>
+      <line x1="28" y1="-18" x2="22" y2="-4" stroke="#BF360C" stroke-width="2.5"/>
+    </g>
+
+    <!-- Bottom Family Sprout Leaves (మన కుటుంబం) -->
+    <g transform="translate(256, 442)">
+      <!-- Left Leaf -->
+      <path d="M 0,-8 C -35,-25 -65,-8 -45,28 C -22,18 -8,6 0,-8 Z" fill="#A5ED6E" stroke="#1B5E20" stroke-width="3"/>
+      <!-- Right Leaf -->
+      <path d="M 0,-8 C 35,-25 65,-8 45,28 C 22,18 8,6 0,-8 Z" fill="#58CC02" stroke="#0B3C08" stroke-width="3"/>
+      <!-- Center Stem & Flower Bud -->
+      <circle cx="0" cy="-6" r="8" fill="#FFC83B" stroke="#E65100" stroke-width="2.5"/>
+      <circle cx="0" cy="-6" r="3.5" fill="#FFF9C4"/>
+    </g>
+  </g>
+
+  <!-- Golden Paddy Ears (వరి కంకులు) flanking the wreath -->
+  <!-- Left stalk main stem -->
+  <path d="M 125,432 C 48,340 50,195 152,98 C 172,80 205,68 238,62" fill="none" stroke="#9A5600" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 125,432 C 48,340 50,195 152,98 C 172,80 205,68 238,62" fill="none" stroke="#FFC83B" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Right stalk main stem -->
+  <path d="M 387,432 C 464,340 462,195 360,98 C 340,80 307,68 274,62" fill="none" stroke="#9A5600" stroke-width="7" stroke-linecap="round"/>
+  <path d="M 387,432 C 464,340 462,195 360,98 C 340,80 307,68 274,62" fill="none" stroke="#FFC83B" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Left & Right Grains -->
+  
+    <g transform="translate(88, 375) rotate(32)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(120, 388) rotate(55)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="26.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="24" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18 Q 3.25,0 0,18" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6" rx="4.94" ry="12" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-24" x2="5" y2="-32" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(72, 330) rotate(25)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="29.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="27" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-20.25 Q 3.5,0 0,20.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.75" rx="5.32" ry="13.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-27" x2="5" y2="-35" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(104, 345) rotate(48)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.25,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6.25" rx="4.94" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(65, 280) rotate(15)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(98, 295) rotate(38)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(69, 230) rotate(5)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(102, 245) rotate(28)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(82, 180) rotate(-10)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="-5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(116, 195) rotate(15)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(108, 138) rotate(-28)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="-5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(140, 156) rotate(-2)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="-5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(146, 106) rotate(-45)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="29.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="27" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-20.25 Q 3.75,0 0,20.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-6.75" rx="5.7" ry="13.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-27" x2="-5" y2="-35" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(174, 126) rotate(-20)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.25,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6.25" rx="4.94" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="-5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(194, 84) rotate(-62)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.5,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.25" rx="5.32" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="-5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(216, 106) rotate(-38)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="26.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="24" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18 Q 3.25,0 0,18" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6" rx="4.94" ry="12" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-24" x2="-5" y2="-32" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(242, 74) rotate(-78)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="25.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="23" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-17.25 Q 3.25,0 0,17.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-5.75" rx="4.94" ry="11.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-23" x2="-5" y2="-31" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+  
+    <g transform="translate(424, 375) rotate(-32)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="-5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(392, 388) rotate(-55)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="26.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="24" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18 Q 3.25,0 0,18" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6" rx="4.94" ry="12" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-24" x2="-5" y2="-32" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(440, 330) rotate(-25)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="29.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="27" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-20.25 Q 3.5,0 0,20.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.75" rx="5.32" ry="13.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-27" x2="-5" y2="-35" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(408, 345) rotate(-48)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.25,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6.25" rx="4.94" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="-5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(447, 280) rotate(-15)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="-5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(414, 295) rotate(-38)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="-5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(443, 230) rotate(-5)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="-5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(410, 245) rotate(-28)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="-5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(430, 180) rotate(10)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(396, 195) rotate(-15)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="-5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(404, 138) rotate(28)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="30.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="28" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-21 Q 3.75,0 0,21" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-7" rx="5.7" ry="14" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-28" x2="5" y2="-36" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(372, 156) rotate(2)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="28.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="26" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-19.5 Q 3.5,0 0,19.5" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.5" rx="5.32" ry="13" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-26" x2="5" y2="-34" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(366, 106) rotate(45)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="17.5" ry="29.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="15" ry="27" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-20.25 Q 3.75,0 0,20.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-4.2" cy="-6.75" rx="5.7" ry="13.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-27" x2="5" y2="-35" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(338, 126) rotate(20)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.25,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6.25" rx="4.94" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(318, 84) rotate(62)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="16.5" ry="27.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="14" ry="25" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18.75 Q 3.5,0 0,18.75" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.9200000000000004" cy="-6.25" rx="5.32" ry="12.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-25" x2="5" y2="-33" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(296, 106) rotate(38)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="26.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="24" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-18 Q 3.25,0 0,18" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-6" rx="4.94" ry="12" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-24" x2="5" y2="-32" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+    <g transform="translate(270, 74) rotate(78)">
+      <!-- Outer stroke/shadow -->
+      <ellipse cx="0" cy="0" rx="15.5" ry="25.5" fill="#B26A00" opacity="0.6"/>
+      <!-- Grain body -->
+      <ellipse cx="0" cy="0" rx="13" ry="23" fill="url(#paddyGold)"/>
+      <!-- Grain central crease -->
+      <path d="M 0,-17.25 Q 3.25,0 0,17.25" stroke="#D87A00" stroke-width="2" fill="none" opacity="0.75"/>
+      <!-- Grain inner glossy highlight -->
+      <ellipse cx="-3.6400000000000006" cy="-5.75" rx="4.94" ry="11.5" fill="url(#paddyLight)" opacity="0.9"/>
+      <!-- Tip awn (బియ్యపు ముల్లు) -->
+      <line x1="0" y1="-23" x2="5" y2="-31" stroke="#FFA000" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  
+
+  <!-- Apex Star / Auspicious Mark -->
+  <g transform="translate(256, 52)">
+    <circle cx="0" cy="0" r="10" fill="#FFC83B" stroke="#9A5600" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
+  </g>
+</svg>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(170, 0)">
+    <!-- Primary Telugu Name: పణుకుపేట -->
+    <text x="0" y="68" font-family="'Nunito', 'Noto Sans Telugu', system-ui, sans-serif" font-size="52" font-weight="900" fill="#13381B" letter-spacing="-0.5">పణుకుపేట</text>
+
+    <!-- English & Tagline Capsule -->
+    <g transform="translate(2, 82)">
+      <!-- Latin Name -->
+      <text x="0" y="24" font-family="'Nunito', system-ui, sans-serif" font-size="22" font-weight="800" fill="#2E7D32" letter-spacing="3">PANUKUPETA</text>
+      <!-- Separator dot -->
+      <circle cx="168" cy="17" r="3.5" fill="#81C784"/>
+      <!-- Telugu Tagline: మన ఊరు, మన కుటుంబం -->
+      <text x="182" y="23" font-family="'Nunito', 'Noto Sans Telugu', system-ui, sans-serif" font-size="17" font-weight="700" fill="#13381B" opacity="0.85">మన ఊరు, మన కుటుంబం</text>
+    </g>
+
+    <!-- Domain Pill Badge: panukupeta.family -->
+    <g transform="translate(0, 118)">
+      <rect x="0" y="0" width="186" height="28" rx="14" fill="#E8F5E9" stroke="#81C784" stroke-width="1.5"/>
+      <circle cx="14" cy="14" r="5" fill="#58CC02"/>
+      <text x="26" y="19" font-family="'Nunito', system-ui, sans-serif" font-size="14" font-weight="800" fill="#1B5E20" letter-spacing="0.5">panukupeta.family</text>
+    </g>
+  </g>
+</svg>

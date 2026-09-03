@@ -382,9 +382,133 @@ if (document.readyState === 'loading') {
   initLiveFamilyRegistry();
 }
 
-/* ─── WhatsApp Share Helper ─── */
+/* ─── WhatsApp / Web Share Helper ─── */
 function shareVillageWebsite() {
-  const shareText = encodeURIComponent("నమస్కారం! మన ఊరు పణుకుపేట (పానుకుపేట) అఫీషియల్ వెబ్‌సైట్ చూడండి మరియు మన కుటుంబ వివరాలను నమోదు చేయండి: https://panukupeta-village.web.app");
-  window.open("https://api.whatsapp.com/send?text=" + shareText, "_blank");
+  const shareData = {
+    title: "పణుకుపేట (Panukupeta) — Official Village Website",
+    text: "మన ఊరు, మన కుటుంబం! పణుకుపేట గ్రామ అధికారిక వెబ్‌సైట్ చూడండి, కుటుంబ నమోదు చేయండి మరియు మన WhatsApp గ్రూప్‌లో చేరండి:",
+    url: "https://panukupeta.family"
+  };
+
+  const fullShareText = "మన ఊరు, మన కుటుంబం! 🌾\n\nపణుకుపేట (Panukupeta) గ్రామ అధికారిక వెబ్‌సైట్ చూడండి: https://panukupeta.family\n\nమన Panukupeta WhatsApp కమ్యూనిటీ గ్రూప్‌లో చేరండి: https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk";
+
+  if (navigator.share) {
+    navigator.share({
+      title: shareData.title,
+      text: fullShareText,
+      url: "https://panukupeta.family"
+    }).catch(err => {
+      if (err.name !== 'AbortError') {
+        window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(fullShareText), "_blank");
+      }
+    });
+  } else {
+    window.open("https://api.whatsapp.com/send?text=" + encodeURIComponent(fullShareText), "_blank");
+  }
 }
+
+/* ══════════════════════════════════════════
+   RAZORPAY PAYMENT GATEWAY INTEGRATION
+══════════════════════════════════════════ */
+// Replace with your Live Razorpay Key (e.g. 'rzp_live_xxxxxxxx') once verified by Razorpay
+window.RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || 'rzp_test_PanukupetaKey';
+
+function selectDonationAmount(amount, btnElement) {
+  const input = document.getElementById('donor-amount');
+  if (input) input.value = amount;
+
+  document.querySelectorAll('.fund-amount-chip').forEach(chip => chip.classList.remove('active'));
+  if (btnElement) btnElement.classList.add('active');
+}
+
+function handleRazorpayDonation() {
+  const amountInput = document.getElementById('donor-amount');
+  const purposeSelect = document.getElementById('donor-purpose');
+  const nameInput = document.getElementById('donor-name');
+  const phoneInput = document.getElementById('donor-phone');
+
+  const amount = parseInt(amountInput ? amountInput.value : 0, 10);
+  const purpose = purposeSelect ? purposeSelect.value : 'General Village Development';
+  const name = nameInput ? nameInput.value.trim() : '';
+  const phone = phoneInput ? phoneInput.value.trim() : '';
+
+  if (!amount || amount < 10) {
+    alert('దయచేసి కనీస విరాళం ₹10 లేదా అంతకంటే ఎక్కువ నమోదు చేయండి.\n(Please enter a minimum contribution of ₹10.)');
+    if (amountInput) amountInput.focus();
+    return;
+  }
+
+  if (!name) {
+    alert('దయచేసి మీ పేరును నమోదు చేయండి.\n(Please enter your full name.)');
+    if (nameInput) nameInput.focus();
+    return;
+  }
+
+  if (!phone || phone.length < 10) {
+    alert('దయచేసి సరైన 10 అంకెల ఫోన్ / WhatsApp నంబర్ నమోదు చేయండి.\n(Please enter a valid 10-digit phone number.)');
+    if (phoneInput) phoneInput.focus();
+    return;
+  }
+
+  // Check if Razorpay Checkout script is loaded
+  if (typeof Razorpay === 'undefined') {
+    alert('Razorpay Payment Gateway is loading. Please check your internet connection and try again.');
+    return;
+  }
+
+  const options = {
+    key: window.RAZORPAY_KEY_ID,
+    amount: amount * 100, // Amount in paise
+    currency: 'INR',
+    name: 'Panukupeta Village Development Fund',
+    description: purpose + ' — పణుకుపేట గ్రామ అభివృద్ధి నిధి',
+    image: 'https://panukupeta.family/logo-mark.png',
+    handler: function (response) {
+      const paymentId = response.razorpay_payment_id;
+      alert(`🎉 ధన్యవాదాలు (Thank you), ${name}!\n\nమీ విరాళం ₹${amount} విజయవంతంగా అందింది.\n\nRazorpay Payment ID: ${paymentId}\nPurpose: ${purpose}\n\nమా గ్రామాభివృద్ధికి సహకరించినందుకు పణుకుపేట గ్రామస్తుల తరఫున హృదయపూర్వక కృతజ్ఞతలు! 🙏\n(A digital acknowledgement receipt has been recorded.)`);
+
+      // Optionally record in Firebase Firestore if initialized
+      if (typeof db !== 'undefined' && db) {
+        db.collection('village_donations').add({
+          donorName: name,
+          phone: phone,
+          amount: amount,
+          purpose: purpose,
+          paymentId: paymentId,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).catch(err => console.warn('Donation Firestore notice:', err));
+      }
+
+      // Reset fields
+      if (amountInput) amountInput.value = '1000';
+      if (nameInput) nameInput.value = '';
+      if (phoneInput) phoneInput.value = '';
+    },
+    prefill: {
+      name: name,
+      contact: phone
+    },
+    notes: {
+      village: 'Panukupeta',
+      mandal: 'Seethanagaram',
+      district: 'Parvathipuram Manyam',
+      purpose: purpose
+    },
+    theme: {
+      color: '#58CC02'
+    }
+  };
+
+  try {
+    const rzp = new Razorpay(options);
+    rzp.on('payment.failed', function (response) {
+      alert(`❌ లావాదేవీ విఫలమైంది (Payment Failed): ${response.error.description || 'Please try again or use another payment method.'}\nPayment ID: ${response.error.metadata ? response.error.metadata.payment_id : ''}`);
+    });
+    rzp.open();
+  } catch (err) {
+    console.error('Razorpay invocation error:', err);
+    alert('Razorpay Checkout Notice: ' + err.message + '\n(Make sure to provide your live or test Razorpay Key ID in window.RAZORPAY_KEY_ID).');
+  }
+}
+
 
