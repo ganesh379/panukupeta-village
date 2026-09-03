@@ -100,6 +100,12 @@ The site includes the **Panukupeta Village Development & Welfare Fund (గ్ర
 Join the official Panukupeta Village Community WhatsApp Group:  
 👉 **[Join WhatsApp Group](https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk)**
 
+## 👤 Admin & Contact Support
+
+- **Admin & Coordinator**: Ganesh Pudi
+- **Email**: [ganeshpudi12@gmail.com](mailto:ganeshpudi12@gmail.com)
+- **Phone / WhatsApp**: [+91 9010525248](tel:+919010525248)
+
 ## 🌐 Domain
 
 **[panukupeta.family](https://panukupeta.family)** — Official Digital Home!
@@ -107,3 +113,4 @@ Join the official Panukupeta Village Community WhatsApp Group:
 ---
 
 Made with ❤️ for Panukupeta · © 2026 panukupeta.family
+
