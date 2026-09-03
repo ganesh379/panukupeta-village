@@ -314,8 +314,10 @@ function initLiveFamilyRegistry() {
   const grid = document.getElementById('recent-families-grid');
   const countBadge = document.getElementById('registered-families-count-text');
 
+  if (!grid && !countBadge) return;
+
   if (!db) {
-    if (countBadge) countBadge.textContent = '🏡 పణుకుపేట గ్రామ డిజిటల్ కుటుంబ రిజిస్ట్రీ';
+    if (countBadge) countBadge.textContent = '🏡 పణుకుపేట గ్రామ డిజిటల్ సమాజం';
     return;
   }
 
