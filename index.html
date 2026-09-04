@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2.4" />
+  <link rel="stylesheet" href="style.css?v=2.5" />
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
@@ -697,31 +697,35 @@
             <div class="donation-stats-summary">
               <div class="donation-stat-box">
                 <span class="stat-num" id="stat-total-amount">₹22,016</span>
-                <span class="stat-lbl">Total Collected (మొత్తం చందాలు)</span>
+                <span class="stat-lbl">Raised (వసూలైన చందాలు)</span>
+              </div>
+              <div class="donation-stat-box">
+                <span class="stat-num" id="stat-target-goal">₹1,00,000</span>
+                <span class="stat-lbl">Target Goal (లక్ష్యం)</span>
+              </div>
+              <div class="donation-stat-box">
+                <span class="stat-num" id="stat-still-needed">₹77,984</span>
+                <span class="stat-lbl">Still Needed (మిగిలినది)</span>
               </div>
               <div class="donation-stat-box">
                 <span class="stat-num" id="stat-total-donors">21</span>
-                <span class="stat-lbl">Total Devotees (భక్తులు)</span>
-              </div>
-              <div class="donation-stat-box">
-                <span class="stat-num" id="stat-target-goal">₹60,000</span>
-                <span class="stat-lbl">Festival Target Goal (లక్ష్యం)</span>
+                <span class="stat-lbl">Devotees (భక్తులు)</span>
               </div>
             </div>
           </div>
 
-          <!-- Target Goal Progress Bar -->
+          <!-- Target Goal Progress Bar (₹1,00,000 Goal) -->
           <div class="chanda-goal-box">
             <div class="chanda-goal-meta">
-              <span>🎯 Festival Collection Progress: <strong id="chanda-goal-percent">37%</strong></span>
-              <span id="chanda-goal-ratio">₹22,016 / ₹60,000</span>
+              <span>🎯 Target Goal Progress: <strong id="chanda-goal-percent">22%</strong> OF GOAL</span>
+              <span id="chanda-goal-ratio">₹22,016 / ₹1,00,000</span>
             </div>
             <div class="chanda-progress-bar">
-              <div class="chanda-progress-fill" id="chanda-progress-fill" style="width: 37%;"></div>
+              <div class="chanda-progress-fill" id="chanda-progress-fill" style="width: 22%;"></div>
             </div>
           </div>
 
-          <!-- Controls: Search & Category Filter Chips -->
+          <!-- Controls: Search & Simple Filter Chips -->
           <div class="donation-controls-row">
             <div class="donation-search-box">
               <span class="search-icon">🔍</span>
@@ -729,8 +733,6 @@
             </div>
             <div class="donation-filter-chips" id="donation-filter-chips">
               <button type="button" class="d-chip active" onclick="setDonorFilter('all', this)">All Chandas (అన్ని చందాలు)</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('high', this)">⭐ ₹2,000+ (గౌరవ చందాలు)</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('mid', this)">🙏 ₹1,000+ (చందాలు)</button>
               <button type="button" class="d-chip" onclick="setDonorFilter('today', this)">📅 Recent / Today (తాజా చందాలు)</button>
             </div>
           </div>
@@ -1058,7 +1060,7 @@
     </button>
   </div>
 
-  <script src="script.js?v=2.5"></script>
+  <script src="script.js?v=2.6"></script>
 </body>
 
 </html>

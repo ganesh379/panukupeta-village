@@ -2666,8 +2666,9 @@ ul {
   background: #F4FAF1;
   border: 1.5px solid #C8E6C9;
   border-radius: 12px;
-  padding: 12px 18px;
-  min-width: 140px;
+  padding: 12px 16px;
+  min-width: 120px;
+  flex: 1 1 120px;
   text-align: center;
 }
 
@@ -3207,10 +3208,7 @@ ul {
   .donation-stat-box {
     padding: 10px 8px !important;
     min-width: 0 !important;
-  }
-
-  .donation-stat-box:nth-child(3) {
-    grid-column: 1 / -1 !important;
+    flex: unset !important;
   }
 
   .donation-stat-box .stat-num {
@@ -3219,6 +3217,18 @@ ul {
 
   .donation-stat-box .stat-lbl {
     font-size: 11px !important;
+  }
+
+  .chanda-goal-box {
+    padding: 12px 14px !important;
+    margin: 14px 0 6px 0 !important;
+  }
+
+  .chanda-goal-meta {
+    font-size: 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
   }
 
   .donors-list-grid {
@@ -3238,6 +3248,14 @@ ul {
 
   .donor-name {
     font-size: 14.5px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  .donor-purpose-tag {
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 12px !important;
   }
 
   .donor-amount {

@@ -498,7 +498,7 @@ const CHANDABOOK_CONFIG = {
 const CHANDABOOK_GROUP_ID = "GROUP-1786886516185";
 
 let allChandas = [];
-let chandaTargetGoal = 60000;
+let chandaTargetGoal = 100000;
 let currentChandaFilter = 'all';
 let currentChandaSearchQuery = '';
 
@@ -539,16 +539,19 @@ function updateChandaStats(totalAmount, totalDevotees, targetGoal) {
   const totalAmountEl = document.getElementById('stat-total-amount');
   const totalDonorsEl = document.getElementById('stat-total-donors');
   const targetGoalEl = document.getElementById('stat-target-goal');
+  const stillNeededEl = document.getElementById('stat-still-needed');
   const goalPercentEl = document.getElementById('chanda-goal-percent');
   const goalRatioEl = document.getElementById('chanda-goal-ratio');
   const progressFillEl = document.getElementById('chanda-progress-fill');
 
-  const goal = targetGoal || 60000;
+  const goal = targetGoal || 100000;
+  const stillNeeded = Math.max(0, goal - totalAmount);
   const percent = Math.min(100, Math.round((totalAmount / goal) * 100));
 
   if (totalAmountEl) totalAmountEl.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
   if (totalDonorsEl) totalDonorsEl.textContent = `${totalDevotees}`;
   if (targetGoalEl) targetGoalEl.textContent = `₹${goal.toLocaleString('en-IN')}`;
+  if (stillNeededEl) stillNeededEl.textContent = `₹${stillNeeded.toLocaleString('en-IN')}`;
   if (goalPercentEl) goalPercentEl.textContent = `${percent}%`;
   if (goalRatioEl) goalRatioEl.textContent = `₹${totalAmount.toLocaleString('en-IN')} / ₹${goal.toLocaleString('en-IN')}`;
   if (progressFillEl) progressFillEl.style.width = `${percent}%`;
@@ -646,7 +649,7 @@ function renderDonorsList() {
 function processChandaGroupData(groupData) {
   if (!groupData) return;
 
-  chandaTargetGoal = Number(groupData.targetGoal || 60000);
+  chandaTargetGoal = 100000;
   const rawCollections = groupData.collections || [];
 
   // Sort newest first: by date desc or receipt number desc
