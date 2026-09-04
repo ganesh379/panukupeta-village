@@ -629,7 +629,7 @@ function renderDonorsList() {
               ${chanda.receiptNo ? `<span class="donor-badge-recent" style="background: #FFF3E0; color: #E65100; border-color: #FFE082;">${escapeHtml(chanda.receiptNo)}</span>` : ''}
             </div>
             <p class="donor-purpose-tag">
-              ${chanda.collectedBy ? `👤 ద్వారా: <strong>${escapeHtml(chanda.collectedBy)}</strong> • ` : ''}
+              ${chanda.collectedBy ? `👤 Collected by: <strong>${escapeHtml(chanda.collectedBy)}</strong> • ` : ''}
               💳 ${escapeHtml(chanda.paymentMode || 'UPI / Cash')}
             </p>
             <p class="donor-meta-sub">
