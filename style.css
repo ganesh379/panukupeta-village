@@ -2868,6 +2868,39 @@ ul {
   margin-top: 1px;
 }
 
+.chanda-goal-box {
+  margin: 18px 0 6px 0;
+  background: #FAFCF9;
+  border: 1.5px solid #E2EFE0;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.chanda-goal-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #1B5E20;
+  margin-bottom: 8px;
+}
+
+.chanda-progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #E8F5E9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.chanda-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #58CC02 0%, #FF9800 100%);
+  border-radius: 999px;
+  transition: width 0.8s ease-in-out;
+}
+
 .donation-transparency-footer {
   margin-top: 24px;
   padding: 14px 18px;

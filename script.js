@@ -483,254 +483,45 @@ function handleCashfreeDonation() {
 }
 
 /* ══════════════════════════════════════════
-   DONATION LIST (విరాళాలు) - PUBLIC LEDGER LOGIC
+   CHANDABOOK LIVE REAL-TIME LEDGER INTEGRATION
+   (Power Youth Panukupeta - Vinayaka Chavithi 2026)
 ══════════════════════════════════════════ */
-const foundingDonors = [
-  {
-    name: "P. Appala Naidu & Family",
-    phone: "+91 94401*****",
-    amount: 10000,
-    purpose: "RO Drinking Water Plant Maintenance",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "💎 Diamond Patron"
-  },
-  {
-    name: "K. Ramana Murthy (Hyderabad)",
-    phone: "+91 98480*****",
-    amount: 5000,
-    purpose: "Solar Street Lighting & Sanitation",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌟 Gold Contributor"
-  },
-  {
-    name: "M. Venkata Rao (Bengaluru)",
-    phone: "+91 99081*****",
-    amount: 5000,
-    purpose: "Youth Sports & Education Scholarships",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌟 Gold Contributor"
-  },
-  {
-    name: "S. Suresh Kumar (Dubai Diaspora)",
-    phone: "+971 50*****",
-    amount: 5000,
-    purpose: "Solar Street Lighting & Sanitation",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌟 Gold Contributor"
-  },
-  {
-    name: "G. Satyanarayana & Family",
-    phone: "+91 94902*****",
-    amount: 3000,
-    purpose: "Temple Preservation & Festival Annadanam",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌿 Silver Benefactor"
-  },
-  {
-    name: "N. Jagadeesh & Youth Club",
-    phone: "+91 83329*****",
-    amount: 3000,
-    purpose: "Youth Sports & Education Scholarships",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌿 Silver Benefactor"
-  },
-  {
-    name: "V. Sanyasi Rao & Brothers",
-    phone: "+91 90105*****",
-    amount: 2500,
-    purpose: "RO Drinking Water Plant Maintenance",
-    date: "Aug 2026",
-    isLive: false,
-    tier: "🌿 Silver Benefactor"
-  },
-  {
-    name: "B. Lakshmi & Narayana",
-    phone: "+91 99593*****",
-    amount: 2500,
-    purpose: "General Village Development & Welfare",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌿 Silver Benefactor"
-  },
-  {
-    name: "Ch. Tirupathi Rao",
-    phone: "+91 91774*****",
-    amount: 2000,
-    purpose: "Youth Sports & Education Scholarships",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "T. Krishna Murthy",
-    phone: "+91 98661*****",
-    amount: 2000,
-    purpose: "Temple Preservation & Festival Annadanam",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "B. Ramu & Family",
-    phone: "+91 94911*****",
-    amount: 2000,
-    purpose: "RO Drinking Water Plant Maintenance",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "K. Prasad Rao (Vizag)",
-    phone: "+91 98664*****",
-    amount: 2000,
-    purpose: "Solar Street Lighting & Sanitation",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "Panukupeta Youth Cricket Club",
-    phone: "+91 91000*****",
-    amount: 2000,
-    purpose: "Youth Sports & Education Scholarships",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "A. Polinaidu",
-    phone: "+91 96182*****",
-    amount: 1500,
-    purpose: "RO Drinking Water Plant Maintenance",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "G. Parvathi Devi",
-    phone: "+91 93901*****",
-    amount: 1500,
-    purpose: "Temple Preservation & Festival Annadanam",
-    date: "Jul 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "D. Mohan Rao",
-    phone: "+91 94413*****",
-    amount: 1000,
-    purpose: "General Village Development & Welfare",
-    date: "Jun 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "K. Suryanarayana",
-    phone: "+91 90001*****",
-    amount: 1000,
-    purpose: "Solar Street Lighting & Sanitation",
-    date: "Jun 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "P. Eswara Rao",
-    phone: "+91 95028*****",
-    amount: 1000,
-    purpose: "Temple Preservation & Festival Annadanam",
-    date: "Jun 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "Y. Apparao",
-    phone: "+91 94405*****",
-    amount: 1000,
-    purpose: "General Village Development & Welfare",
-    date: "Jun 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "M. Someswara Rao",
-    phone: "+91 98492*****",
-    amount: 1000,
-    purpose: "RO Drinking Water Plant Maintenance",
-    date: "May 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "B. Simhachalam",
-    phone: "+91 97042*****",
-    amount: 1000,
-    purpose: "Youth Sports & Education Scholarships",
-    date: "May 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  },
-  {
-    name: "All Village Well-Wishers",
-    phone: "+91 90105*****",
-    amount: 1000,
-    purpose: "General Village Development & Welfare",
-    date: "May 2026",
-    isLive: false,
-    tier: "🌱 Supporter"
-  }
-];
+const CHANDABOOK_CONFIG = {
+  apiKey: "AIzaSyBUgvaew_XA3QRZzlQ_eEv1JA375IfgZKs",
+  authDomain: "chandabook-utsav.firebaseapp.com",
+  projectId: "chandabook-utsav",
+  storageBucket: "chandabook-utsav.firebasestorage.app",
+  messagingSenderId: "870424515514",
+  appId: "1:870424515514:web:375d8cd414437deba3c383"
+};
 
-let allDonors = [...foundingDonors];
-let currentDonorFilter = 'all';
-let currentDonorSearchQuery = '';
+const CHANDABOOK_GROUP_ID = "GROUP-1786886516185";
 
-function maskPhoneNumber(phone) {
-  if (!phone) return '•••••';
-  const clean = String(phone).replace(/\s+/g, '');
-  if (clean.length <= 5) return clean.slice(0, 2) + '***';
-  if (clean.startsWith('+91')) {
-    return clean.slice(0, 8) + '*****';
-  }
-  return clean.slice(0, 5) + '*****';
-}
+let allChandas = [];
+let chandaTargetGoal = 60000;
+let currentChandaFilter = 'all';
+let currentChandaSearchQuery = '';
 
-function getDonorTier(amount) {
+function getChandaTier(amount) {
   const num = Number(amount) || 0;
-  if (num >= 10000) return '💎 Diamond Patron';
-  if (num >= 5000) return '🌟 Gold Contributor';
-  if (num >= 2500) return '🌿 Silver Benefactor';
-  return '🌱 Supporter';
+  if (num >= 5000) return '🏆 Maha Raja Patron';
+  if (num >= 2000) return '🌟 Special Patron (గౌరవ చందా)';
+  if (num >= 1000) return '🙏 Devotee (భక్తుడు)';
+  return '🌱 Well-Wisher';
 }
 
-function getPurposeEmoji(purpose) {
-  if (!purpose) return '🌾';
-  const p = purpose.toLowerCase();
-  if (p.includes('water') || p.includes('ro')) return '💧';
-  if (p.includes('solar') || p.includes('light') || p.includes('sanitation')) return '💡';
-  if (p.includes('youth') || p.includes('school') || p.includes('scholarship') || p.includes('sport')) return '🎓';
-  if (p.includes('temple') || p.includes('annadanam') || p.includes('festival')) return '🛕';
-  return '🌾';
-}
-
-function getAvatarInitial(name) {
-  if (!name) return '👤';
-  const clean = name.trim();
-  return clean.charAt(0).toUpperCase();
-}
-
-function formatDonorDate(dateObj) {
-  if (!dateObj) return 'Recent';
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+function formatChandaDate(dateStr) {
+  if (!dateStr) return 'Recent';
   try {
-    return `${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+    const parts = dateStr.split('-');
+    if (parts.length === 3) {
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      const monthIdx = parseInt(parts[1], 10) - 1;
+      return `${months[monthIdx]} ${parseInt(parts[2], 10)}, ${parts[0]}`;
+    }
+    return dateStr;
   } catch (e) {
-    return 'Recent';
+    return dateStr;
   }
 }
 
@@ -744,21 +535,27 @@ function escapeHtml(str) {
     .replace(/'/g, '&#039;');
 }
 
-function updateDonationStats() {
+function updateChandaStats(totalAmount, totalDevotees, targetGoal) {
   const totalAmountEl = document.getElementById('stat-total-amount');
   const totalDonorsEl = document.getElementById('stat-total-donors');
-  const activeCausesEl = document.getElementById('stat-active-projects');
+  const targetGoalEl = document.getElementById('stat-target-goal');
+  const goalPercentEl = document.getElementById('chanda-goal-percent');
+  const goalRatioEl = document.getElementById('chanda-goal-ratio');
+  const progressFillEl = document.getElementById('chanda-progress-fill');
 
-  const totalAmount = allDonors.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
-  const totalDonors = allDonors.length;
+  const goal = targetGoal || 60000;
+  const percent = Math.min(100, Math.round((totalAmount / goal) * 100));
 
   if (totalAmountEl) totalAmountEl.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
-  if (totalDonorsEl) totalDonorsEl.textContent = `${totalDonors}`;
-  if (activeCausesEl) activeCausesEl.textContent = '5';
+  if (totalDonorsEl) totalDonorsEl.textContent = `${totalDevotees}`;
+  if (targetGoalEl) targetGoalEl.textContent = `₹${goal.toLocaleString('en-IN')}`;
+  if (goalPercentEl) goalPercentEl.textContent = `${percent}%`;
+  if (goalRatioEl) goalRatioEl.textContent = `₹${totalAmount.toLocaleString('en-IN')} / ₹${goal.toLocaleString('en-IN')}`;
+  if (progressFillEl) progressFillEl.style.width = `${percent}%`;
 }
 
 function setDonorFilter(category, btnElement) {
-  currentDonorFilter = category;
+  currentChandaFilter = category;
   document.querySelectorAll('#donation-filter-chips .d-chip').forEach(chip => chip.classList.remove('active'));
   if (btnElement) btnElement.classList.add('active');
   renderDonorsList();
@@ -766,7 +563,7 @@ function setDonorFilter(category, btnElement) {
 
 function filterDonorsList() {
   const searchInput = document.getElementById('donor-search-input');
-  currentDonorSearchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  currentChandaSearchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
   renderDonorsList();
 }
 
@@ -774,129 +571,170 @@ function renderDonorsList() {
   const container = document.getElementById('donors-list-grid');
   if (!container) return;
 
-  const filtered = allDonors.filter(donor => {
-    // Category match
-    let matchesCategory = true;
-    if (currentDonorFilter !== 'all') {
-      const p = (donor.purpose || '').toLowerCase();
-      if (currentDonorFilter === 'Water') matchesCategory = p.includes('water') || p.includes('ro');
-      else if (currentDonorFilter === 'Solar') matchesCategory = p.includes('solar') || p.includes('light') || p.includes('sanitation');
-      else if (currentDonorFilter === 'Youth') matchesCategory = p.includes('youth') || p.includes('school') || p.includes('sport') || p.includes('scholarship');
-      else if (currentDonorFilter === 'Temple') matchesCategory = p.includes('temple') || p.includes('annadanam') || p.includes('festival');
-      else if (currentDonorFilter === 'General') matchesCategory = p.includes('general') || p.includes('welfare') || p.includes('development');
+  const filtered = allChandas.filter(item => {
+    // Filter chip matching
+    let matchesFilter = true;
+    const amt = Number(item.amount) || 0;
+    if (currentChandaFilter === 'high') matchesFilter = amt >= 2000;
+    else if (currentChandaFilter === 'mid') matchesFilter = amt >= 1000;
+    else if (currentChandaFilter === 'today') {
+      const todayStr = new Date().toISOString().split('T')[0];
+      matchesFilter = (item.date === todayStr) || (item.date && item.date >= '2026-09-04');
     }
 
-    // Search query match
+    // Search query matching
     let matchesSearch = true;
-    if (currentDonorSearchQuery) {
-      const nameMatch = (donor.name || '').toLowerCase().includes(currentDonorSearchQuery);
-      const purposeMatch = (donor.purpose || '').toLowerCase().includes(currentDonorSearchQuery);
-      const amountMatch = String(donor.amount || '').includes(currentDonorSearchQuery);
-      matchesSearch = nameMatch || purposeMatch || amountMatch;
+    if (currentChandaSearchQuery) {
+      const nameMatch = (item.donorName || '').toLowerCase().includes(currentChandaSearchQuery);
+      const receiptMatch = (item.receiptNo || '').toLowerCase().includes(currentChandaSearchQuery);
+      const collectorMatch = (item.collectedBy || '').toLowerCase().includes(currentChandaSearchQuery);
+      const modeMatch = (item.paymentMode || '').toLowerCase().includes(currentChandaSearchQuery);
+      const amtMatch = String(amt).includes(currentChandaSearchQuery);
+      matchesSearch = nameMatch || receiptMatch || collectorMatch || modeMatch || amtMatch;
     }
 
-    return matchesCategory && matchesSearch;
+    return matchesFilter && matchesSearch;
   });
 
   if (filtered.length === 0) {
     container.innerHTML = `
       <div class="donors-empty-state">
         <p style="font-size: 28px; margin: 0 0 8px 0;">🔍</p>
-        <p style="font-weight: 700; color: #1B5E20; margin-bottom: 4px; font-size: 15px;">No donors found matching your search</p>
-        <p style="font-size: 13px; color: #666; margin: 0;">Try adjusting your keywords or select "All Causes (అన్ని విరాళాలు)".</p>
+        <p style="font-weight: 700; color: #1B5E20; margin-bottom: 4px; font-size: 15px;">No chanda records found</p>
+        <p style="font-size: 13px; color: #666; margin: 0;">Try adjusting your search terms or select "All Chandas (అన్ని చందాలు)".</p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = filtered.map(donor => {
-    const avatar = getAvatarInitial(donor.name);
-    const purposeEmoji = getPurposeEmoji(donor.purpose);
-    const recentBadge = donor.isLive ? '<span class="donor-badge-recent">⚡ Just Contributed</span>' : '';
-    const formattedAmount = Number(donor.amount).toLocaleString('en-IN');
+  container.innerHTML = filtered.map(chanda => {
+    const amt = Number(chanda.amount) || 0;
+    const formattedAmount = amt.toLocaleString('en-IN');
+    const tier = getChandaTier(amt);
+    const dateFormatted = formatChandaDate(chanda.date);
+    const initial = (chanda.donorName && chanda.donorName.trim()) ? chanda.donorName.trim().charAt(0).toUpperCase() : '🕉️';
 
     return `
       <div class="donor-item-card">
         <div class="donor-info-left">
-          <div class="donor-avatar">${avatar}</div>
+          <div class="donor-avatar" style="background: linear-gradient(135deg, #FFB300 0%, #E65100 100%); color: #ffffff;">
+            ${initial}
+          </div>
           <div class="donor-details">
             <div class="donor-name-row">
-              <h4 class="donor-name">${escapeHtml(donor.name)}</h4>
-              ${recentBadge}
+              <h4 class="donor-name">${escapeHtml(chanda.donorName)}</h4>
+              ${chanda.receiptNo ? `<span class="donor-badge-recent" style="background: #FFF3E0; color: #E65100; border-color: #FFE082;">${escapeHtml(chanda.receiptNo)}</span>` : ''}
             </div>
-            <p class="donor-purpose-tag">${purposeEmoji} ${escapeHtml(donor.purpose)}</p>
-            <p class="donor-meta-sub">📞 ${escapeHtml(donor.phone)} • 📅 ${escapeHtml(donor.date)}</p>
+            <p class="donor-purpose-tag">
+              ${chanda.collectedBy ? `👤 ద్వారా: <strong>${escapeHtml(chanda.collectedBy)}</strong> • ` : ''}
+              💳 ${escapeHtml(chanda.paymentMode || 'UPI / Cash')}
+            </p>
+            <p class="donor-meta-sub">
+              📅 ${dateFormatted}
+            </p>
           </div>
         </div>
         <div class="donor-amount-box">
-          <div class="donor-amount">₹${formattedAmount}</div>
-          <span class="donor-tier-label">${escapeHtml(donor.tier)}</span>
+          <div class="donor-amount" style="color: #E65100;">₹${formattedAmount}</div>
+          <span class="donor-tier-label" style="color: #F57C00;">${escapeHtml(tier)}</span>
         </div>
       </div>
     `;
   }).join('');
 }
 
-function initDonationReport() {
-  // Update stats & render static founding donors immediately
-  allDonors = [...foundingDonors];
-  updateDonationStats();
+function processChandaGroupData(groupData) {
+  if (!groupData) return;
+
+  chandaTargetGoal = Number(groupData.targetGoal || 60000);
+  const rawCollections = groupData.collections || [];
+
+  // Sort newest first: by date desc or receipt number desc
+  allChandas = [...rawCollections].sort((a, b) => {
+    if (b.date && a.date && b.date !== a.date) {
+      return b.date.localeCompare(a.date);
+    }
+    const rA = parseInt((a.receiptNo || '').replace(/\D/g, ''), 10) || 0;
+    const rB = parseInt((b.receiptNo || '').replace(/\D/g, ''), 10) || 0;
+    return rB - rA;
+  });
+
+  const totalAmount = allChandas.reduce((sum, item) => sum + (Number(item.amount) || 0), 0);
+  const totalDevotees = allChandas.length;
+
+  updateChandaStats(totalAmount, totalDevotees, chandaTargetGoal);
   renderDonorsList();
+}
 
-  // Connect to Firestore real-time listener if available
-  if (typeof db !== 'undefined' && db) {
+async function fetchChandaBookViaRest() {
+  try {
+    const res = await fetch(`https://firestore.googleapis.com/v1/projects/chandabook-utsav/databases/(default)/documents/groups/${CHANDABOOK_GROUP_ID}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const doc = await res.json();
+    const fields = doc.fields || {};
+    const rawCols = fields.collections?.arrayValue?.values || [];
+    
+    const collections = rawCols.map(c => {
+      const f = c.mapValue?.fields || {};
+      return {
+        donorName: f.donorName?.stringValue || 'Devotee',
+        amount: Number(f.amount?.doubleValue || f.amount?.integerValue || 0),
+        receiptNo: f.receiptNo?.stringValue || '',
+        date: f.date?.stringValue || '',
+        collectedBy: f.collectedBy?.stringValue || '',
+        paymentMode: f.paymentMode?.stringValue || 'UPI / Cash',
+        notes: f.notes?.stringValue || ''
+      };
+    });
+
+    processChandaGroupData({
+      name: fields.name?.stringValue || 'Power Youth - Panukupeta',
+      targetGoal: Number(fields.targetGoal?.integerValue || 60000),
+      collections: collections
+    });
+  } catch (err) {
+    console.warn("ChandaBook REST fetch failed:", err);
+  }
+}
+
+function initChandaBookLiveSync() {
+  // First load fast from REST API so data appears immediately without waiting for websocket
+  fetchChandaBookViaRest();
+
+  // Then establish real-time Firestore onSnapshot connection to ChandaBook project
+  if (typeof firebase !== 'undefined') {
     try {
-      db.collection('village_donations')
-        .limit(50)
-        .onSnapshot((snapshot) => {
-          const liveList = [];
-          snapshot.forEach(doc => {
-            const data = doc.data();
-            const rawAmount = Number(data.amount) || 0;
-            let dateStr = 'Recent';
-            if (data.timestamp && typeof data.timestamp.toDate === 'function') {
-              dateStr = formatDonorDate(data.timestamp.toDate());
-            }
+      let chandaApp = null;
+      try {
+        chandaApp = firebase.app('chandabookApp');
+      } catch (e) {
+        chandaApp = firebase.initializeApp(CHANDABOOK_CONFIG, 'chandabookApp');
+      }
 
-            liveList.push({
-              id: doc.id,
-              name: data.donorName || 'Village Well-wisher',
-              phone: maskPhoneNumber(data.phone),
-              amount: rawAmount,
-              purpose: data.purpose || 'General Village Development',
-              date: dateStr,
-              isLive: true,
-              tier: getDonorTier(rawAmount),
-              timestampNum: data.timestamp && typeof data.timestamp.toMillis === 'function' ? data.timestamp.toMillis() : Date.now()
-            });
-          });
-
-          // Sort live contributions newest first
-          liveList.sort((a, b) => b.timestampNum - a.timestampNum);
-
-          // Merge live list at top of founding donors
-          allDonors = [...liveList, ...foundingDonors];
-          updateDonationStats();
-          renderDonorsList();
+      if (chandaApp) {
+        const chandaDb = chandaApp.firestore();
+        chandaDb.collection('groups').doc(CHANDABOOK_GROUP_ID).onSnapshot((docSnap) => {
+          if (docSnap.exists) {
+            const data = docSnap.data();
+            processChandaGroupData(data);
+          }
         }, (err) => {
-          console.warn('Firestore village_donations read notice:', err);
-          // Fallback gracefully to founding donors
-          allDonors = [...foundingDonors];
-          updateDonationStats();
-          renderDonorsList();
+          console.warn("ChandaBook real-time snapshot notice:", err);
         });
+      }
     } catch (e) {
-      console.warn('Could not attach Firestore donation listener:', e);
+      console.warn("ChandaBook multi-app initialization notice:", e);
     }
   }
 }
 
-// Initialize on DOM ready or immediately if already loaded
+// Auto-run on DOM ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initDonationReport);
+  document.addEventListener('DOMContentLoaded', initChandaBookLiveSync);
 } else {
-  initDonationReport();
+  initChandaBookLiveSync();
 }
+
 
 
 

@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2.3" />
+  <link rel="stylesheet" href="style.css?v=2.4" />
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
@@ -624,8 +624,8 @@
           </div>
         </div>
 
-        <!-- ─── Cashfree Village Development & Welfare Fund Card ─── -->
-        <div class="fund-card" id="fund-section">
+        <!-- ─── Cashfree Village Development & Welfare Fund Card (Hidden until Cashfree activation is approved) ─── -->
+        <div class="fund-card" id="fund-section" style="display: none;">
           <div class="fund-header">
             <span class="fund-badge">🏛️ Cashfree Secured</span>
             <h3 class="fund-title">Panukupeta Village Development &amp; Welfare Fund (గ్రామ అభివృద్ధి నిధి)</h3>
@@ -684,29 +684,40 @@
           </div>
         </div>
 
-        <!-- ─── Donation List (విరాళాలు) - Public Ledger ─── -->
+        <!-- ─── Vinayaka Chavithi Chandas - Live ChandaBook Sync ─── -->
         <div class="donation-report-card" id="donation-report">
           <div class="donation-report-header">
             <div>
-              <span class="donation-live-badge">🟢 Live Public Ledger • పారదర్శక నివేదిక</span>
-              <h2 class="donation-report-title" style="margin: 6px 0 8px 0;">Donation List (విరాళాలు)</h2>
+              <span class="donation-live-badge">🟢 Live ChandaBook Sync • పవర్ యూత్ పణుకుపేట</span>
+              <h2 class="donation-report-title" style="margin: 6px 0 8px 0;">Vinayaka Chavithi Chandas (వినాయక చవితి చందాలు 🕉️)</h2>
               <p class="donation-report-sub">
-                Our heartfelt gratitude to every donor empowering Panukupeta's community projects &amp; welfare.
+                <strong>Power Youth - Panukupeta (పవర్ యూత్ - పణుకుపేట)</strong> • 2026 గణేష్ చతుర్థి ఉత్సవాల పారదర్శక చందాల నివేదిక (Synced live from ChandaBook).
               </p>
             </div>
             <div class="donation-stats-summary">
               <div class="donation-stat-box">
-                <span class="stat-num" id="stat-total-amount">₹62,500</span>
-                <span class="stat-lbl">Total Collected (మొత్తం)</span>
+                <span class="stat-num" id="stat-total-amount">₹22,016</span>
+                <span class="stat-lbl">Total Collected (మొత్తం చందాలు)</span>
               </div>
               <div class="donation-stat-box">
-                <span class="stat-num" id="stat-total-donors">22</span>
-                <span class="stat-lbl">Generous Donors (దాతలు)</span>
+                <span class="stat-num" id="stat-total-donors">21</span>
+                <span class="stat-lbl">Total Devotees (భక్తులు)</span>
               </div>
               <div class="donation-stat-box">
-                <span class="stat-num" id="stat-active-projects">5</span>
-                <span class="stat-lbl">Active Causes (పనులు)</span>
+                <span class="stat-num" id="stat-target-goal">₹60,000</span>
+                <span class="stat-lbl">Festival Target Goal (లక్ష్యం)</span>
               </div>
+            </div>
+          </div>
+
+          <!-- Target Goal Progress Bar -->
+          <div class="chanda-goal-box">
+            <div class="chanda-goal-meta">
+              <span>🎯 Festival Collection Progress: <strong id="chanda-goal-percent">37%</strong></span>
+              <span id="chanda-goal-ratio">₹22,016 / ₹60,000</span>
+            </div>
+            <div class="chanda-progress-bar">
+              <div class="chanda-progress-fill" id="chanda-progress-fill" style="width: 37%;"></div>
             </div>
           </div>
 
@@ -714,15 +725,13 @@
           <div class="donation-controls-row">
             <div class="donation-search-box">
               <span class="search-icon">🔍</span>
-              <input type="text" id="donor-search-input" placeholder="Search donors by name or purpose (పేరు ద్వారా వెతకండి)..." oninput="filterDonorsList()" />
+              <input type="text" id="donor-search-input" placeholder="Search by devotee name, receipt no (e.g. Dasari, Pudi, CB-121)..." oninput="filterDonorsList()" />
             </div>
             <div class="donation-filter-chips" id="donation-filter-chips">
-              <button type="button" class="d-chip active" onclick="setDonorFilter('all', this)">All Causes (అన్ని విరాళాలు)</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('Water', this)">💧 Drinking Water RO</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('Solar', this)">💡 Solar Lighting &amp; Sanitation</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('Youth', this)">🎓 Youth &amp; School</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('Temple', this)">🛕 Temple &amp; Annadanam</button>
-              <button type="button" class="d-chip" onclick="setDonorFilter('General', this)">🌾 General Welfare</button>
+              <button type="button" class="d-chip active" onclick="setDonorFilter('all', this)">All Chandas (అన్ని చందాలు)</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('high', this)">⭐ ₹2,000+ (గౌరవ చందాలు)</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('mid', this)">🙏 ₹1,000+ (చందాలు)</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('today', this)">📅 Recent / Today (తాజా చందాలు)</button>
             </div>
           </div>
 
@@ -734,7 +743,7 @@
           <!-- Transparency Assurance Footer -->
           <div class="donation-transparency-footer">
             <p>
-              🛡️ <strong>100% Community Transparency:</strong> Every rupee contributed is deposited directly into the village development trust account. Phone numbers are masked for privacy. For queries or to add an offline contribution, contact village elders or WhatsApp us at <strong>+91 90105 25248</strong>.
+              🛡️ <strong>100% Real-Time Transparency:</strong> Live synced from ChandaBook database for Power Youth Panukupeta Vinayaka Chavithi Utsav. Every donation receipt is digitally verified. To contribute your chanda, please contact committee members or WhatsApp at <strong>+91 90105 25248</strong>.
             </p>
           </div>
         </div>
@@ -1049,7 +1058,7 @@
     </button>
   </div>
 
-  <script src="script.js?v=2.4"></script>
+  <script src="script.js?v=2.5"></script>
 </body>
 
 </html>
