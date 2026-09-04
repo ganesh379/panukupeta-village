@@ -2604,6 +2604,295 @@ ul {
 }
 
 /* ══════════════════════════════════════════
+   DONATION LIST (విరాళాలు) - PUBLIC LEDGER
+══════════════════════════════════════════ */
+.donation-report-card {
+  background: #ffffff !important;
+  border-radius: var(--radius);
+  padding: var(--spacing-32);
+  border: 2px solid #81C784;
+  box-shadow: 0 8px 28px rgba(88, 204, 2, 0.14);
+  margin-top: var(--spacing-32);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.donation-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #E8F5E9;
+}
+
+.donation-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #E8F5E9;
+  color: #1B5E20;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid #C8E6C9;
+  margin-bottom: 8px;
+}
+
+.donation-report-title {
+  font-size: 24px;
+  font-weight: 900;
+  color: #13381B;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.01em;
+}
+
+.donation-report-sub {
+  font-size: 14.5px;
+  color: #4B5563;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.donation-stats-summary {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.donation-stat-box {
+  background: #F4FAF1;
+  border: 1.5px solid #C8E6C9;
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 140px;
+  text-align: center;
+}
+
+.donation-stat-box .stat-num {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  color: #1B5E20;
+  font-family: var(--font-primary);
+}
+
+.donation-stat-box .stat-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555555;
+  margin-top: 2px;
+}
+
+.donation-controls-row {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.donation-search-box {
+  position: relative;
+  width: 100%;
+}
+
+.donation-search-box .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #6B7280;
+}
+
+.donation-search-box input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 16px 12px 42px;
+  border: 2px solid #C8E6C9;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  color: #1F2937;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.donation-search-box input:focus {
+  border-color: #58CC02;
+  box-shadow: 0 0 0 3px rgba(88, 204, 2, 0.2);
+}
+
+.donation-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.d-chip {
+  background: #F9FBF8;
+  border: 1.5px solid #DCECD4;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-primary);
+  color: #2E7D32;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.d-chip:hover {
+  background: #E8F5E9;
+  border-color: #81C784;
+}
+
+.d-chip.active {
+  background: #2E7D32;
+  color: #ffffff;
+  border-color: #1B5E20;
+}
+
+.donors-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.donor-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #FAFCF9;
+  border: 1.5px solid #E2EFE0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.donor-item-card:hover {
+  transform: translateY(-2px);
+  border-color: #81C784;
+  box-shadow: 0 4px 14px rgba(88, 204, 2, 0.12);
+}
+
+.donor-info-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.donor-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #A5ED6E 0%, #58CC02 100%);
+  color: #13381B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.donor-details {
+  min-width: 0;
+}
+
+.donor-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.donor-name {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #13381B;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.donor-badge-recent {
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: 10.5px;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid #FDE68A;
+}
+
+.donor-purpose-tag {
+  font-size: 12.5px;
+  color: #555555;
+  margin: 3px 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.donor-meta-sub {
+  font-size: 11.5px;
+  color: #888888;
+  margin: 2px 0 0 0;
+}
+
+.donor-amount-box {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.donor-amount {
+  font-size: 17px;
+  font-weight: 900;
+  color: #1B5E20;
+  font-family: var(--font-primary);
+}
+
+.donor-tier-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #4CAF50;
+  margin-top: 1px;
+}
+
+.donation-transparency-footer {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: #F4FAF1;
+  border: 1px dashed #A5D6A7;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.donation-transparency-footer p {
+  font-size: 13px;
+  color: #2E7D32;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.donors-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 30px;
+  color: #666666;
+  font-size: 14px;
+}
+
+/* ══════════════════════════════════════════
    WHATSAPP FAMILY COMMUNITY SHOWCASE CARD
 ══════════════════════════════════════════ */
 .whatsapp-community-card {
@@ -2857,6 +3146,69 @@ ul {
     font-size: 11px;
     text-align: center;
     line-height: 1.5;
+  }
+
+  /* Donation Report Mobile Optimization */
+  .donation-report-card {
+    padding: 20px 14px !important;
+    margin-top: 20px !important;
+    border-radius: 14px !important;
+  }
+
+  .donation-report-header {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .donation-report-title {
+    font-size: 20px !important;
+  }
+
+  .donation-stats-summary {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+  }
+
+  .donation-stat-box {
+    padding: 10px 8px !important;
+    min-width: 0 !important;
+  }
+
+  .donation-stat-box:nth-child(3) {
+    grid-column: 1 / -1 !important;
+  }
+
+  .donation-stat-box .stat-num {
+    font-size: 18px !important;
+  }
+
+  .donation-stat-box .stat-lbl {
+    font-size: 11px !important;
+  }
+
+  .donors-list-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .donor-item-card {
+    padding: 12px 14px !important;
+  }
+
+  .donor-avatar {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 15px !important;
+  }
+
+  .donor-name {
+    font-size: 14.5px !important;
+  }
+
+  .donor-amount {
+    font-size: 16px !important;
   }
 
   /* WhatsApp Showcase Card Mobile Optimization */

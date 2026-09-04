@@ -6,5 +6,11 @@ service cloud.firestore {
       allow create: if request.resource.data.firstName != null;
       allow update, delete: if false;
     }
+
+    match /village_donations/{donationId} {
+      allow read: if true;
+      allow create: if request.resource.data.amount is number && request.resource.data.amount >= 10;
+      allow update, delete: if false;
+    }
   }
 }

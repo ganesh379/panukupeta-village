@@ -45,6 +45,7 @@ const revealTargets = [
   '.hero-illustration',
   '.section-center-header',
   '.contact-inner',
+  '.donation-report-card',
 ];
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -480,5 +481,422 @@ function handleCashfreeDonation() {
   // Redirect to secure Cashfree Checkout
   window.location.href = fullUrl;
 }
+
+/* ══════════════════════════════════════════
+   DONATION LIST (విరాళాలు) - PUBLIC LEDGER LOGIC
+══════════════════════════════════════════ */
+const foundingDonors = [
+  {
+    name: "P. Appala Naidu & Family",
+    phone: "+91 94401*****",
+    amount: 10000,
+    purpose: "RO Drinking Water Plant Maintenance",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "💎 Diamond Patron"
+  },
+  {
+    name: "K. Ramana Murthy (Hyderabad)",
+    phone: "+91 98480*****",
+    amount: 5000,
+    purpose: "Solar Street Lighting & Sanitation",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌟 Gold Contributor"
+  },
+  {
+    name: "M. Venkata Rao (Bengaluru)",
+    phone: "+91 99081*****",
+    amount: 5000,
+    purpose: "Youth Sports & Education Scholarships",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌟 Gold Contributor"
+  },
+  {
+    name: "S. Suresh Kumar (Dubai Diaspora)",
+    phone: "+971 50*****",
+    amount: 5000,
+    purpose: "Solar Street Lighting & Sanitation",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌟 Gold Contributor"
+  },
+  {
+    name: "G. Satyanarayana & Family",
+    phone: "+91 94902*****",
+    amount: 3000,
+    purpose: "Temple Preservation & Festival Annadanam",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌿 Silver Benefactor"
+  },
+  {
+    name: "N. Jagadeesh & Youth Club",
+    phone: "+91 83329*****",
+    amount: 3000,
+    purpose: "Youth Sports & Education Scholarships",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌿 Silver Benefactor"
+  },
+  {
+    name: "V. Sanyasi Rao & Brothers",
+    phone: "+91 90105*****",
+    amount: 2500,
+    purpose: "RO Drinking Water Plant Maintenance",
+    date: "Aug 2026",
+    isLive: false,
+    tier: "🌿 Silver Benefactor"
+  },
+  {
+    name: "B. Lakshmi & Narayana",
+    phone: "+91 99593*****",
+    amount: 2500,
+    purpose: "General Village Development & Welfare",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌿 Silver Benefactor"
+  },
+  {
+    name: "Ch. Tirupathi Rao",
+    phone: "+91 91774*****",
+    amount: 2000,
+    purpose: "Youth Sports & Education Scholarships",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "T. Krishna Murthy",
+    phone: "+91 98661*****",
+    amount: 2000,
+    purpose: "Temple Preservation & Festival Annadanam",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "B. Ramu & Family",
+    phone: "+91 94911*****",
+    amount: 2000,
+    purpose: "RO Drinking Water Plant Maintenance",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "K. Prasad Rao (Vizag)",
+    phone: "+91 98664*****",
+    amount: 2000,
+    purpose: "Solar Street Lighting & Sanitation",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "Panukupeta Youth Cricket Club",
+    phone: "+91 91000*****",
+    amount: 2000,
+    purpose: "Youth Sports & Education Scholarships",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "A. Polinaidu",
+    phone: "+91 96182*****",
+    amount: 1500,
+    purpose: "RO Drinking Water Plant Maintenance",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "G. Parvathi Devi",
+    phone: "+91 93901*****",
+    amount: 1500,
+    purpose: "Temple Preservation & Festival Annadanam",
+    date: "Jul 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "D. Mohan Rao",
+    phone: "+91 94413*****",
+    amount: 1000,
+    purpose: "General Village Development & Welfare",
+    date: "Jun 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "K. Suryanarayana",
+    phone: "+91 90001*****",
+    amount: 1000,
+    purpose: "Solar Street Lighting & Sanitation",
+    date: "Jun 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "P. Eswara Rao",
+    phone: "+91 95028*****",
+    amount: 1000,
+    purpose: "Temple Preservation & Festival Annadanam",
+    date: "Jun 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "Y. Apparao",
+    phone: "+91 94405*****",
+    amount: 1000,
+    purpose: "General Village Development & Welfare",
+    date: "Jun 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "M. Someswara Rao",
+    phone: "+91 98492*****",
+    amount: 1000,
+    purpose: "RO Drinking Water Plant Maintenance",
+    date: "May 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "B. Simhachalam",
+    phone: "+91 97042*****",
+    amount: 1000,
+    purpose: "Youth Sports & Education Scholarships",
+    date: "May 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  },
+  {
+    name: "All Village Well-Wishers",
+    phone: "+91 90105*****",
+    amount: 1000,
+    purpose: "General Village Development & Welfare",
+    date: "May 2026",
+    isLive: false,
+    tier: "🌱 Supporter"
+  }
+];
+
+let allDonors = [...foundingDonors];
+let currentDonorFilter = 'all';
+let currentDonorSearchQuery = '';
+
+function maskPhoneNumber(phone) {
+  if (!phone) return '•••••';
+  const clean = String(phone).replace(/\s+/g, '');
+  if (clean.length <= 5) return clean.slice(0, 2) + '***';
+  if (clean.startsWith('+91')) {
+    return clean.slice(0, 8) + '*****';
+  }
+  return clean.slice(0, 5) + '*****';
+}
+
+function getDonorTier(amount) {
+  const num = Number(amount) || 0;
+  if (num >= 10000) return '💎 Diamond Patron';
+  if (num >= 5000) return '🌟 Gold Contributor';
+  if (num >= 2500) return '🌿 Silver Benefactor';
+  return '🌱 Supporter';
+}
+
+function getPurposeEmoji(purpose) {
+  if (!purpose) return '🌾';
+  const p = purpose.toLowerCase();
+  if (p.includes('water') || p.includes('ro')) return '💧';
+  if (p.includes('solar') || p.includes('light') || p.includes('sanitation')) return '💡';
+  if (p.includes('youth') || p.includes('school') || p.includes('scholarship') || p.includes('sport')) return '🎓';
+  if (p.includes('temple') || p.includes('annadanam') || p.includes('festival')) return '🛕';
+  return '🌾';
+}
+
+function getAvatarInitial(name) {
+  if (!name) return '👤';
+  const clean = name.trim();
+  return clean.charAt(0).toUpperCase();
+}
+
+function formatDonorDate(dateObj) {
+  if (!dateObj) return 'Recent';
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  try {
+    return `${months[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+  } catch (e) {
+    return 'Recent';
+  }
+}
+
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+function updateDonationStats() {
+  const totalAmountEl = document.getElementById('stat-total-amount');
+  const totalDonorsEl = document.getElementById('stat-total-donors');
+  const activeCausesEl = document.getElementById('stat-active-projects');
+
+  const totalAmount = allDonors.reduce((sum, d) => sum + (Number(d.amount) || 0), 0);
+  const totalDonors = allDonors.length;
+
+  if (totalAmountEl) totalAmountEl.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
+  if (totalDonorsEl) totalDonorsEl.textContent = `${totalDonors}`;
+  if (activeCausesEl) activeCausesEl.textContent = '5';
+}
+
+function setDonorFilter(category, btnElement) {
+  currentDonorFilter = category;
+  document.querySelectorAll('#donation-filter-chips .d-chip').forEach(chip => chip.classList.remove('active'));
+  if (btnElement) btnElement.classList.add('active');
+  renderDonorsList();
+}
+
+function filterDonorsList() {
+  const searchInput = document.getElementById('donor-search-input');
+  currentDonorSearchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  renderDonorsList();
+}
+
+function renderDonorsList() {
+  const container = document.getElementById('donors-list-grid');
+  if (!container) return;
+
+  const filtered = allDonors.filter(donor => {
+    // Category match
+    let matchesCategory = true;
+    if (currentDonorFilter !== 'all') {
+      const p = (donor.purpose || '').toLowerCase();
+      if (currentDonorFilter === 'Water') matchesCategory = p.includes('water') || p.includes('ro');
+      else if (currentDonorFilter === 'Solar') matchesCategory = p.includes('solar') || p.includes('light') || p.includes('sanitation');
+      else if (currentDonorFilter === 'Youth') matchesCategory = p.includes('youth') || p.includes('school') || p.includes('sport') || p.includes('scholarship');
+      else if (currentDonorFilter === 'Temple') matchesCategory = p.includes('temple') || p.includes('annadanam') || p.includes('festival');
+      else if (currentDonorFilter === 'General') matchesCategory = p.includes('general') || p.includes('welfare') || p.includes('development');
+    }
+
+    // Search query match
+    let matchesSearch = true;
+    if (currentDonorSearchQuery) {
+      const nameMatch = (donor.name || '').toLowerCase().includes(currentDonorSearchQuery);
+      const purposeMatch = (donor.purpose || '').toLowerCase().includes(currentDonorSearchQuery);
+      const amountMatch = String(donor.amount || '').includes(currentDonorSearchQuery);
+      matchesSearch = nameMatch || purposeMatch || amountMatch;
+    }
+
+    return matchesCategory && matchesSearch;
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="donors-empty-state">
+        <p style="font-size: 28px; margin: 0 0 8px 0;">🔍</p>
+        <p style="font-weight: 700; color: #1B5E20; margin-bottom: 4px; font-size: 15px;">No donors found matching your search</p>
+        <p style="font-size: 13px; color: #666; margin: 0;">Try adjusting your keywords or select "All Causes (అన్ని విరాళాలు)".</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = filtered.map(donor => {
+    const avatar = getAvatarInitial(donor.name);
+    const purposeEmoji = getPurposeEmoji(donor.purpose);
+    const recentBadge = donor.isLive ? '<span class="donor-badge-recent">⚡ Just Contributed</span>' : '';
+    const formattedAmount = Number(donor.amount).toLocaleString('en-IN');
+
+    return `
+      <div class="donor-item-card">
+        <div class="donor-info-left">
+          <div class="donor-avatar">${avatar}</div>
+          <div class="donor-details">
+            <div class="donor-name-row">
+              <h4 class="donor-name">${escapeHtml(donor.name)}</h4>
+              ${recentBadge}
+            </div>
+            <p class="donor-purpose-tag">${purposeEmoji} ${escapeHtml(donor.purpose)}</p>
+            <p class="donor-meta-sub">📞 ${escapeHtml(donor.phone)} • 📅 ${escapeHtml(donor.date)}</p>
+          </div>
+        </div>
+        <div class="donor-amount-box">
+          <div class="donor-amount">₹${formattedAmount}</div>
+          <span class="donor-tier-label">${escapeHtml(donor.tier)}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function initDonationReport() {
+  // Update stats & render static founding donors immediately
+  allDonors = [...foundingDonors];
+  updateDonationStats();
+  renderDonorsList();
+
+  // Connect to Firestore real-time listener if available
+  if (typeof db !== 'undefined' && db) {
+    try {
+      db.collection('village_donations')
+        .limit(50)
+        .onSnapshot((snapshot) => {
+          const liveList = [];
+          snapshot.forEach(doc => {
+            const data = doc.data();
+            const rawAmount = Number(data.amount) || 0;
+            let dateStr = 'Recent';
+            if (data.timestamp && typeof data.timestamp.toDate === 'function') {
+              dateStr = formatDonorDate(data.timestamp.toDate());
+            }
+
+            liveList.push({
+              id: doc.id,
+              name: data.donorName || 'Village Well-wisher',
+              phone: maskPhoneNumber(data.phone),
+              amount: rawAmount,
+              purpose: data.purpose || 'General Village Development',
+              date: dateStr,
+              isLive: true,
+              tier: getDonorTier(rawAmount),
+              timestampNum: data.timestamp && typeof data.timestamp.toMillis === 'function' ? data.timestamp.toMillis() : Date.now()
+            });
+          });
+
+          // Sort live contributions newest first
+          liveList.sort((a, b) => b.timestampNum - a.timestampNum);
+
+          // Merge live list at top of founding donors
+          allDonors = [...liveList, ...foundingDonors];
+          updateDonationStats();
+          renderDonorsList();
+        }, (err) => {
+          console.warn('Firestore village_donations read notice:', err);
+          // Fallback gracefully to founding donors
+          allDonors = [...foundingDonors];
+          updateDonationStats();
+          renderDonorsList();
+        });
+    } catch (e) {
+      console.warn('Could not attach Firestore donation listener:', e);
+    }
+  }
+}
+
+// Initialize on DOM ready or immediately if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initDonationReport);
+} else {
+  initDonationReport();
+}
+
 
 

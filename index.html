@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2.2" />
+  <link rel="stylesheet" href="style.css?v=2.3" />
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
@@ -187,6 +187,7 @@
         <a href="#culture" class="nav-link">Culture</a>
         <a href="#agriculture" class="nav-link">Agriculture</a>
         <a href="#community" class="nav-link">Community</a>
+        <a href="#donation-report" class="nav-link">Donations (విరాళాలు)</a>
         <a href="#location" class="nav-link">Location</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="https://chat.whatsapp.com/KkcqrMP17Wl2SjLAFefcdk" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Join Family 🤝</a>
@@ -203,6 +204,7 @@
     <a href="#culture" class="mobile-link">Culture</a>
     <a href="#agriculture" class="mobile-link">Agriculture</a>
     <a href="#community" class="mobile-link">Community &amp; Fund</a>
+    <a href="#donation-report" class="mobile-link">Donation List (విరాళాలు)</a>
     <a href="#location" class="mobile-link">Location</a>
     <a href="#faq" class="mobile-link">FAQ / ప్రశ్నలు</a>
     <a href="terms.html" class="mobile-link">Terms &amp; Policies</a>
@@ -681,6 +683,61 @@
             <span>📜 Instant Digital Receipt</span>
           </div>
         </div>
+
+        <!-- ─── Donation List (విరాళాలు) - Public Ledger ─── -->
+        <div class="donation-report-card" id="donation-report">
+          <div class="donation-report-header">
+            <div>
+              <span class="donation-live-badge">🟢 Live Public Ledger • పారదర్శక నివేదిక</span>
+              <h2 class="donation-report-title" style="margin: 6px 0 8px 0;">Donation List (విరాళాలు)</h2>
+              <p class="donation-report-sub">
+                Our heartfelt gratitude to every donor empowering Panukupeta's community projects &amp; welfare.
+              </p>
+            </div>
+            <div class="donation-stats-summary">
+              <div class="donation-stat-box">
+                <span class="stat-num" id="stat-total-amount">₹62,500</span>
+                <span class="stat-lbl">Total Collected (మొత్తం)</span>
+              </div>
+              <div class="donation-stat-box">
+                <span class="stat-num" id="stat-total-donors">22</span>
+                <span class="stat-lbl">Generous Donors (దాతలు)</span>
+              </div>
+              <div class="donation-stat-box">
+                <span class="stat-num" id="stat-active-projects">5</span>
+                <span class="stat-lbl">Active Causes (పనులు)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls: Search & Category Filter Chips -->
+          <div class="donation-controls-row">
+            <div class="donation-search-box">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="donor-search-input" placeholder="Search donors by name or purpose (పేరు ద్వారా వెతకండి)..." oninput="filterDonorsList()" />
+            </div>
+            <div class="donation-filter-chips" id="donation-filter-chips">
+              <button type="button" class="d-chip active" onclick="setDonorFilter('all', this)">All Causes (అన్ని విరాళాలు)</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('Water', this)">💧 Drinking Water RO</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('Solar', this)">💡 Solar Lighting &amp; Sanitation</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('Youth', this)">🎓 Youth &amp; School</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('Temple', this)">🛕 Temple &amp; Annadanam</button>
+              <button type="button" class="d-chip" onclick="setDonorFilter('General', this)">🌾 General Welfare</button>
+            </div>
+          </div>
+
+          <!-- Donors Grid -->
+          <div class="donors-list-grid" id="donors-list-grid">
+            <!-- Dynamically populated by renderDonorsList() -->
+          </div>
+
+          <!-- Transparency Assurance Footer -->
+          <div class="donation-transparency-footer">
+            <p>
+              🛡️ <strong>100% Community Transparency:</strong> Every rupee contributed is deposited directly into the village development trust account. Phone numbers are masked for privacy. For queries or to add an offline contribution, contact village elders or WhatsApp us at <strong>+91 90105 25248</strong>.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -992,7 +1049,7 @@
     </button>
   </div>
 
-  <script src="script.js?v=2.3"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 
 </html>
