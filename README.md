@@ -60,12 +60,12 @@ start index.html
 panukupeta-village/
 ├── index.html                  # Main website & Village Fund section
 ├── style.css                   # Design system & responsive styles
-├── script.js                   # Interactivity, Firebase & Razorpay integration
-├── privacy.html                # Privacy Policy (Razorpay mandatory)
-├── terms.html                  # Terms & Conditions (Razorpay mandatory)
-├── refund-policy.html          # Cancellation & Refund Policy (Razorpay mandatory)
-├── shipping-policy.html        # Shipping & Fulfillment Policy (Razorpay mandatory)
-├── contact.html                # Contact Us page (Razorpay mandatory)
+├── script.js                   # Interactivity, Firebase & Cashfree integration
+├── privacy.html                # Privacy Policy (Cashfree & IT Act compliant)
+├── terms.html                  # Terms & Conditions (Cashfree mandatory)
+├── refund-policy.html          # Cancellation & Refund Policy (Cashfree mandatory)
+├── shipping-policy.html        # Shipping & Fulfillment Policy (Cashfree mandatory)
+├── contact.html                # Contact Us page (Admin & Help Desk)
 ├── logo.jpg / logo.png         # Official Panukupeta Village Logo (1024x1024)
 ├── logo-mark.png               # High-res square emblem mark for navbar & footer
 ├── favicon.ico                 # Multi-resolution favicon (16x16, 32x32)
@@ -84,11 +84,11 @@ panukupeta-village/
 └── README.md                   # This file
 ```
 
-## 💳 Razorpay Payment Gateway Integration
+## 💳 Cashfree Payment Gateway Integration
 
-The site includes the **Panukupeta Village Development & Welfare Fund (గ్రామ అభివృద్ధి నిధి)** with instant Razorpay Checkout:
-- **Test Key Configuration:** Set `window.RAZORPAY_KEY_ID = 'rzp_live_your_actual_key'` in `script.js` once your Razorpay merchant account is activated.
-- **Mandatory Compliance Policies:** Fully compliant with Razorpay onboarding requirements:
+The site includes the **Panukupeta Village Development & Welfare Fund (గ్రామ అభివృద్ధి నిధి)** powered by Cashfree Payments:
+- **Payment Link / Form:** Configured in `script.js` under `window.CASHFREE_PAYMENT_URL`.
+- **Mandatory Compliance Policies:** Fully compliant with Cashfree merchant onboarding requirements:
   - [Privacy Policy](privacy.html)
   - [Terms & Conditions](terms.html)
   - [Cancellation & Refund Policy](refund-policy.html)

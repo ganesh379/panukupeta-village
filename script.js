@@ -410,10 +410,11 @@ function shareVillageWebsite() {
 }
 
 /* ══════════════════════════════════════════
-   RAZORPAY PAYMENT GATEWAY INTEGRATION
+   CASHFREE PAYMENT GATEWAY INTEGRATION
 ══════════════════════════════════════════ */
-// Replace with your Live Razorpay Key (e.g. 'rzp_live_xxxxxxxx') once verified by Razorpay
-window.RAZORPAY_KEY_ID = window.RAZORPAY_KEY_ID || 'rzp_test_PanukupetaKey';
+// Set your Cashfree Payment Form / Link URL here:
+// Create in Cashfree Dashboard -> Payment Links / Forms -> e.g. "https://payments.cashfree.com/forms/panukupeta-fund"
+window.CASHFREE_PAYMENT_URL = window.CASHFREE_PAYMENT_URL || "https://payments.cashfree.com/forms/panukupeta-fund";
 
 function selectDonationAmount(amount, btnElement) {
   const input = document.getElementById('donor-amount');
@@ -423,7 +424,7 @@ function selectDonationAmount(amount, btnElement) {
   if (btnElement) btnElement.classList.add('active');
 }
 
-function handleRazorpayDonation() {
+function handleCashfreeDonation() {
   const amountInput = document.getElementById('donor-amount');
   const purposeSelect = document.getElementById('donor-purpose');
   const nameInput = document.getElementById('donor-name');
@@ -452,65 +453,33 @@ function handleRazorpayDonation() {
     return;
   }
 
-  // Check if Razorpay Checkout script is loaded
-  if (typeof Razorpay === 'undefined') {
-    alert('Razorpay Payment Gateway is loading. Please check your internet connection and try again.');
-    return;
+  // Record donation intention in Firestore if initialized
+  if (typeof db !== 'undefined' && db) {
+    db.collection('village_donations').add({
+      donorName: name,
+      phone: phone,
+      amount: amount,
+      purpose: purpose,
+      gateway: 'Cashfree',
+      status: 'initiated',
+      timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).catch(err => console.warn('Donation Firestore notice:', err));
   }
 
-  const options = {
-    key: window.RAZORPAY_KEY_ID,
-    amount: amount * 100, // Amount in paise
-    currency: 'INR',
-    name: 'Panukupeta Village Development Fund',
-    description: purpose + ' — పణుకుపేట గ్రామ అభివృద్ధి నిధి',
-    image: 'https://panukupeta.family/logo-mark.png',
-    handler: function (response) {
-      const paymentId = response.razorpay_payment_id;
-      alert(`🎉 ధన్యవాదాలు (Thank you), ${name}!\n\nమీ విరాళం ₹${amount} విజయవంతంగా అందింది.\n\nRazorpay Payment ID: ${paymentId}\nPurpose: ${purpose}\n\nమా గ్రామాభివృద్ధికి సహకరించినందుకు పణుకుపేట గ్రామస్తుల తరఫున హృదయపూర్వక కృతజ్ఞతలు! 🙏\n(A digital acknowledgement receipt has been recorded.)`);
+  // Build the Cashfree payment redirect URL with pre-filled parameters
+  let paymentUrl = window.CASHFREE_PAYMENT_URL;
+  const urlSeparator = paymentUrl.includes('?') ? '&' : '?';
+  const params = new URLSearchParams({
+    amount: amount,
+    customer_name: name,
+    customer_phone: phone,
+    purpose: purpose
+  });
 
-      // Optionally record in Firebase Firestore if initialized
-      if (typeof db !== 'undefined' && db) {
-        db.collection('village_donations').add({
-          donorName: name,
-          phone: phone,
-          amount: amount,
-          purpose: purpose,
-          paymentId: paymentId,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        }).catch(err => console.warn('Donation Firestore notice:', err));
-      }
+  const fullUrl = `${paymentUrl}${urlSeparator}${params.toString()}`;
 
-      // Reset fields
-      if (amountInput) amountInput.value = '1000';
-      if (nameInput) nameInput.value = '';
-      if (phoneInput) phoneInput.value = '';
-    },
-    prefill: {
-      name: name,
-      contact: phone
-    },
-    notes: {
-      village: 'Panukupeta',
-      mandal: 'Seethanagaram',
-      district: 'Parvathipuram Manyam',
-      purpose: purpose
-    },
-    theme: {
-      color: '#58CC02'
-    }
-  };
-
-  try {
-    const rzp = new Razorpay(options);
-    rzp.on('payment.failed', function (response) {
-      alert(`❌ లావాదేవీ విఫలమైంది (Payment Failed): ${response.error.description || 'Please try again or use another payment method.'}\nPayment ID: ${response.error.metadata ? response.error.metadata.payment_id : ''}`);
-    });
-    rzp.open();
-  } catch (err) {
-    console.error('Razorpay invocation error:', err);
-    alert('Razorpay Checkout Notice: ' + err.message + '\n(Make sure to provide your live or test Razorpay Key ID in window.RAZORPAY_KEY_ID).');
-  }
+  // Redirect to secure Cashfree Checkout
+  window.location.href = fullUrl;
 }
 
 

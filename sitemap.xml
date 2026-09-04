@@ -22,7 +22,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Legal & Compliance Policies (Required for Razorpay & Search Verification) -->
+  <!-- Legal & Compliance Policies (Required for Payment Gateway & Search Verification) -->
   <url>
     <loc>https://panukupeta.family/privacy.html</loc>
     <lastmod>2026-09-04</lastmod>
