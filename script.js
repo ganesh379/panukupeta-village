@@ -620,26 +620,29 @@ function renderDonorsList() {
     return `
       <div class="donor-item-card">
         <div class="donor-info-left">
-          <div class="donor-avatar" style="background: linear-gradient(135deg, #FFB300 0%, #E65100 100%); color: #ffffff;">
+          <div class="donor-avatar">
             ${initial}
           </div>
           <div class="donor-details">
             <div class="donor-name-row">
               <h4 class="donor-name">${escapeHtml(chanda.donorName)}</h4>
-              ${chanda.receiptNo ? `<span class="donor-badge-recent" style="background: #FFF3E0; color: #E65100; border-color: #FFE082;">${escapeHtml(chanda.receiptNo)}</span>` : ''}
+              ${chanda.receiptNo ? `<span class="donor-badge-recent">${escapeHtml(chanda.receiptNo)}</span>` : ''}
             </div>
-            <p class="donor-purpose-tag">
-              ${chanda.collectedBy ? `👤 Collected by: <strong>${escapeHtml(chanda.collectedBy)}</strong> • ` : ''}
-              💳 ${escapeHtml(chanda.paymentMode || 'UPI / Cash')}
-            </p>
-            <p class="donor-meta-sub">
-              📅 ${dateFormatted}
-            </p>
+            ${chanda.collectedBy ? `
+              <div class="donor-collector-tag">
+                👤 Collected by: <strong>${escapeHtml(chanda.collectedBy)}</strong>
+              </div>
+            ` : ''}
+            <div class="donor-meta-sub">
+              <span>📅 ${dateFormatted}</span>
+              <span>•</span>
+              <span>💳 ${escapeHtml(chanda.paymentMode || 'UPI / Cash')}</span>
+            </div>
           </div>
         </div>
         <div class="donor-amount-box">
-          <div class="donor-amount" style="color: #E65100;">₹${formattedAmount}</div>
-          <span class="donor-tier-label" style="color: #F57C00;">${escapeHtml(tier)}</span>
+          <div class="donor-amount">₹${formattedAmount}</div>
+          <span class="donor-tier-label">${escapeHtml(tier)}</span>
         </div>
       </div>
     `;
