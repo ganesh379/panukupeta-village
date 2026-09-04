@@ -23,7 +23,7 @@ Panukupeta (పణుకుపేట) is a vibrant village in **Seethanagaram Ma
 |---------|-------------|
 | 🌾 Hero | Village introduction with stats |
 | 📋 About | Location, roots, panchayat, agriculture |
-| 🎊 Culture | Festivals — Sankranti, Jatara, Savara art |
+| 🎊 Culture | Festivals — Sankranti, Jatara, Vinayaka Chavithi |
 | 🌾 Agriculture | Paddy farming, Seethanagaram Anicut |
 | 📍 Landmarks | Bobbili Fort, Veena Centre, Waterfalls |
 | 🤝 Community | Diaspora connect, blood donors, mentorship |
