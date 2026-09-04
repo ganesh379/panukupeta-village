@@ -2771,14 +2771,12 @@ ul {
 
 .donor-item-card {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
+  flex-direction: column;
   background: #ffffff;
   border: 1.5px solid #E8F5E9;
   border-radius: 14px;
-  padding: 14px 16px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  padding: 13px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   box-sizing: border-box;
 }
@@ -2789,17 +2787,25 @@ ul {
   box-shadow: 0 4px 16px rgba(88, 204, 2, 0.12);
 }
 
-.donor-info-left {
+.donor-card-top {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 12px;
+  width: 100%;
+}
+
+.donor-card-identity {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   min-width: 0;
   flex: 1;
 }
 
 .donor-avatar {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 12px;
   background: linear-gradient(135deg, #FF9800 0%, #E65100 100%);
   color: #ffffff;
@@ -2812,7 +2818,7 @@ ul {
   box-shadow: 0 2px 6px rgba(230, 81, 0, 0.2);
 }
 
-.donor-details {
+.donor-identity-text {
   min-width: 0;
   flex: 1;
 }
@@ -2822,7 +2828,6 @@ ul {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
-  margin-bottom: 2px;
 }
 
 .donor-name {
@@ -2834,38 +2839,34 @@ ul {
   word-break: break-word;
 }
 
+.donor-badge-receipt,
 .donor-badge-recent {
   background: #FEF3C7;
   color: #B45309;
   font-size: 11px;
   font-weight: 800;
-  padding: 2px 7px;
+  padding: 1.5px 7px;
   border-radius: 6px;
   border: 1px solid #FDE68A;
   white-space: nowrap;
+  letter-spacing: 0.2px;
 }
 
-.donor-collector-tag {
-  font-size: 12.5px;
-  color: #4B5563;
-  margin: 2px 0 0 0;
-  line-height: 1.4;
-  word-break: break-word;
-}
-
-.donor-collector-tag strong {
-  color: #1F2937;
-  font-weight: 700;
-}
-
-.donor-meta-sub {
-  font-size: 11.5px;
-  color: #6B7280;
-  margin: 3px 0 0 0;
-  display: flex;
+.donor-tier-pill,
+.donor-tier-label {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #92400E;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  padding: 1.5px 8px;
+  border-radius: 999px;
+  margin-top: 3px;
+  width: fit-content;
+  line-height: 1.3;
 }
 
 .donor-amount-box {
@@ -2874,28 +2875,59 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding-left: 8px;
 }
 
 .donor-amount {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 900;
   color: #D97706;
   font-family: var(--font-primary);
   line-height: 1.2;
+  letter-spacing: -0.2px;
 }
 
-.donor-tier-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 800;
-  color: #92400E;
-  background: #FEF3C7;
-  border: 1px solid #FDE68A;
-  padding: 2px 7px;
-  border-radius: 999px;
-  margin-top: 4px;
+.donor-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 12px;
+  color: #6B7280;
+  border-top: 1px solid #F3F4F6;
+  padding-top: 9px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.donor-collector-info,
+.donor-collector-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #4B5563;
+  font-size: 12px;
+}
+
+.donor-collector-info strong,
+.donor-collector-tag strong {
+  color: #1F2937;
+  font-weight: 700;
+}
+
+.donor-meta-info,
+.donor-meta-sub {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6B7280;
+  font-size: 11.5px;
   white-space: nowrap;
+}
+
+.donor-meta-dot {
+  color: #CBD5E1;
+  font-weight: 900;
 }
 
 .chanda-goal-box {
@@ -3266,29 +3298,56 @@ ul {
   }
 
   .donor-item-card {
-    padding: 12px 14px !important;
+    padding: 11px 13px !important;
+  }
+
+  .donor-card-top {
+    gap: 10px !important;
+  }
+
+  .donor-card-identity {
+    gap: 9px !important;
   }
 
   .donor-avatar {
-    width: 38px !important;
-    height: 38px !important;
-    font-size: 15px !important;
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 14.5px !important;
+    border-radius: 10px !important;
   }
 
   .donor-name {
     font-size: 14.5px !important;
+    line-height: 1.3 !important;
     white-space: normal !important;
     word-break: break-word !important;
-  }
-
-  .donor-purpose-tag {
-    white-space: normal !important;
-    word-break: break-word !important;
-    font-size: 12px !important;
   }
 
   .donor-amount {
-    font-size: 16px !important;
+    font-size: 17.5px !important;
+  }
+
+  .donor-tier-pill,
+  .donor-tier-label {
+    font-size: 10.5px !important;
+    padding: 1px 7px !important;
+  }
+
+  .donor-card-bottom {
+    font-size: 11.5px !important;
+    padding-top: 7px !important;
+    margin-top: 8px !important;
+    gap: 4px 10px !important;
+  }
+
+  .donor-collector-info,
+  .donor-collector-tag {
+    font-size: 11.5px !important;
+  }
+
+  .donor-meta-info,
+  .donor-meta-sub {
+    font-size: 11px !important;
   }
 
   /* WhatsApp Showcase Card Mobile Optimization */

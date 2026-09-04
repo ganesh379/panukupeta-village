@@ -510,6 +510,22 @@ function getChandaTier(amount) {
   return '🌱 Well-Wisher';
 }
 
+function cleanPaymentMode(mode) {
+  if (!mode) return 'UPI';
+  const m = String(mode).trim().toLowerCase();
+  if (m.includes('cash')) return 'Cash';
+  if (m.includes('upi') || m.includes('gpay') || m.includes('phonepe') || m.includes('paytm')) return 'UPI';
+  return mode;
+}
+
+function formatPaymentModeBadge(mode) {
+  const cleaned = cleanPaymentMode(mode);
+  if (cleaned.toLowerCase() === 'cash') {
+    return '💵 Cash';
+  }
+  return `💳 ${escapeHtml(cleaned)}`;
+}
+
 function formatChandaDate(dateStr) {
   if (!dateStr) return 'Recent';
   try {
@@ -549,7 +565,7 @@ function updateChandaStats(totalAmount, totalDevotees, targetGoal) {
   const percent = Math.min(100, Math.round((totalAmount / goal) * 100));
 
   if (totalAmountEl) totalAmountEl.textContent = `₹${totalAmount.toLocaleString('en-IN')}`;
-  if (totalDonorsEl) totalDonorsEl.textContent = `${totalDevotees}`;
+  if (totalDonorsEl) totalDonorsEl.textContent = totalDevotees;
   if (targetGoalEl) targetGoalEl.textContent = `₹${goal.toLocaleString('en-IN')}`;
   if (stillNeededEl) stillNeededEl.textContent = `₹${stillNeeded.toLocaleString('en-IN')}`;
   if (goalPercentEl) goalPercentEl.textContent = `${percent}%`;
@@ -557,16 +573,18 @@ function updateChandaStats(totalAmount, totalDevotees, targetGoal) {
   if (progressFillEl) progressFillEl.style.width = `${percent}%`;
 }
 
-function setDonorFilter(category, btnElement) {
-  currentChandaFilter = category;
-  document.querySelectorAll('#donation-filter-chips .d-chip').forEach(chip => chip.classList.remove('active'));
-  if (btnElement) btnElement.classList.add('active');
+function setDonorFilter(filterType, btnEl) {
+  currentChandaFilter = filterType;
+  const chips = document.querySelectorAll('.donation-filter-chips .d-chip');
+  chips.forEach(chip => chip.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
   renderDonorsList();
 }
 
 function filterDonorsList() {
-  const searchInput = document.getElementById('donor-search-input');
-  currentChandaSearchQuery = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  const input = document.getElementById('donor-search-input');
+  if (!input) return;
+  currentChandaSearchQuery = input.value.trim().toLowerCase();
   renderDonorsList();
 }
 
@@ -616,33 +634,37 @@ function renderDonorsList() {
     const tier = getChandaTier(amt);
     const dateFormatted = formatChandaDate(chanda.date);
     const initial = (chanda.donorName && chanda.donorName.trim()) ? chanda.donorName.trim().charAt(0).toUpperCase() : '🕉️';
+    const paymentBadge = formatPaymentModeBadge(chanda.paymentMode);
+    const collectorText = chanda.collectedBy
+      ? `👤 Collected by: <strong>${escapeHtml(chanda.collectedBy)}</strong>`
+      : `👤 <strong>Power Youth Committee</strong>`;
 
     return `
       <div class="donor-item-card">
-        <div class="donor-info-left">
-          <div class="donor-avatar">
-            ${initial}
-          </div>
-          <div class="donor-details">
-            <div class="donor-name-row">
-              <h4 class="donor-name">${escapeHtml(chanda.donorName)}</h4>
-              ${chanda.receiptNo ? `<span class="donor-badge-recent">${escapeHtml(chanda.receiptNo)}</span>` : ''}
-            </div>
-            ${chanda.collectedBy ? `
-              <div class="donor-collector-tag">
-                👤 Collected by: <strong>${escapeHtml(chanda.collectedBy)}</strong>
+        <div class="donor-card-top">
+          <div class="donor-card-identity">
+            <div class="donor-avatar">${initial}</div>
+            <div class="donor-identity-text">
+              <div class="donor-name-row">
+                <h4 class="donor-name">${escapeHtml(chanda.donorName)}</h4>
+                ${chanda.receiptNo ? `<span class="donor-badge-receipt">${escapeHtml(chanda.receiptNo)}</span>` : ''}
               </div>
-            ` : ''}
-            <div class="donor-meta-sub">
-              <span>📅 ${dateFormatted}</span>
-              <span>•</span>
-              <span>💳 ${escapeHtml(chanda.paymentMode || 'UPI / Cash')}</span>
+              ${tier ? `<div class="donor-tier-pill">${escapeHtml(tier)}</div>` : ''}
             </div>
+          </div>
+          <div class="donor-amount-box">
+            <div class="donor-amount">₹${formattedAmount}</div>
           </div>
         </div>
-        <div class="donor-amount-box">
-          <div class="donor-amount">₹${formattedAmount}</div>
-          <span class="donor-tier-label">${escapeHtml(tier)}</span>
+        <div class="donor-card-bottom">
+          <div class="donor-collector-info">
+            ${collectorText}
+          </div>
+          <div class="donor-meta-info">
+            <span class="donor-meta-date">📅 ${dateFormatted}</span>
+            <span class="donor-meta-dot">•</span>
+            <span class="donor-meta-mode">${paymentBadge}</span>
+          </div>
         </div>
       </div>
     `;

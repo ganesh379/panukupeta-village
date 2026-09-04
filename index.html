@@ -62,7 +62,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=2.6" />
+  <link rel="stylesheet" href="style.css?v=2.7" />
 
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
@@ -729,7 +729,7 @@
           <div class="donation-controls-row">
             <div class="donation-search-box">
               <span class="search-icon">🔍</span>
-              <input type="text" id="donor-search-input" placeholder="Search by devotee name, receipt no (e.g. Dasari, Pudi, CB-121)..." oninput="filterDonorsList()" />
+              <input type="text" id="donor-search-input" placeholder="Search devotee name or receipt # (e.g. Ramu, CB-121)..." oninput="filterDonorsList()" />
             </div>
             <div class="donation-filter-chips" id="donation-filter-chips">
               <button type="button" class="d-chip active" onclick="setDonorFilter('all', this)">All Chandas (అన్ని చందాలు)</button>
@@ -1068,7 +1068,7 @@
     </button>
   </div>
 
-  <script src="script.js?v=2.9"></script>
+  <script src="script.js?v=3.0"></script>
 </body>
 
 </html>
