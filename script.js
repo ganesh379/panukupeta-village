@@ -412,9 +412,8 @@ function shareVillageWebsite() {
 /* ══════════════════════════════════════════
    CASHFREE PAYMENT GATEWAY INTEGRATION
 ══════════════════════════════════════════ */
-// Set your Cashfree Payment Form / Link URL here:
-// Create in Cashfree Dashboard -> Payment Links / Forms -> e.g. "https://payments.cashfree.com/forms/panukupeta-fund"
-window.CASHFREE_PAYMENT_URL = window.CASHFREE_PAYMENT_URL || "https://payments.cashfree.com/forms/panukupeta-fund";
+// Official Cashfree Payment Form URL
+window.CASHFREE_PAYMENT_URL = "https://payments.cashfree.com/forms?code=panukupeta-fund";
 
 function selectDonationAmount(amount, btnElement) {
   const input = document.getElementById('donor-amount');
